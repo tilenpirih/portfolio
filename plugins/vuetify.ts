@@ -5,13 +5,14 @@ import { createVuetify } from 'vuetify'
 import { VNumberInput } from 'vuetify/labs/VNumberInput'
 import { sl } from 'vuetify/locale'
 
+// #4290f5
 const defaultTheme: ThemeDefinition = {
   dark: true,
   colors: {
-    primary: '#aec6ff',
-    secondary: '#bfc6dc',
-    background: '#121318',
-    surface: '#1e1f25',
+    primary: '#a8c8ff',
+    secondary: '#bdc7dc',
+    background: '#111318',
+    surface: '#1d2024',
     danger: '#FE4543',
   },
 }
@@ -60,7 +61,12 @@ export default defineNuxtPlugin(app => {
       fallback: 'en',
       messages: { sl },
     },
-    defaults: { },
+    defaults: {
+      VBtn: {
+        color: 'primary',
+        class: 'text-none',
+      },
+    },
   })
 
   app.vueApp.use(vuetify)

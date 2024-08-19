@@ -12,8 +12,9 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@mdi/js": "^7.4.47",
+    "aos": "^2.3.4",
     "nuxt": "^3.12.4",
-    "vue": "latest"
+    "vue": "^3.4.38"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.26.0",

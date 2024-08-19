@@ -9,9 +9,9 @@ useHead({
 
 <template>
   <v-app class="bg-background">
-    <navbar /> 
+    <navbar />
     <v-main>
-        <slot />
+      <slot />
     </v-main>
   </v-app>
 </template>

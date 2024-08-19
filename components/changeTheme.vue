@@ -20,7 +20,6 @@ const lightTheme = ref({
 })
 
 function switchTheme() {
-  console.log(defaultTheme.dark)
   if (defaultTheme.dark) {
     defaultTheme.dark = false
     defaultTheme.colors.primary = lightTheme.value.primary

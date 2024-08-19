@@ -17,26 +17,26 @@ const defaultTheme: ThemeDefinition = {
   },
 }
 
-// if (import.meta.client) {
-//   const localTheme = JSON.parse(localStorage.getItem('theme') as string)
-//   if (localTheme && defaultTheme.colors) {
-//     defaultTheme.dark = localTheme.dark
-//     defaultTheme.colors.primary = localTheme.primary
-//     defaultTheme.colors.secondary = localTheme.secondary
-//     defaultTheme.colors.background = localTheme.background
-//     defaultTheme.colors.surface = localTheme.surface
-//     if (localTheme.danger)
-//       defaultTheme.colors.danger = localTheme.danger
-//     if (localTheme.error)
-//       defaultTheme.colors.error = localTheme.error
-//     if (localTheme.info)
-//       defaultTheme.colors.info = localTheme.info
-//     if (localTheme.success)
-//       defaultTheme.colors.success = localTheme.success
-//     if (localTheme.warning)
-//       defaultTheme.colors.warning = localTheme.warning
-//   }
-// }
+if (import.meta.client) {
+  const localTheme = JSON.parse(localStorage.getItem('theme') as string)
+  if (localTheme && defaultTheme.colors) {
+    defaultTheme.dark = localTheme.dark
+    defaultTheme.colors.primary = localTheme.primary
+    defaultTheme.colors.secondary = localTheme.secondary
+    defaultTheme.colors.background = localTheme.background
+    defaultTheme.colors.surface = localTheme.surface
+    if (localTheme.danger)
+      defaultTheme.colors.danger = localTheme.danger
+    if (localTheme.error)
+      defaultTheme.colors.error = localTheme.error
+    if (localTheme.info)
+      defaultTheme.colors.info = localTheme.info
+    if (localTheme.success)
+      defaultTheme.colors.success = localTheme.success
+    if (localTheme.warning)
+      defaultTheme.colors.warning = localTheme.warning
+  }
+}
 export default defineNuxtPlugin(app => {
   const vuetify = createVuetify({
     components: {

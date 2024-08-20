@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
+    'nuxt-aos',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', config => {
         // @ts-expect-error

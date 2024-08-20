@@ -1,15 +1,15 @@
 <script setup lang="ts">
 useHead({
-  title: 'Global PDR - EST',
+  title: 'Tilen Pirih - Fullstack developer',
   meta: [
-    { name: 'description', content: 'Ocena škode avtomobilov.' },
+    { name: 'description', content: 'My portfolio' },
   ],
 })
 </script>
 
 <template>
   <v-app class="bg-background">
-    <navbar />
+    <navbar style="margin-bottom: 64px;" />
     <v-main>
       <slot />
     </v-main>

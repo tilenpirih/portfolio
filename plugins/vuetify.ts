@@ -14,6 +14,7 @@ const defaultTheme: ThemeDefinition = {
     background: '#111318',
     surface: '#1d2024',
     danger: '#FE4543',
+    text: '#d5e3ff',
   },
 }
 

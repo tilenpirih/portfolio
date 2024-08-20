@@ -12,8 +12,8 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@mdi/js": "^7.4.47",
-    "aos": "^2.3.4",
     "nuxt": "^3.12.4",
+    "nuxt-aos": "^1.2.5",
     "vue": "^3.4.38"
   },
   "devDependencies": {

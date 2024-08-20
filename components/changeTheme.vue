@@ -50,5 +50,5 @@ function setThemeToLocalStorage() {
 </script>
 
 <template>
-  <v-btn size="small" :icon="mdiThemeLightDark" @click="switchTheme()" />
+  <v-btn variant="text" size="small" :icon="mdiThemeLightDark" @click="switchTheme()" />
 </template>

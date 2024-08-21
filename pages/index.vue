@@ -1,5 +1,14 @@
 <script setup lang="ts">
-
+console.log('test')
+const projects = [
+  {
+    title: 'Global PDR Application',
+    description: 'Description 1',
+    image: '/img/globalPDR.webp',
+    lazyImage: '/img/lazy/globalPDR.webp',
+    link: 'https://google.com',
+  },
+]
 </script>
 
 <template>
@@ -33,14 +42,37 @@
       </div>
     </v-container>
   </div>
+  <!-- <div style="height: 500px;">
+    <h1>Skills</h1>
+  </div> -->
+  <v-container>
+    <div data-aos="fade-down" class="text-h3 text-primary text-center mb-2">
+      Projects
+    </div>
+    <v-row>
+      <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4">
+        <v-card class="projectCard">
+          <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
+          <v-card-title class="text-h5 text-primary">
+            {{ project.title }}
+          </v-card-title>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
   <div style="height: 500px;">
     <h1>Skills</h1>
   </div>
-  <div data-aos="fade-up" style="height: 500px;">
-    <h1>Projects</h1>
-  </div>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+.projectCard{
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.projectCard:hover {
+  box-shadow: 0 0 4pt 2pt rgb(var(--v-theme-primary));
+  scale: 1.05;
+  transition: all 0.3s;
+}
 </style>

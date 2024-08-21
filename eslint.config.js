@@ -4,9 +4,9 @@ export default antfu(
   {
     vue: true,
     typescript: true,
-    formatters:{
+    formatters: {
       css: true,
-    }
+    },
   },
   {
     files: ['**/*.vue'],

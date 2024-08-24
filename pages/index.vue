@@ -9,7 +9,7 @@ const projects = [
     link: 'https://google.com',
   },
   {
-    title: 'Global PDR Application',
+    title: 'EST PDR',
     description: 'Description 1 asdf asd fasd fasd fasdf  asdfa sdfas dfa sdf asdf asdf asdf asd fas dfasd fasd asd fasd fas dfasd fasd fasd fasd fasd f',
     image: '/img/globalPDR.webp',
     lazyImage: '/img/lazy/globalPDR.webp',
@@ -26,7 +26,7 @@ const projects = [
 </script>
 
 <template>
-  <v-container>
+  <v-container class="py-8">
     <v-row class="justify-center align-center">
       <v-col cols="12" sm="6" lg="6" xl="4" class="d-flex align-center">
         <div style="width: 100%;">
@@ -43,8 +43,8 @@ const projects = [
       </v-col>
     </v-row>
   </v-container>
-  <div class="bg-surface mt-8">
-    <v-container>
+  <div class="bg-surface">
+    <v-container class="py-8">
       <div data-aos="fade-down" class="text-h3 text-primary text-center mb-2">
         About
       </div>
@@ -56,40 +56,91 @@ const projects = [
       </div>
     </v-container>
   </div>
-  <!-- <div style="height: 500px;">
-    <h1>Skills</h1>
-  </div> -->
-  <v-container>
+  <v-container class="py-8">
     <div data-aos="fade-down" class="text-h3 text-primary text-center mb-2">
-      Projects
+      Skills
     </div>
     <v-row>
-      <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4">
-        <v-card class="projectCard h-100">
-          <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
-          <v-card-title class="text-h5 text-primary">
-            {{ project.title }}
-          </v-card-title>
-          <v-card-text>
-            {{ project.description }}
-          </v-card-text>
-        </v-card>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          Vue / Nuxt
+        </div>
+        <v-progress-linear color="primary" model-value="9" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          JS / TS
+        </div>
+        <v-progress-linear color="primary" model-value="9" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          HTML, CSS / SCSS
+        </div>
+        <v-progress-linear color="primary" model-value="8" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          SQL, Postgress, ORMs
+        </div>
+        <v-progress-linear color="primary" model-value="8" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          FastApi / Flask
+        </div>
+        <v-progress-linear color="primary" model-value="8" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          Git workflow
+        </div>
+        <v-progress-linear color="primary" model-value="8" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          Docker
+        </div>
+        <v-progress-linear color="primary" model-value="7" max="10" />
+      </v-col>
+      <v-col data-aos="fade-up" cols="12" md="6" class="px-6">
+        <div class="text-center text-h5">
+          Linux
+        </div>
+        <v-progress-linear color="primary" model-value="7" max="10" />
       </v-col>
     </v-row>
   </v-container>
-  <div style="height: 500px;">
-    <h1>Skills</h1>
+  <div class="bg-surface">
+    <v-container>
+      <div data-aos="fade-down" class="text-h3 text-primary text-center mb-4">
+        Projects
+      </div>
+      <v-row>
+        <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
+          <v-card data-aos="flip-up" class="projectCard h-100 rounded-lg bg-background">
+            <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
+            <v-card-title class="text-h5 text-primary">
+              {{ project.title }}
+            </v-card-title>
+            <v-card-text>
+              {{ project.description }}
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <style scoped lang="scss">
-.projectCard{
+.projectCard {
   transition: all 0.3s;
   cursor: pointer;
 }
 .projectCard:hover {
   box-shadow: 0 0 4pt 2pt rgb(var(--v-theme-primary));
-  scale: 1.05;
+  scale: 1.03;
   transition: all 0.3s;
 }
 </style>

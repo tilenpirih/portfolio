@@ -67,6 +67,10 @@ export default defineNuxtPlugin(app => {
         color: 'primary',
         class: 'text-none',
       },
+      VProgressLinear: {
+        rounded: true,
+        height: '12',
+      },
     },
   })
 

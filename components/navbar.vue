@@ -20,8 +20,8 @@ onUnmounted(() => {
     <div class="outerContainer px-4 pt-4">
       <client-only>
         <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ scrolled: hasScrolled }">
-          <div>
-            asdf
+          <div style="width: 40px;">
+            <!-- as -->
           </div>
           <div>
             <v-btn variant="text" rounded="xl">

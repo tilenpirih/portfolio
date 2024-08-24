@@ -1,5 +1,4 @@
 <script setup lang="ts">
-console.log('test')
 const projects = [
   {
     title: 'Global PDR Application',
@@ -26,23 +25,7 @@ const projects = [
 </script>
 
 <template>
-  <v-container class="py-8">
-    <v-row class="justify-center align-center">
-      <v-col cols="12" sm="6" lg="6" xl="4" class="d-flex align-center">
-        <div style="width: 100%;">
-          <div data-aos="fade-left" class="text-h2 text-lg-h1  text-primary text-center">
-            Tilen Pirih
-          </div>
-          <div data-aos="fade-right" class="text-h4 text-lg-h3  text-center text-secondary">
-            Full-stack developer
-          </div>
-        </div>
-      </v-col>
-      <v-col data-aos="flip-up" cols="12" sm="6" lg="4" xl="3">
-        <v-img style="border-radius: 50%;" aspect-ratio="1" class="border-lg border-primary" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
-      </v-col>
-    </v-row>
-  </v-container>
+  <top />
   <div class="bg-surface">
     <v-container class="py-8">
       <div data-aos="fade-down" class="text-h3 text-primary text-center mb-2">

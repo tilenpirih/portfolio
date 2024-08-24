@@ -34,7 +34,7 @@ const projects = [
             Tilen Pirih
           </div>
           <div data-aos="fade-right" class="text-h4 text-lg-h3  text-center text-secondary">
-            Fullstack developer
+            Full-stack developer
           </div>
         </div>
       </v-col>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { mdiMenu } from '@mdi/js'
-import { useGoTo } from 'vuetify'
+import { useDisplay, useGoTo } from 'vuetify'
 
+const { smAndUp, xs } = useDisplay()
 const goTo = useGoTo()
 const hasScrolled = ref(false)
 const drawer = ref(false)
@@ -19,6 +20,7 @@ function onScroll() {
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
   onScroll()
+  console.log(smAndUp.value)
 })
 
 onUnmounted(() => {
@@ -32,9 +34,9 @@ onUnmounted(() => {
       <client-only>
         <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ 'scrolled bg-blur': hasScrolled }">
           <div style="width: 40px;">
-            <v-btn variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
+            <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
           </div>
-          <div>
+          <div v-if="smAndUp">
             <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="goTo(tab.to, { offset: -80 })">
               {{ tab.title }}
             </v-btn>
@@ -57,7 +59,7 @@ onUnmounted(() => {
         </div>
       </client-only>
     </div>
-    <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur">
+    <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
       <div class="d-flex justify-center h-100 flex-column">
         <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="goTo(tab.to, { offset: -80 }); drawer = false">
           {{ tab.title }}
@@ -90,6 +92,6 @@ onUnmounted(() => {
   background-color: rgb(var(--v-theme-background), 0.5);
 }
 .v-navigation-drawer {
-  background-color: rgb(var(--v-theme-background), 0.5);
+  background-color: rgb(var(--v-theme-background), 0.7);
 }
 </style>

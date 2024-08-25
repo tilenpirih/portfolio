@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
+  css: ['@/assets/css/main.scss'],
   modules: [
     'nuxt-aos',
     'nuxt-particles',

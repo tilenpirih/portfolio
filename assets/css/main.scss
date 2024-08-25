@@ -3,5 +3,9 @@ body {
 }
 html {
   overflow: auto !important;
-  color: #ff0000 !important; 
+}
+
+.bg-blur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }

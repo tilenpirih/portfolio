@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useGoTo } from 'vuetify'
+
+const goTo = useGoTo()
 const hasScrolled = ref(false)
 
 function onScroll() {
@@ -19,21 +22,21 @@ onUnmounted(() => {
   <div>
     <div class="outerContainer px-4 pt-4">
       <client-only>
-        <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ scrolled: hasScrolled }">
+        <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ 'scrolled bg-blur': hasScrolled }">
           <div style="width: 40px;">
             <!-- as -->
           </div>
           <div>
-            <v-btn variant="text" rounded="xl">
+            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#about', { offset: -80 })">
               About
             </v-btn>
-            <v-btn variant="text" rounded="xl" class="mx-1">
+            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#skills', { offset: -80 })">
               Skills
             </v-btn>
-            <v-btn variant="text" rounded="xl">
+            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#projects', { offset: -80 })">
               Projects
             </v-btn>
-            <v-btn variant="text" rounded="xl">
+            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#contact', { offset: -80 })">
               Contact
             </v-btn>
           </div>
@@ -66,7 +69,6 @@ onUnmounted(() => {
 }
 .scrolled {
   border: solid 2px rgb(var(--v-theme-primary), 0.5);
-  backdrop-filter: blur(10px);
   background-color: rgb(var(--v-theme-background), 0.5);
 }
 </style>

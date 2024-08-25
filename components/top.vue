@@ -1,13 +1,7 @@
 <script setup lang="ts">
-import type { Container } from '@tsparticles/engine'
 import { useTheme } from 'vuetify'
 
 const defaultTheme = useTheme().themes.value.defaultTheme
-
-function onLoad(container: Container) {
-  container.pause()
-  setTimeout(() => container.play(), 2000)
-}
 </script>
 
 <template>
@@ -21,14 +15,10 @@ function onLoad(container: Container) {
           enable: false,
           zIndex: -1,
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         detectRetina: true,
         interactivity: {
           events: {
-            onClick: {
-              enable: true,
-              mode: 'push',
-            },
             onHover: {
               enable: true,
               mode: 'repulse',
@@ -40,9 +30,6 @@ function onLoad(container: Container) {
               duration: 2,
               opacity: 0.8,
               size: 40,
-            },
-            push: {
-              quantity: 4,
             },
             repulse: {
               distance: 100,
@@ -66,7 +53,7 @@ function onLoad(container: Container) {
             enable: true,
             outModes: 'bounce',
             random: false,
-            speed: 2,
+            speed: 1,
             straight: false,
           },
           number: {
@@ -86,20 +73,19 @@ function onLoad(container: Container) {
           },
         },
       }"
-      @load="onLoad"
     />
     <v-container class="pt-16">
       <v-row class="justify-center align-center">
         <v-col cols="12" md="6" lg="6" xl="4" class="d-flex align-center">
           <div style="width: 100%;">
-            <div data-aos="fade-left" class="text-h2 text-lg-h1  text-primary text-center">
+            <div data-aos="fade-down" class="text-h2 text-lg-h1 text-primary text-center">
               Tilen Pirih
             </div>
-            <div data-aos="fade-right" class="text-h4 text-lg-h3  text-center text-secondary">
+            <div data-aos="fade-right" class="text-h4 text-lg-h3 text-center text-secondary">
               Full-stack developer
             </div>
             <div class="d-flex justify-center mt-3">
-              <v-btn variant="outlined" rounded="xl" class="text-primary">
+              <v-btn data-aos="fade-up" variant="outlined" rounded="xl" class="text-primary bg-blur">
                 <div class="rounded bg-success mr-3 greenDot" style="width: 8px; height: 8px;" />
                 Available for work
               </v-btn>
@@ -107,7 +93,7 @@ function onLoad(container: Container) {
           </div>
         </v-col>
         <v-col data-aos="flip-up" cols="12" md="6" lg="4" xl="3" class="d-flex justify-center">
-          <v-img style="border-radius: 50%;" max-width="400" aspect-ratio="1" class="border-lg border-primary" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
+          <v-img max-width="400" aspect-ratio="1" class="border-lg border-primary profile" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
         </v-col>
       </v-row>
     </v-container>
@@ -154,9 +140,8 @@ function onLoad(container: Container) {
 .greenDot {
   animation: pulsate 2s infinite;
 }
-// #tsparticles {
-//   canvas {
-//     border: solid 1px red;
-//   }
-// }
+
+.profile {
+  border-radius: 50%;
+}
 </style>

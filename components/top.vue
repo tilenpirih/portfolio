@@ -13,13 +13,42 @@ function onLoad(container: Container) {
 <template>
   <div class="mainContainer mt-n16">
     <nuxt-particles
-      class="particle-container"
       id="tsparticles"
       :key="defaultTheme.dark"
+      class="particle-container"
       :options="{
         fullScreen: {
           enable: false,
           zIndex: -1,
+        },
+        fpsLimit: 120,
+        detectRetina: true,
+        interactivity: {
+          events: {
+            onClick: {
+              enable: true,
+              mode: 'push',
+            },
+            onHover: {
+              enable: true,
+              mode: 'repulse',
+            },
+          },
+          modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.8,
+              size: 40,
+            },
+            push: {
+              quantity: 4,
+            },
+            repulse: {
+              distance: 100,
+              duration: 0.4,
+            },
+          },
         },
         particles: {
           color: {
@@ -37,14 +66,14 @@ function onLoad(container: Container) {
             enable: true,
             outModes: 'bounce',
             random: false,
-            speed: 3,
+            speed: 2,
             straight: false,
           },
           number: {
             density: {
               enable: true,
             },
-            value: 80,
+            value: 120,
           },
           opacity: {
             value: 0.5,
@@ -60,9 +89,8 @@ function onLoad(container: Container) {
       @load="onLoad"
     />
     <v-container class="pt-16">
-      <!-- Content -->
       <v-row class="justify-center align-center">
-        <v-col cols="12" sm="6" lg="6" xl="4" class="d-flex align-center">
+        <v-col cols="12" md="6" lg="6" xl="4" class="d-flex align-center">
           <div style="width: 100%;">
             <div data-aos="fade-left" class="text-h2 text-lg-h1  text-primary text-center">
               Tilen Pirih
@@ -70,21 +98,40 @@ function onLoad(container: Container) {
             <div data-aos="fade-right" class="text-h4 text-lg-h3  text-center text-secondary">
               Full-stack developer
             </div>
+            <div class="d-flex justify-center mt-3">
+              <v-btn variant="outlined" rounded="xl" class="text-primary">
+                <div class="rounded bg-success mr-3 greenDot" style="width: 8px; height: 8px;" />
+                Available for work
+              </v-btn>
+            </div>
           </div>
         </v-col>
-        <v-col data-aos="flip-up" cols="12" sm="6" lg="4" xl="3">
-          <v-img style="border-radius: 50%;" aspect-ratio="1" class="border-lg border-primary" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
+        <v-col data-aos="flip-up" cols="12" md="6" lg="4" xl="3" class="d-flex justify-center">
+          <v-img style="border-radius: 50%;" max-width="400" aspect-ratio="1" class="border-lg border-primary" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
         </v-col>
       </v-row>
     </v-container>
   </div>
-
-  <div>Here particles shouldn't be visible</div>
 </template>
 
 <style scoped lang="scss">
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .mainContainer {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,6 +151,9 @@ function onLoad(container: Container) {
   height: 100%;
 }
 
+.greenDot {
+  animation: pulsate 2s infinite;
+}
 // #tsparticles {
 //   canvas {
 //     border: solid 1px red;

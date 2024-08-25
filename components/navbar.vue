@@ -33,6 +33,9 @@ onUnmounted(() => {
             <v-btn variant="text" rounded="xl">
               Projects
             </v-btn>
+            <v-btn variant="text" rounded="xl">
+              Contact
+            </v-btn>
           </div>
           <div>
             <change-theme />

@@ -60,7 +60,7 @@ const defaultTheme = useTheme().themes.value.defaultTheme
             density: {
               enable: true,
             },
-            value: 120,
+            value: 150,
           },
           opacity: {
             value: 0.5,

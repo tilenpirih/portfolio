@@ -7,4 +7,5 @@
   <about />
   <skills />
   <projects />
+  <contact />
 </template>

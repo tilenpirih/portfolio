@@ -2,7 +2,7 @@
 const projects = [
   {
     title: 'Global PDR Application',
-    description: 'Description 1',
+    description: 'Logging application for PDR technicians.',
     image: '/img/globalPDR.webp',
     lazyImage: '/img/lazy/globalPDR.webp',
     link: 'https://google.com',

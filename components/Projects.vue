@@ -8,10 +8,10 @@ const projects = [
     link: 'https://google.com',
   },
   {
-    title: 'EST PDR',
-    description: 'Description 1 asdf asd fasd fasd fasdf  asdfa sdfas dfa sdf asdf asdf asdf asd fas dfasd fasd asd fasd fas dfasd fasd fasd fasd fasd f',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
+    title: 'KK Krka - image generator',
+    description: 'Tool for generating images for social media.',
+    image: '/img/krka_social.webp',
+    lazyImage: '/img/lazy/krka_social.webp',
     link: 'https://google.com',
   },
   {
@@ -47,6 +47,14 @@ const projects = [
   </div>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+.projectCard {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.projectCard:hover {
+  box-shadow: 0 0 4pt 2pt rgb(var(--v-theme-primary));
+  scale: 1.03;
+  transition: all 0.3s;
+}
 </style>

@@ -20,7 +20,6 @@ function onScroll() {
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
   onScroll()
-  console.log(smAndUp.value)
 })
 
 onUnmounted(() => {

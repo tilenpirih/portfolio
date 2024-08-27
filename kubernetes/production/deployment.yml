@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: landing
+  namespace: global-pdr
+  labels:
+    app: landing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: landing
+  template:
+    metadata:
+      labels:
+        app: landing
+    spec:
+      containers:
+        - name: landing
+          image: localhost:32000/global-pdr/landing:1.0.0
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: '1'

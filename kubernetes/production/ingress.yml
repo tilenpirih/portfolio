@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: landing-ingress
+  namespace: global-pdr
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/acme-challenge-type: dns01
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - globalpdr.org
+      secretName: globalpdr-org-cert
+  rules:
+    - host: globalpdr.org
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: landing
+                port:
+                  number: 3000

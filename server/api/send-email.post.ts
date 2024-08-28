@@ -47,11 +47,11 @@ export default defineEventHandler(async (event: H3Event) => {
       },
     }
 
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    return {
-      statusCode: 200,
-      statusMessage: 'Email sent successfully!',
-    }
+    // await new Promise(resolve => setTimeout(resolve, 1500))
+    // return {
+    //   statusCode: 200,
+    //   statusMessage: 'Email sent successfully!',
+    // }
 
     const response = await $fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',

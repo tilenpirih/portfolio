@@ -30,7 +30,7 @@ async function sendEmail() {
     sendSuccessfully.value = true
   }
   else {
-    failMessage.value = response.statusMessage
+    failMessage.value = response.statusMessage || 'Failed to send message'
     sendSuccessfully.value = false
   }
   sending.value = false

@@ -13,5 +13,6 @@ useHead({
     <v-main>
       <slot />
     </v-main>
+    <custom-footer />
   </v-app>
 </template>

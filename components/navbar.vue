@@ -29,8 +29,8 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <div class="outerContainer px-4 pt-4">
-      <client-only>
+    <client-only>
+      <div class="outerContainer px-4 pt-4">
         <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ 'scrolled bg-blur': hasScrolled }">
           <div style="width: 40px;">
             <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
@@ -39,39 +39,24 @@ onUnmounted(() => {
             <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="goTo(tab.to, { offset: -80 })">
               {{ tab.title }}
             </v-btn>
-            <!-- <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#about', { offset: -80 })">
-              About
-            </v-btn>
-            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#skills', { offset: -80 })">
-              Skills
-            </v-btn>
-            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#projects', { offset: -80 })">
-              Projects
-            </v-btn>
-            <v-btn variant="text" rounded="xl" class="mx-1" @click="goTo('#contact', { offset: -80 })">
-              Contact
-            </v-btn> -->
           </div>
           <div>
             <change-theme />
           </div>
         </div>
-      </client-only>
-    </div>
-    <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
-      <div class="d-flex justify-center h-100 flex-column">
-        <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="goTo(tab.to, { offset: -80 }); drawer = false">
-          {{ tab.title }}
-        </v-btn>
       </div>
-    </v-navigation-drawer>
+      <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
+        <div class="d-flex justify-center h-100 flex-column">
+          <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="goTo(tab.to, { offset: -80 }); drawer = false">
+            {{ tab.title }}
+          </v-btn>
+        </div>
+      </v-navigation-drawer>
+    </client-only>
   </div>
 </template>
 
 <style scoped lang="scss">
-:deep(.v-toolbar) {
-  background: transparent !important;
-}
 .outerContainer {
   position: fixed;
   width: 100%;
@@ -79,7 +64,6 @@ onUnmounted(() => {
 }
 .innerContainer {
   width: 100%;
-  // margin: 16px;
   margin-bottom: 0px;
   border-radius: 100px;
   height: 48px;

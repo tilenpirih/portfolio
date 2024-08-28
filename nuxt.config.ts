@@ -2,7 +2,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   runtimeConfig: {
     EMAILJS_PUBLIC_KEY: process.env.EMAILJS_PUBLIC_KEY,
     EMAILJS_PRIVATE_KEY: process.env.EMAILJS_PRIVATE_KEY,

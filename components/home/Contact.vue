@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { useDisplay } from 'vuetify'
-
-const display = useDisplay()
-
 const fullName = ref('')
 const email = ref('')
 const message = ref('')
 const valid = ref(false)
-const form = ref(null)
+const form = ref<HTMLFormElement | null>(null)
 
 const sending = ref(false)
 const sended = ref(false)
@@ -104,7 +100,3 @@ async function sendEmail() {
     </div>
   </v-container>
 </template>
-
-<style scoped>
-
-</style>

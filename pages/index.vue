@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <top />
-  <about />
-  <skills />
-  <projects />
-  <contact />
+  <home-top />
+  <home-about />
+  <home-skills />
+  <home-projects />
+  <home-contact />
 </template>

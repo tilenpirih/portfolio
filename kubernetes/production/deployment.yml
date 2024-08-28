@@ -23,3 +23,24 @@ spec:
             limits:
               memory: 512Mi
               cpu: '0.25'
+          env:
+            - name: EMAILJS_PUBLIC_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-secrets
+                  key: emailjs-public-key
+            - name: EMAILJS_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-secrets
+                  key: emailjs-private-key
+            - name: EMAILJS_SERVICE_ID
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-secrets
+                  key: emailjs-service-id
+            - name: EMAILJS_TEMPLATE_ID
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-secrets
+                  key: emailjs-template-id

@@ -8,6 +8,7 @@ const form = ref<HTMLFormElement | null>(null)
 const sending = ref(false)
 const sended = ref(false)
 const sendSuccessfully = ref(false)
+const failMessage = ref('')
 
 async function sendEmail() {
   if (!form.value || !valid.value)
@@ -21,14 +22,15 @@ async function sendEmail() {
       email: email.value,
       message: message.value,
     }),
-  })
+  }) as { statusCode: number, statusMessage: string }
   sended.value = true
-  if (response === 'OK') {
+  if (response.statusCode === 200) {
     form.value.reset()
     valid.value = false
     sendSuccessfully.value = true
   }
   else {
+    failMessage.value = response.statusMessage
     sendSuccessfully.value = false
   }
   sending.value = false
@@ -71,11 +73,11 @@ async function sendEmail() {
             />
           </v-col>
           <v-col cols="12" class="d-flex justify-end pt-0">
-            <v-card v-if="sended && sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-success d-none d-sm-flex">
+            <v-card v-if="sended && sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-success d-none d-sm-flex px-2 text-center">
               Message sent successfully!
             </v-card>
-            <v-card v-if="sended && !sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-error d-none d-sm-flex">
-              Message not sent!
+            <v-card v-if="sended && !sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-error d-none d-sm-flex px-2 text-center">
+              {{ failMessage }}
             </v-card>
             <v-btn
               color="primary"
@@ -88,11 +90,11 @@ async function sendEmail() {
             </v-btn>
           </v-col>
           <v-col cols="12" class="d-block d-sm-none">
-            <v-card v-if="sended && sendSuccessfully" height="36" class="d-flex w-100 mr-6 justify-center align-center bg-success">
+            <v-card v-if="sended && sendSuccessfully" min-height="36" class="d-flex w-100 mr-6 justify-center align-center bg-success px-2 text-center">
               Message sent successfully!
             </v-card>
-            <v-card v-if="sended && !sendSuccessfully" height="36" class="d-flex w-100 mr-6 justify-center align-center bg-error">
-              Message not sent!
+            <v-card v-if="sended && !sendSuccessfully" min-height="36" class="d-flex w-100 mr-6 justify-center align-center bg-error px-2 text-center">
+              {{ failMessage }}
             </v-card>
           </v-col>
         </v-row>

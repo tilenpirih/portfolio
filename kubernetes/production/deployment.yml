@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: landing
-  namespace: global-pdr
+  name: portfolio
+  namespace: personal-tilen
   labels:
-    app: landing
+    app: portfolio
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: landing
+      app: portfolio
   template:
     metadata:
       labels:
-        app: landing
+        app: portfolio
     spec:
       containers:
-        - name: landing
-          image: localhost:32000/global-pdr/landing:1.0.0
+        - name: portfolio
+          image: localhost:32000/personal/tilen/portfolio:1.0.0
           imagePullPolicy: Always
           resources:
             limits:
               memory: 512Mi
-              cpu: '1'
+              cpu: '0.25'

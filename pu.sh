@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-REPOSITORY_NAME="global-pdr"
-PROJECT_NAME="landing"
-ENVIRONMENT="Global PDR (Landing)"
+REPOSITORY_NAME="personal/tilen"
+PROJECT_NAME="portfolio"
+ENVIRONMENT="Tilen (Portfolio)"
 TAG=${1:-staging}
 
 docker build -t registry.ventic.tv/$REPOSITORY_NAME/$PROJECT_NAME:$TAG .
@@ -13,5 +13,3 @@ then
 else
   kubectl rollout restart deployment/$PROJECT_NAME -n $REPOSITORY_NAME
 fi
-
-

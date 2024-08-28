@@ -24,6 +24,8 @@ spec:
               memory: 512Mi
               cpu: '0.25'
           env:
+            - name: BASE_URL
+              value: https://tilenpirih.com
             - name: EMAILJS_PUBLIC_KEY
               valueFrom:
                 secretKeyRef:

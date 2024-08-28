@@ -15,25 +15,31 @@ async function sendEmail() {
     return
   sending.value = true
 
-  const response = await $fetch('/api/send-email', {
+  await $fetch('/api/send-email', {
     method: 'POST',
     body: JSON.stringify({
       fullName: fullName.value,
       email: email.value,
       message: message.value,
     }),
-  }) as { statusCode: number, statusMessage: string }
-  sended.value = true
-  if (response.statusCode === 200) {
+  }).then(() => {
+    if (!form.value)
+      return
     form.value.reset()
     valid.value = false
     sendSuccessfully.value = true
-  }
-  else {
-    failMessage.value = response.statusMessage || 'Failed to send message'
-    sendSuccessfully.value = false
-  }
-  sending.value = false
+  }).catch(error => {
+    console.log(error)
+    if (error.status === 429) {
+      failMessage.value = 'Too many requests. You can only send one email per hour.'
+    }
+    else {
+      failMessage.value = 'Failed to send email'
+    }
+  }).finally(() => {
+    sended.value = true
+    sending.value = false
+  })
 }
 </script>
 

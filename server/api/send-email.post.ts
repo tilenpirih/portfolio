@@ -20,18 +20,14 @@ export default defineEventHandler(async (event: H3Event) => {
       throw new Error('Unable to determine IP address')
     }
 
-    // Check if the user has made a request within the last hour
     const now = Date.now()
     const lastRequestTime = requestTimestamps[ip]
-
     if (lastRequestTime && now - lastRequestTime < 3600000) { // 1 hour in milliseconds
-      return {
-        statusCode: 429,
-        statusMessage: 'Too many requests. You can only send one email per hour.',
-      }
+      const error = new Error('Too many requests. You can only send one email per hour.') as any
+      error.statusCode = 429
+      throw error
     }
 
-    // Update the last request time for this IP
     requestTimestamps[ip] = now
 
     const body = await readBody(event)
@@ -48,11 +44,7 @@ export default defineEventHandler(async (event: H3Event) => {
     }
 
     // await new Promise(resolve => setTimeout(resolve, 1500))
-    // return {
-    //   statusCode: 200,
-    //   statusMessage: 'Email sent successfully!',
-    // }
-
+    // return 'OK'
     const response = await $fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
@@ -61,15 +53,9 @@ export default defineEventHandler(async (event: H3Event) => {
       body: JSON.stringify(data),
     })
     if (response === 'OK') {
-      return {
-        statusCode: 200,
-        statusMessage: 'Email sent successfully!',
-      }
+      return 'OK'
     }
-    return {
-      statusCode: 500,
-      statusMessage: 'Failed to send email',
-    }
+    throw new Error('Failed to send email')
   }
   catch (e) {
     return e

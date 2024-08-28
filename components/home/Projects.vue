@@ -8,15 +8,15 @@ const projects = [
     link: 'https://google.com',
   },
   {
-    title: 'KK Krka - image generator',
+    title: 'KK Krka - Image generator',
     description: 'Tool for generating images for social media.',
     image: '/img/krka_social.webp',
     lazyImage: '/img/lazy/krka_social.webp',
     link: 'https://google.com',
   },
   {
-    title: 'Global PDR Application',
-    description: 'Description 1',
+    title: 'Global EST Application',
+    description: 'App for creating car damage estimation reports.',
     image: '/img/globalPDR.webp',
     lazyImage: '/img/lazy/globalPDR.webp',
     link: 'https://google.com',

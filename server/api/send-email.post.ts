@@ -11,7 +11,9 @@ export default defineEventHandler(async (event: H3Event) => {
   try {
     // Get the user's IP address from the request headers
     const headers = getRequestHeaders(event)
-    const ip = headers['x-forwarded-for'] || event.node.req.socket.remoteAddress
+    const ip = headers['x-forwarded-for']?.split(',')[0].trim()
+      || headers['cf-connecting-ip']
+      || event.node.req.socket.remoteAddress
     console.log(ip)
 
     if (!ip) {

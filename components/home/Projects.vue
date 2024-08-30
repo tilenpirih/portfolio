@@ -12,7 +12,7 @@ const projects = [
     description: 'Tool for generating images for social media.',
     image: '/img/krka_social.webp',
     lazyImage: '/img/lazy/krka_social.webp',
-    link: 'https://google.com',
+    link: '/project/kk_krka_image_generator',
   },
   {
     title: 'Global EST Application',
@@ -32,15 +32,17 @@ const projects = [
       </div>
       <v-row>
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
-          <v-card data-aos="flip-up" class="projectCard h-100 rounded-lg bg-background">
-            <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
-            <v-card-title class="text-h5 text-primary">
-              {{ project.title }}
-            </v-card-title>
-            <v-card-text>
-              {{ project.description }}
-            </v-card-text>
-          </v-card>
+          <nuxt-link :to="project.link" class="text-decoration-none">
+            <v-card data-aos="flip-up" class="projectCard h-100 rounded-lg bg-background">
+              <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
+              <v-card-title class="text-h5 text-primary">
+                {{ project.title }}
+              </v-card-title>
+              <v-card-text>
+                {{ project.description }}
+              </v-card-text>
+            </v-card>
+          </nuxt-link>
         </v-col>
       </v-row>
     </v-container>

@@ -4,8 +4,8 @@
 
 <template>
   <div id="about" class="bg-surface">
-    <v-container class="py-8">
-      <div data-aos="fade-down" class="text-h3 text-primary text-center mb-2">
+    <v-container class="py-12">
+      <div data-aos="fade-down" class="text-h3 text-primary text-center pb-4">
         About
       </div>
       <div data-aos="fade-up" class="d-flex justify-center mt-2">

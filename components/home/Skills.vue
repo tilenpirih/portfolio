@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <v-container id="skills" class="py-8">
-    <div data-aos="fade-down" class="text-h3 text-primary text-center mb-2">
+  <v-container id="skills" class="py-12">
+    <div data-aos="fade-down" class="text-h3 text-primary text-center pb-4">
       Skills
     </div>
     <v-row>

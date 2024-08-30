@@ -44,8 +44,8 @@ async function sendEmail() {
 </script>
 
 <template>
-  <v-container id="contact" class="py-8">
-    <div data-aos="fade-down" class="text-h3 text-primary text-center mb-5">
+  <v-container id="contact" class="py-12">
+    <div data-aos="fade-down" class="text-h3 text-primary text-center pb-4">
       Contact
     </div>
     <div data-aos="fade-down" class="text-center mb-5">

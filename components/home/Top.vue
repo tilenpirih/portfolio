@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
+import { useGoTo, useTheme } from 'vuetify'
 
+const goTo = useGoTo()
 const defaultTheme = useTheme().themes.value.defaultTheme
 </script>
 
@@ -8,7 +9,7 @@ const defaultTheme = useTheme().themes.value.defaultTheme
   <div class="mainContainer mt-n16">
     <nuxt-particles
       id="tsparticles"
-      :key="defaultTheme.dark"
+      :key="defaultTheme.dark.toString()"
       class="particle-container"
       :options="{
         fullScreen: {
@@ -85,7 +86,7 @@ const defaultTheme = useTheme().themes.value.defaultTheme
               Full-stack developer
             </div>
             <div class="d-flex justify-center mt-3">
-              <v-btn data-aos="fade-up" variant="outlined" rounded="xl" class="text-primary bg-blur">
+              <v-btn data-aos="fade-up" variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
                 <div class="rounded bg-success mr-3 greenDot" style="width: 8px; height: 8px;" />
                 Available for work
               </v-btn>

@@ -12,7 +12,8 @@ const tabs = ref([
   { title: 'Projects', to: '#projects' },
   { title: 'Contact', to: '#contact' },
 ])
-
+const router = useRouter()
+const route = useRoute()
 function onScroll() {
   hasScrolled.value = window.scrollY > 8
 }
@@ -25,6 +26,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
 })
+
+function clickButton(id: string) {
+  if (route.path === '/') {
+    goTo(id, { offset: -80 })
+  }
+  else {
+    router.push({ path: '/', query: { section: id } })
+  }
+}
 </script>
 
 <template>
@@ -36,7 +46,7 @@ onUnmounted(() => {
             <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
           </div>
           <div v-if="smAndUp">
-            <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="goTo(tab.to, { offset: -80 })">
+            <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="clickButton(tab.to)">
               {{ tab.title }}
             </v-btn>
           </div>
@@ -47,7 +57,7 @@ onUnmounted(() => {
       </div>
       <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
         <div class="d-flex justify-center h-100 flex-column">
-          <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="goTo(tab.to, { offset: -80 }); drawer = false">
+          <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="clickButton(tab.to); drawer = false">
             {{ tab.title }}
           </v-btn>
         </div>

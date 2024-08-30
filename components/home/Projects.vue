@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const projects = [
   {
-    title: 'Global PDR Application',
-    description: 'Logging application for PDR technicians.',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
-    link: 'https://google.com',
-  },
-  {
     title: 'KK Krka - Image generator',
     description: 'Tool for generating images for social media.',
     image: '/img/krka_social.webp',
     lazyImage: '/img/lazy/krka_social.webp',
     link: '/project/kk_krka_image_generator',
+  },
+  {
+    title: 'Global PDR Application',
+    description: 'Logging application for PDR technicians.',
+    image: '/img/globalPDR.webp',
+    lazyImage: '/img/lazy/globalPDR.webp',
+    link: 'https://google.com',
   },
   {
     title: 'Global EST Application',

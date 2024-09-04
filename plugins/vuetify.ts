@@ -2,7 +2,6 @@ import type { ThemeDefinition } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import { VNumberInput } from 'vuetify/labs/VNumberInput'
 import { sl } from 'vuetify/locale'
 
 // #4290f5
@@ -42,7 +41,6 @@ export default defineNuxtPlugin(app => {
   const vuetify = createVuetify({
     components: {
       ssr: true,
-      VNumberInput,
     },
     theme: {
       defaultTheme: 'defaultTheme',

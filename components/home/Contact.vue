@@ -29,7 +29,6 @@ async function sendEmail() {
     valid.value = false
     sendSuccessfully.value = true
   }).catch(error => {
-    console.log(error)
     if (error.status === 429) {
       failMessage.value = 'Too many requests. You can only send one email per hour.'
     }

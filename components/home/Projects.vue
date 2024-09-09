@@ -9,7 +9,7 @@ const projects = [
   },
   {
     title: 'Ventic',
-    description: 'Tracking and streaming app for media.',
+    description: 'Tracking and streaming desktop app.',
     image: '/img/ventic.webp',
     lazyImage: '/img/lazy/ventic.webp',
     link: '/project/ventic',

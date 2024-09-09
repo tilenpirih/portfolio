@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { mdiGithub } from '@mdi/js'
 import { useDisplay } from 'vuetify'
 
 const display = useDisplay()
@@ -33,6 +34,10 @@ const technologies = [
     icon: '/img/technologies/js.svg',
     link: 'https://www.w3schools.com/js/',
   },
+  {
+    icon: '/img/technologies/videojs.svg',
+    link: 'https://videojs.com/',
+  },
 ]
 </script>
 
@@ -47,6 +52,7 @@ const technologies = [
             </div>
             <nuxt-link to="https://github.com/tilenpirih/ventic-clone">
               <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
+                <v-icon :icon="mdiGithub" size="large" class="mr-2" />
                 Source code
               </v-btn>
             </nuxt-link>

@@ -38,6 +38,10 @@ const technologies = [
     icon: '/img/technologies/videojs.svg',
     link: 'https://videojs.com/',
   },
+  {
+    icon: '/img/technologies/nodejs.svg',
+    link: 'https://nodejs.org/en',
+  },
 ]
 </script>
 

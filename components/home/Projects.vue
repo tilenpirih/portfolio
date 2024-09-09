@@ -8,11 +8,11 @@ const projects = [
     link: '/project/kk_krka_image_generator',
   },
   {
-    title: 'Global PDR Application',
-    description: 'Logging application for PDR technicians.',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
-    link: 'https://google.com',
+    title: 'Ventic',
+    description: 'Tracking and streaming app for media.',
+    image: '/img/ventic.webp',
+    lazyImage: '/img/lazy/ventic.webp',
+    link: '/project/ventic',
   },
   {
     title: 'Global EST Application',

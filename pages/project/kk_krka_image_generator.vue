@@ -2,7 +2,12 @@
 import { useDisplay } from 'vuetify'
 
 const display = useDisplay()
-const buttonSize = computed(() => display.mobile.value ? 80 : 100)
+
+const buttonSize = ref(100)
+watch(() => display.mobile.value, value => {
+  buttonSize.value = value ? 80 : 100
+})
+
 const technologies = [
   {
     icon: '/img/technologies/nuxt.svg',
@@ -36,6 +41,14 @@ const technologies = [
     icon: '/img/technologies/advancedCropper.svg',
     link: 'https://advanced-cropper.github.io/vue-advanced-cropper/',
   },
+  {
+    icon: '/img/technologies/advancedCropper.svg',
+    link: 'https://advanced-cropper.github.io/vue-advanced-cropper/',
+  },
+  {
+    icon: '/img/technologies/ts.svg',
+    link: 'https://www.typescriptlang.org/',
+  },
 ]
 </script>
 
@@ -60,7 +73,10 @@ const technologies = [
         About
       </div>
       <div class="text-center">
-        This project is for basketall club Krka. It is used to generate images for social media quickly and easily. That allows them to generate images also while match is still ongoing just on their phones.
+        This project is designed for the Krka Basketball Club, making it easy to quickly generate images for social media.
+        Users can create and save customizable templates that can be modified with ease.
+        The platform allows for personalized image and text customization, enhancing flexibility.
+        Additionally, it includes a built-in background removal tool, which is especially handy for removing backgrounds on mobile devices or when you're looking to save time.
       </div>
     </v-container>
   </div>
@@ -98,24 +114,3 @@ const technologies = [
     </v-row>
   </v-container>
 </template>
-
-<style scoped lang=scss>
-// :deep(.v-tooltip) {
-//   background-color: red;
-//   > div {
-//     background-color: rgb(var(--v-theme-primary)) !important;
-//     color: white;
-//     border-radius: 8px;
-//   }
-// }
-// :deep(){
-//   .v-tooltip {
-//     background-color: red !important;
-//     > div {
-//       background-color: rgb(var(--v-theme-primary)) !important;
-//       color: white;
-//       border-radius: 8px;
-//     }
-//   }
-// }
-</style>

@@ -15,11 +15,11 @@ const projects = [
     link: '/project/ventic',
   },
   {
-    title: 'Global EST Application',
-    description: 'App for creating car damage estimation reports.',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
-    link: 'https://google.com',
+    title: 'NK Tolmin',
+    description: 'Football club website, where data were automatically gathered with web scraping.',
+    image: '/img/nktolmin.webp',
+    lazyImage: '/img/lazy/nktolmin.webp',
+    link: '/project/nktolmin',
   },
   {
     title: 'Global EST Application',

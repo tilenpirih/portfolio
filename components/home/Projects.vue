@@ -22,26 +22,26 @@ const projects = [
     link: '/project/nktolmin',
   },
   {
-    title: 'Global EST Application',
-    description: 'App for creating car damage estimation reports.',
+    title: 'Global PDR Application',
+    description: 'PDR application for logging vehicles.',
     image: '/img/globalPDR.webp',
     lazyImage: '/img/lazy/globalPDR.webp',
-    link: 'https://google.com',
+    link: '/project/global_pdr_application',
   },
-  {
-    title: 'Global EST Application',
-    description: 'App for creating car damage estimation reports.',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
-    link: 'https://google.com',
-  },
-  {
-    title: 'Global EST Application',
-    description: 'App for creating car damage estimation reports.',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
-    link: 'https://google.com',
-  },
+  // {
+  //   title: 'Global EST Application',
+  //   description: 'App for creating car damage estimation reports.',
+  //   image: '/img/globalPDR.webp',
+  //   lazyImage: '/img/lazy/globalPDR.webp',
+  //   link: 'https://google.com',
+  // },
+  // {
+  //   title: 'Global EST Application',
+  //   description: 'App for creating car damage estimation reports.',
+  //   image: '/img/globalPDR.webp',
+  //   lazyImage: '/img/lazy/globalPDR.webp',
+  //   link: 'https://google.com',
+  // },
 ]
 </script>
 
@@ -49,7 +49,7 @@ const projects = [
   <div id="projects" class="bg-surface">
     <v-container class="py-12">
       <div data-aos="fade-down" class="text-h3 text-primary text-center pb-4">
-        Projects - (todo)
+        Projects
       </div>
       <v-row>
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">

@@ -42,10 +42,6 @@ const technologies = [
     link: 'https://advanced-cropper.github.io/vue-advanced-cropper/',
   },
   {
-    icon: '/img/technologies/advancedCropper.svg',
-    link: 'https://advanced-cropper.github.io/vue-advanced-cropper/',
-  },
-  {
     icon: '/img/technologies/ts.svg',
     link: 'https://www.typescriptlang.org/',
   },

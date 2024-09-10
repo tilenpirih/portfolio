@@ -78,7 +78,7 @@ const defaultTheme = useTheme().themes.value.defaultTheme
     <v-container class="pt-16">
       <v-row class="justify-center align-center">
         <v-col cols="12" md="6" lg="6" xl="4" class="d-flex align-center">
-          <div style="width: 100%;">
+          <div class="w-100">
             <div data-aos="fade-down" class="text-h2 text-lg-h1 text-primary text-center">
               Tilen Pirih
             </div>
@@ -87,7 +87,7 @@ const defaultTheme = useTheme().themes.value.defaultTheme
             </div>
             <div class="d-flex justify-center mt-3">
               <v-btn data-aos="fade-up" variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
-                <div class="rounded bg-success mr-3 greenDot" style="width: 8px; height: 8px;" />
+                <div class="rounded bg-success mr-3 greenDot" />
                 Available for work
               </v-btn>
             </div>
@@ -139,6 +139,8 @@ const defaultTheme = useTheme().themes.value.defaultTheme
 }
 
 .greenDot {
+  width: 8px;
+  height: 8px;
   animation: pulsate 2s infinite;
 }
 

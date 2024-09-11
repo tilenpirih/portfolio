@@ -67,7 +67,7 @@ useHead({
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.778" src="/img/kzs.webp" class="rounded-lg" lazy-src="/img/lazy/kzs.webp" />
+        <v-img max-width="600" aspect-ratio="1.778" src="/img/kzs.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/kzs.webp" />
       </v-col>
     </v-row>
   </v-container>
@@ -76,7 +76,7 @@ useHead({
       <div data-aos="fade-down" class="text-h4 text-primary text-center mb-2">
         About
       </div>
-      <div class="text-center">
+      <div data-aos="fade-up" class="text-center">
         I contributed to the development of the new website for the Slovenian Basketball Federation, working in collaboration with Onixweb d.o.o. I joined the project during its mid-development stage and actively participated in its progress for six months.
         <br>
         Additionally, we adapted the design for the Slovenian Volleyball Federation and Paravolley Europe.
@@ -90,7 +90,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Technologies
         </div>
-        <div class="h-100 d-flex align-center">
+        <div data-aos="fade-up" class="h-100 d-flex align-center">
           <v-row class="justify-center">
             <v-col v-for="tech in technologies" :key="tech.link" cols="auto">
               <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">

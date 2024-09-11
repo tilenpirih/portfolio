@@ -80,7 +80,7 @@ useHead({
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.778" src="/img/nktolmin.webp" class="rounded-lg" lazy-src="/img/lazy/nktolmin.webp" />
+        <v-img max-width="600" aspect-ratio="1.778" src="/img/nktolmin.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/nktolmin.webp" />
       </v-col>
     </v-row>
   </v-container>
@@ -89,7 +89,7 @@ useHead({
       <div data-aos="fade-down" class="text-h4 text-primary text-center mb-2">
         About
       </div>
-      <div class="text-center">
+      <div data-aos="fade-up" class="text-center">
         This project was particularly meaningful to me because it involved revamping the website of my local football club, where I had played for 10 years.
         Additionally, I saw an opportunity to incorporate this work into my college
         <nuxt-link to="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=145003&lang=slv" target="_blank">
@@ -108,7 +108,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Technologies
         </div>
-        <div class="h-100 d-flex align-center">
+        <div data-aos="fade-up" class="h-100 d-flex align-center">
           <v-row class="justify-center">
             <v-col v-for="tech in technologies" :key="tech.link" cols="auto">
               <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">
@@ -122,7 +122,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Overview
         </div>
-        <div class="rounded overflow-hidden d-flex justify-center">
+        <div data-aos="fade-up" class="rounded overflow-hidden d-flex justify-center">
           <script-you-tube-player video-id="_NxHsBEe0xY">
             <template #awaitingLoad>
               <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">

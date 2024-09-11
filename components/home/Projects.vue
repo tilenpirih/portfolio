@@ -8,6 +8,13 @@ const projects = [
     link: '/project/global_est_application',
   },
   {
+    title: 'Portfolio',
+    description: 'My personal portfolio website. Feel free to use it as a template for your own portfolio.',
+    image: '/img/portfolio.webp',
+    lazyImage: '/img/lazy/portfolio.webp',
+    link: '/project/portfolio',
+  },
+  {
     title: 'KK Krka - Image generator',
     description: 'Tool for generating images for social media.',
     image: '/img/krka_social.webp',

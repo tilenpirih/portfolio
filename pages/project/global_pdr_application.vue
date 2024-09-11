@@ -75,7 +75,7 @@ useHead({
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.7778" src="/img/globalPDR.webp" class="rounded-lg" lazy-src="/img/lazy/globalPDR.webp" />
+        <v-img max-width="600" aspect-ratio="1.7778" src="/img/globalPDR.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/globalPDR.webp" />
       </v-col>
     </v-row>
   </v-container>
@@ -84,7 +84,7 @@ useHead({
       <div data-aos="fade-down" class="text-h4 text-primary text-center mb-2">
         About
       </div>
-      <div class="text-center">
+      <div data-aos="fade-up" class="text-center">
         Global PDR Application is a web-based platform designed for logging and tracking vehicles, primarily used by car repair shops. Optimized for mobile devices, it also supports Progressive Web App (PWA) functionality, ensuring flexibility and easy customization for specific company needs.
 
         Technicians can add new vehicles along with detailed damage information, while administrators have full control over managing the data.
@@ -98,7 +98,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Technologies
         </div>
-        <div class="h-100 d-flex align-center">
+        <div data-aos="fade-up" class="h-100 d-flex align-center">
           <v-row class="justify-center">
             <v-col v-for="tech in technologies" :key="tech.link" cols="auto">
               <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">
@@ -112,7 +112,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Overview
         </div>
-        <div class="rounded overflow-hidden d-flex justify-center">
+        <div data-aos="fade-up" class="rounded overflow-hidden d-flex justify-center">
           <script-you-tube-player video-id="cdXl7_E8sq4">
             <template #awaitingLoad>
               <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">

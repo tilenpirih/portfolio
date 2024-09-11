@@ -76,7 +76,7 @@ useHead({
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.84173" src="/img/ventic.webp" class="rounded-lg" lazy-src="/img/lazy/ventic.webp" />
+        <v-img max-width="600" aspect-ratio="1.84173" src="/img/ventic.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/ventic.webp" />
       </v-col>
     </v-row>
   </v-container>
@@ -85,7 +85,7 @@ useHead({
       <div data-aos="fade-down" class="text-h4 text-primary text-center mb-2">
         About
       </div>
-      <div class="text-center">
+      <div data-aos="fade-up" class="text-center">
         This project was originally designed to be an all-in-one tool for streaming various types of media. It was one of my first ventures into the Vue ecosystem and desktop application development. Unfortunately, due to time constraints and other commitments, I had to put it on hold. However, the experience was invaluable, and I gained a lot from it.
         <br>
         While several features are still missing, the tool is already great for discovering new movies, shows, actors, and watching trailers. I plan to revisit this project, rewriting it using Vue 3 and switching from Electron to Tauri, with the goal of delivering a fully polished product.
@@ -99,7 +99,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Technologies
         </div>
-        <div class="h-100 d-flex align-center">
+        <div data-aos="fade-up" class="h-100 d-flex align-center">
           <v-row class="justify-center">
             <v-col v-for="tech in technologies" :key="tech.link" cols="auto">
               <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">
@@ -113,7 +113,7 @@ useHead({
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Overview
         </div>
-        <div class="rounded overflow-hidden d-flex justify-center">
+        <div data-aos="fade-up" class="rounded overflow-hidden d-flex justify-center">
           <script-you-tube-player video-id="8BgjFmTXyM0">
             <template #awaitingLoad>
               <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">

@@ -42,20 +42,6 @@ const projects = [
     lazyImage: '/img/lazy/nktolmin.webp',
     link: '/project/nktolmin',
   },
-  // {
-  //   title: 'Global EST Application',
-  //   description: 'App for creating car damage estimation reports.',
-  //   image: '/img/globalPDR.webp',
-  //   lazyImage: '/img/lazy/globalPDR.webp',
-  //   link: 'https://google.com',
-  // },
-  // {
-  //   title: 'Global EST Application',
-  //   description: 'App for creating car damage estimation reports.',
-  //   image: '/img/globalPDR.webp',
-  //   lazyImage: '/img/lazy/globalPDR.webp',
-  //   link: 'https://google.com',
-  // },
 ]
 </script>
 

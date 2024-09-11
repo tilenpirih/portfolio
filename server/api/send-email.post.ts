@@ -1,8 +1,6 @@
 import { defineEventHandler, getRequestHeaders, readBody } from 'h3'
 import type { H3Event } from 'h3'
 
-// Use a simple in-memory store for demonstration
-// In a production app, consider using Redis or a database
 const requestTimestamps: Record<string, number> = {}
 
 const runtimeConfig = useRuntimeConfig()
@@ -14,7 +12,6 @@ export default defineEventHandler(async (event: H3Event) => {
     const ip = headers['x-forwarded-for']?.split(',')[0].trim()
       || headers['cf-connecting-ip']
       || event.node.req.socket.remoteAddress
-    console.log(ip)
 
     if (!ip) {
       throw new Error('Unable to determine IP address')
@@ -22,7 +19,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
     const now = Date.now()
     const lastRequestTime = requestTimestamps[ip]
-    if (lastRequestTime && now - lastRequestTime < 3600000) { // 1 hour in milliseconds
+    if (lastRequestTime && now - lastRequestTime < 3600000) {
       const error = new Error('Too many requests. You can only send one email per hour.') as any
       error.statusCode = 429
       throw error
@@ -43,8 +40,6 @@ export default defineEventHandler(async (event: H3Event) => {
       },
     }
 
-    // await new Promise(resolve => setTimeout(resolve, 1500))
-    // return 'OK'
     const response = await $fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {

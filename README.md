@@ -1,6 +1,6 @@
 # Tilen Pirih portfolio
 
-Welcome to my portfolio website built using Nuxt 3. You can check out a live preview [here](https://tilenpirih.com/).
+Welcome to my portfolio website built using Nuxt 3, vuetify and integration with EmailJS. You can check out a live preview [here](https://tilenpirih.com/).
 
 Feel free to modify this template and use it for your own portfolio.
 

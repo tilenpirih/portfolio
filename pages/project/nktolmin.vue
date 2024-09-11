@@ -47,6 +47,18 @@ const technologies = [
     link: 'https://beautiful-soup-4.readthedocs.io/',
   },
 ]
+
+const runtimeConfig = useRuntimeConfig()
+useHead({
+  title: 'Project NK Tolmin',
+  meta: [
+    { name: 'description', content: 'This project was particularly meaningful to me because it involved revamping the website of my local football club, where I had played for 10 years. My goal was to make it easier for the club to manage their online presence, so I developed a web scraper that automatically pulled relevant public data and displayed it seamlessly on the website.' },
+    { property: 'og:title', content: 'Project NK Tolmin' },
+    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/nktolmin.webp` },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/nktolmin` },
+  ],
+})
 </script>
 
 <template>

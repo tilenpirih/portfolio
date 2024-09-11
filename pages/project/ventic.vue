@@ -43,6 +43,18 @@ const technologies = [
     link: 'https://nodejs.org/en',
   },
 ]
+
+const runtimeConfig = useRuntimeConfig()
+useHead({
+  title: 'Project Ventic',
+  meta: [
+    { name: 'description', content: 'This project was originally designed to be an all-in-one tool for streaming various types of media. It was one of my first ventures into the Vue ecosystem and desktop application development. Unfortunately, due to time constraints and other commitments, I had to put it on hold. However, the experience was invaluable, and I gained a lot from it.' },
+    { property: 'og:title', content: 'Project Ventic' },
+    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/ventic.webp` },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/ventic` },
+  ],
+})
 </script>
 
 <template>

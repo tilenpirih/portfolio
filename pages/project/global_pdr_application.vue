@@ -43,6 +43,17 @@ const technologies = [
     link: 'https://www.typescriptlang.org/',
   },
 ]
+const runtimeConfig = useRuntimeConfig()
+useHead({
+  title: 'Project Global PDR Application',
+  meta: [
+    { name: 'description', content: 'Global PDR Application is a web-based platform designed for logging and tracking vehicles, primarily used by car repair shops. Optimized for mobile devices, it also supports Progressive Web App (PWA) functionality, ensuring flexibility and easy customization for specific company needs.' },
+    { property: 'og:title', content: 'Project Global PDR Application' },
+    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/globalPDR.webp` },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/global_pdr_application` },
+  ],
+})
 </script>
 
 <template>

@@ -46,6 +46,17 @@ const technologies = [
     link: 'https://www.typescriptlang.org/',
   },
 ]
+const runtimeConfig = useRuntimeConfig()
+useHead({
+  title: 'Project KK Krka - Image generator',
+  meta: [
+    { name: 'description', content: 'This project is designed for the Krka Basketball Club, making it easy to quickly generate images for social media. Users can create and save customizable templates that can be modified with ease. The platform allows for personalized image and text customization, enhancing flexibility. Additionally, it includes a built-in background removal tool, which is especially handy for removing backgrounds on mobile devices or when you\'re looking to save time.' },
+    { property: 'og:title', content: 'Project KK Krka - Image generator' },
+    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/krka_social.webp` },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/kk_krka_image_generator` },
+  ],
+})
 </script>
 
 <template>

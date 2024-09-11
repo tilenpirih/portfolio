@@ -28,6 +28,13 @@ const projects = [
     lazyImage: '/img/lazy/globalPDR.webp',
     link: '/project/global_pdr_application',
   },
+  {
+    title: 'Košarkaška zveza Slovenije',
+    description: 'Slovenian basketball federation website.',
+    image: '/img/kzs.webp',
+    lazyImage: '/img/lazy/kzs.webp',
+    link: '/project/kzs',
+  },
   // {
   //   title: 'Global EST Application',
   //   description: 'App for creating car damage estimation reports.',

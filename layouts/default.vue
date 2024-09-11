@@ -5,7 +5,7 @@ useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'description', content: 'My portfolio' },
-    { name: 'keywords', content: 'portfolio, developer, fullstack, frontend, backend, Tilen, Pirih' },
+    { name: 'keywords', content: 'portfolio, developer, fullstack, frontend, backend, Tilen, Pirih, Pirihcode, programming, vue, nuxt' },
     { name: 'author', content: 'Tilen Pirih' },
     { property: 'og:title', content: 'Tilen Pirih - Fullstack developer' },
     { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/OGImage.png` },

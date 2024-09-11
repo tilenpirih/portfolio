@@ -30,6 +30,10 @@ const technologies = [
     icon: '/img/technologies/tailwind.svg',
     link: 'https://tailwindcss.com/',
   },
+  {
+    icon: '/img/technologies/bootstrapVue.svg',
+    link: 'https://bootstrap-vue.org/',
+  },
 ]
 const runtimeConfig = useRuntimeConfig()
 useHead({
@@ -74,6 +78,8 @@ useHead({
       </div>
       <div class="text-center">
         I contributed to the development of the new website for the Slovenian Basketball Federation, working in collaboration with Onixweb d.o.o. I joined the project during its mid-development stage and actively participated in its progress for six months.
+        <br>
+        Additionally, we adapted the design for the Slovenian Volleyball Federation and Paravolley Europe.
       </div>
     </v-container>
   </div>

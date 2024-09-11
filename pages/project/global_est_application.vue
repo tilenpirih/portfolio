@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { mdiGithub } from '@mdi/js'
+import { mdiWeb } from '@mdi/js'
 import { useDisplay } from 'vuetify'
 
 const display = useDisplay()
@@ -11,52 +11,51 @@ watch(() => display.mobile.value, value => {
 
 const technologies = [
   {
-    icon: '/img/technologies/vue.svg',
-    link: 'https://vuejs.org/',
+    icon: '/img/technologies/nuxt.svg',
+    link: 'https://nuxtjs.org/',
   },
   {
     icon: '/img/technologies/vuetify.svg',
     link: 'https://vuetifyjs.com/',
   },
   {
-    icon: '/img/technologies/vuex.svg',
-    link: 'https://vuex.vuejs.org/',
+    icon: '/img/technologies/pinia.svg',
+    link: 'https://pinia.vuejs.org/',
   },
   {
-    icon: '/img/technologies/js.svg',
-    link: 'https://www.w3schools.com/js/',
+    icon: '/img/technologies/bun.svg',
+    link: 'https://bun.sh/',
   },
   {
-    icon: '/img/technologies/nodejs.svg',
-    link: 'https://nodejs.org/en',
+    icon: '/img/technologies/fastapi.svg',
+    link: 'https://fastapi.tiangolo.com/',
   },
   {
-    icon: '/img/technologies/flask.svg',
-    link: 'https://flask.palletsprojects.com/',
+    icon: '/img/technologies/postgresql.svg',
+    link: 'https://www.postgresql.org/',
   },
   {
     icon: '/img/technologies/docker.svg',
     link: 'https://www.docker.com/',
   },
   {
-    icon: '/img/technologies/peewee.webp',
-    link: 'https://docs.peewee-orm.com/',
+    icon: '/img/technologies/ts.svg',
+    link: 'https://www.typescriptlang.org/',
   },
   {
-    icon: '/img/technologies/beautifulSoup.png',
-    link: 'https://beautiful-soup-4.readthedocs.io/',
+    icon: '/img/technologies/openCV.svg',
+    link: 'https://opencv.org/',
   },
 ]
-
 const runtimeConfig = useRuntimeConfig()
 useHead({
-  title: 'Project NK Tolmin',
+  title: 'Project Global PDR Application',
   meta: [
-    { name: 'description', content: 'This project was particularly meaningful to me because it involved revamping the website of my local football club, where I had played for 10 years. My goal was to make it easier for the club to manage their online presence, so I developed a web scraper that automatically pulled relevant public data and displayed it seamlessly on the website.' },
-    { property: 'og:title', content: 'Project NK Tolmin' },
-    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/nktolmin.webp` },
+    { name: 'description', content: 'Global PDR Application is a web-based platform designed for logging and tracking vehicles, primarily used by car repair shops. Optimized for mobile devices, it also supports Progressive Web App (PWA) functionality, ensuring flexibility and easy customization for specific company needs.' },
+    { property: 'og:title', content: 'Project Global PDR Application' },
+    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/globalPDR.webp` },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/nktolmin` },
+    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/global_pdr_application` },
   ],
 })
 </script>
@@ -68,19 +67,19 @@ useHead({
         <div style="width: 100%;">
           <div class="text-h3 text-lg-h2 text-primary text-center">
             <div data-aos="fade-down">
-              NK Tolmin
+              Global EST Application
             </div>
-            <nuxt-link to="https://github.com/tilenpirih?tab=repositories&q=nk-tolmin&type=&language=&sort=">
+            <nuxt-link to="https://globalpdr.org/">
               <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
-                <v-icon :icon="mdiGithub" size="large" class="mr-2" />
-                Source code
+                <v-icon :icon="mdiWeb" size="large" class="mr-2" />
+                Visit webpage
               </v-btn>
             </nuxt-link>
           </div>
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.778" src="/img/nktolmin.webp" class="rounded-lg" lazy-src="/img/lazy/nktolmin.webp" />
+        <v-img max-width="600" aspect-ratio="1.7778" src="/img/globalPDR.webp" class="rounded-lg" lazy-src="/img/lazy/globalPDR.webp" />
       </v-col>
     </v-row>
   </v-container>
@@ -90,14 +89,8 @@ useHead({
         About
       </div>
       <div class="text-center">
-        This project was particularly meaningful to me because it involved revamping the website of my local football club, where I had played for 10 years.
-        Additionally, I saw an opportunity to incorporate this work into my college
-        <nuxt-link to="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=145003&lang=slv" target="_blank">
-          <span>thesis</span>
-        </nuxt-link>.
-        My goal was to make it easier for the club to manage their online presence, so I developed a web scraper that automatically pulled relevant public data and displayed it seamlessly on the website.
-        <br>
-        Unfortunately, the project had to be abandoned. The club chose not to compensate me adequately, and without proper pay, I lacked the time and motivation to continue working and maintaining the project.
+        This project allows users to create a car damage report. Users can select car parts and for images it can automatically gather images from a tunnel cameras with RTSP protocol.
+        After all the data is inserted it generates a PDF report and with one click of a button it sends the report to the insurance company.
       </div>
     </v-container>
   </div>
@@ -123,7 +116,7 @@ useHead({
           Overview
         </div>
         <div class="rounded overflow-hidden d-flex justify-center">
-          <script-you-tube-player video-id="_NxHsBEe0xY">
+          <script-you-tube-player video-id="fK418gdwDRk">
             <template #awaitingLoad>
               <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">
                 <v-img src="/img/technologies/youtube.svg" />

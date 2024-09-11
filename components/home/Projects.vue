@@ -1,25 +1,18 @@
 <script setup lang="ts">
 const projects = [
+{
+    title: 'Global EST Application',
+    description: 'App for creating car damage estimation reports.',
+    image: '/img/globalEST.webp',
+    lazyImage: '/img/lazy/globalEST.webp',
+    link: '/project/global_est_application',
+  },
   {
     title: 'KK Krka - Image generator',
     description: 'Tool for generating images for social media.',
     image: '/img/krka_social.webp',
     lazyImage: '/img/lazy/krka_social.webp',
     link: '/project/kk_krka_image_generator',
-  },
-  {
-    title: 'Ventic',
-    description: 'Tracking and streaming desktop app.',
-    image: '/img/ventic.webp',
-    lazyImage: '/img/lazy/ventic.webp',
-    link: '/project/ventic',
-  },
-  {
-    title: 'NK Tolmin',
-    description: 'Football club website, where data were automatically gathered with web scraping.',
-    image: '/img/nktolmin.webp',
-    lazyImage: '/img/lazy/nktolmin.webp',
-    link: '/project/nktolmin',
   },
   {
     title: 'Global PDR Application',
@@ -34,6 +27,20 @@ const projects = [
     image: '/img/kzs.webp',
     lazyImage: '/img/lazy/kzs.webp',
     link: '/project/kzs',
+  },
+  {
+    title: 'Ventic',
+    description: 'Tracking and streaming desktop app.',
+    image: '/img/ventic.webp',
+    lazyImage: '/img/lazy/ventic.webp',
+    link: '/project/ventic',
+  },
+  {
+    title: 'NK Tolmin',
+    description: 'Football club website, where data were automatically gathered with web scraping.',
+    image: '/img/nktolmin.webp',
+    lazyImage: '/img/lazy/nktolmin.webp',
+    link: '/project/nktolmin',
   },
   // {
   //   title: 'Global EST Application',

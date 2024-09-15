@@ -18,7 +18,7 @@ import { mdiOpenInNew } from '@mdi/js'
             Whether it's crafting seamless user interfaces or optimizing backend processes, I'm always eager to contribute and grow as a developer.
           </div>
           <div data-aos="fade-up" class="mt-3">
-            <nuxt-link to="/CV_Tilen_Pirih.pdf" target="_blank">
+            <nuxt-link to="/resume_Tilen_Pirih.pdf" target="_blank">
               <v-btn variant="outlined" class="rounded-pill">
                 See my resume
                 <v-icon :icon="mdiOpenInNew" size="large" class="ml-2" />

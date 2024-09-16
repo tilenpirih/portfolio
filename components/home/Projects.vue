@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const projects = [
-{
+  {
+    title: 'Free background remover',
+    description: 'Remove image backgrounds instantly and for free. No limits, no hidden fees. Just fast and easy background remover.',
+    image: '/img/bg_eraser.webp',
+    lazyImage: '/img/lazy/bg_eraser.webp',
+    link: '/project/bg_eraser',
+  },
+  {
     title: 'Global EST Application',
     description: 'App for creating car damage estimation reports.',
     image: '/img/globalEST.webp',

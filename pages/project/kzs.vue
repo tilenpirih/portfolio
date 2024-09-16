@@ -57,7 +57,7 @@ useHead({
             <div data-aos="fade-down">
               Košarkaška zveza Slovenije
             </div>
-            <nuxt-link to="https://kzs.si">
+            <nuxt-link to="https://kzs.si" target="_blank">
               <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
                 <v-icon :icon="mdiWeb" size="large" class="mr-2" />
                 Visit page

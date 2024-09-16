@@ -70,7 +70,7 @@ useHead({
             <div data-aos="fade-down">
               NK Tolmin
             </div>
-            <nuxt-link to="https://github.com/tilenpirih?tab=repositories&q=nk-tolmin&type=&language=&sort=">
+            <nuxt-link to="https://github.com/tilenpirih?tab=repositories&q=nk-tolmin&type=&language=&sort=" target="_blank">
               <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
                 <v-icon :icon="mdiGithub" size="large" class="mr-2" />
                 Source code

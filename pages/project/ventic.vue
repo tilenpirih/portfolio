@@ -66,7 +66,7 @@ useHead({
             <div data-aos="fade-down">
               Ventic
             </div>
-            <nuxt-link to="https://github.com/tilenpirih/ventic-clone">
+            <nuxt-link to="https://github.com/tilenpirih/ventic-clone" target="_blank">
               <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
                 <v-icon :icon="mdiGithub" size="large" class="mr-2" />
                 Source code

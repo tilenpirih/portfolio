@@ -79,7 +79,7 @@ useHead({
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.7778" src="/img/globalPDR.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/globalPDR.webp" />
+        <v-img max-width="600" aspect-ratio="1.7778" src="/img/globalEST.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/globalEST.webp" />
       </v-col>
     </v-row>
   </v-container>

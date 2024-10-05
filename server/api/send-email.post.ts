@@ -1,5 +1,5 @@
-import { defineEventHandler, getRequestHeaders, readBody } from 'h3'
 import type { H3Event } from 'h3'
+import { defineEventHandler, getRequestHeaders, readBody } from 'h3'
 
 const requestTimestamps: Record<string, number> = {}
 
@@ -56,3 +56,15 @@ export default defineEventHandler(async (event: H3Event) => {
     return e
   }
 })
+
+// execute test every second
+// setInterval(test, 10000)
+// function test() {
+//   const memoryUsage = process.memoryUsage()
+//   console.log('---------------------------------')
+//   console.log('Memory usage:')
+//   console.log(`RSS: ${(memoryUsage.rss / 1024 / 1024).toFixed(2)} MB`)
+//   console.log(`Heap Total: ${(memoryUsage.heapTotal / 1024 / 1024).toFixed(2)} MB`)
+//   console.log(`Heap Used: ${(memoryUsage.heapUsed / 1024 / 1024).toFixed(2)} MB`)
+//   console.log(`External: ${(memoryUsage.external / 1024 / 1024).toFixed(2)} MB`)
+// }

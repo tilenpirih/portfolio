@@ -8,7 +8,7 @@ useHead({
     { name: 'keywords', content: 'portfolio, developer, fullstack, frontend, backend, Tilen, Pirih, Pirihcode, programming, vue, nuxt' },
     { name: 'author', content: 'Tilen Pirih' },
     { property: 'og:title', content: 'Tilen Pirih - Fullstack developer' },
-    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/OGImage.png` },
+    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/OGImage.webp` },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
     { property: 'og:type', content: 'website' },

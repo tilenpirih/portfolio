@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "build:preview": "nuxt build && nuxt preview"
+    "build:preview": "nuxt build && nuxt preview",
+    "preview:debug:bun": "bun run build && bun --inspect .output/server/index.mjs"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",

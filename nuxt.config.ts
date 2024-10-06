@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   css: ['@/assets/css/main.scss'],
+
   modules: [
     'nuxt-aos',
     '@nuxt/scripts',
@@ -31,6 +32,13 @@ export default defineNuxtConfig({
     vue: {
       template: {
         transformAssetUrls,
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern',
+        },
       },
     },
   },

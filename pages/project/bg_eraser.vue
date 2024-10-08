@@ -51,7 +51,7 @@ useHead({
         <div style="width: 100%;">
           <div class="text-h3 text-lg-h2 text-primary text-center">
             <div data-aos="fade-down">
-              Global PDR Application
+              Free background remover
             </div>
             <nuxt-link to="https://bg-eraser.com" target="_blank">
               <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">

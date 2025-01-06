@@ -1,8 +1,8 @@
 import type { ThemeDefinition } from 'vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
-import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import { sl } from 'vuetify/locale'
+import 'vuetify/styles'
 
 // #4290f5
 const defaultTheme: ThemeDefinition = {
@@ -39,9 +39,7 @@ if (import.meta.client) {
 }
 export default defineNuxtPlugin(app => {
   const vuetify = createVuetify({
-    components: {
-      ssr: true,
-    },
+    ssr: true,
     theme: {
       defaultTheme: 'defaultTheme',
       themes: {

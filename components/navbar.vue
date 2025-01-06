@@ -39,30 +39,28 @@ function clickButton(id: string) {
 
 <template>
   <div>
-    <client-only>
-      <div class="outerContainer px-4 pt-4">
-        <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ 'scrolled bg-blur': hasScrolled }">
-          <div style="width: 40px;">
-            <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
-          </div>
-          <div v-if="smAndUp">
-            <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="clickButton(tab.to)">
-              {{ tab.title }}
-            </v-btn>
-          </div>
-          <div>
-            <change-theme />
-          </div>
+    <div class="outerContainer px-4 pt-4">
+      <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ 'scrolled bg-blur': hasScrolled }">
+        <div style="width: 40px;">
+          <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
         </div>
-      </div>
-      <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
-        <div class="d-flex justify-center h-100 flex-column">
-          <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="clickButton(tab.to); drawer = false">
+        <div v-if="smAndUp">
+          <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="clickButton(tab.to)">
             {{ tab.title }}
           </v-btn>
         </div>
-      </v-navigation-drawer>
-    </client-only>
+        <div>
+          <change-theme />
+        </div>
+      </div>
+    </div>
+    <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
+      <div class="d-flex justify-center h-100 flex-column">
+        <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="clickButton(tab.to); drawer = false">
+          {{ tab.title }}
+        </v-btn>
+      </div>
+    </v-navigation-drawer>
   </div>
 </template>
 

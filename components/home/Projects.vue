@@ -6,6 +6,7 @@ const projects = [
     image: '/img/bg_eraser.webp',
     lazyImage: '/img/lazy/bg_eraser.webp',
     link: '/project/bg_eraser',
+    chips: [],
   },
   {
     title: 'Global EST Application',
@@ -13,6 +14,7 @@ const projects = [
     image: '/img/globalEST.webp',
     lazyImage: '/img/lazy/globalEST.webp',
     link: '/project/global_est_application',
+    chips: [],
   },
   {
     title: 'Portfolio',
@@ -20,6 +22,7 @@ const projects = [
     image: '/img/portfolio.webp',
     lazyImage: '/img/lazy/portfolio.webp',
     link: '/project/portfolio',
+    chips: [],
   },
   {
     title: 'KK Krka - Image generator',
@@ -27,6 +30,7 @@ const projects = [
     image: '/img/krka_social.webp',
     lazyImage: '/img/lazy/krka_social.webp',
     link: '/project/kk_krka_image_generator',
+    chips: [],
   },
   {
     title: 'Global PDR Application',
@@ -34,6 +38,7 @@ const projects = [
     image: '/img/globalPDR.webp',
     lazyImage: '/img/lazy/globalPDR.webp',
     link: '/project/global_pdr_application',
+    chips: [],
   },
   {
     title: 'Košarkaška zveza Slovenije',
@@ -41,6 +46,7 @@ const projects = [
     image: '/img/kzs.webp',
     lazyImage: '/img/lazy/kzs.webp',
     link: '/project/kzs',
+    chips: [],
   },
   {
     title: 'Ventic',
@@ -48,6 +54,7 @@ const projects = [
     image: '/img/ventic.webp',
     lazyImage: '/img/lazy/ventic.webp',
     link: '/project/ventic',
+    chips: [],
   },
   {
     title: 'NK Tolmin',
@@ -55,6 +62,7 @@ const projects = [
     image: '/img/nktolmin.webp',
     lazyImage: '/img/lazy/nktolmin.webp',
     link: '/project/nktolmin',
+    chips: [],
   },
 ]
 </script>

@@ -1,4 +1,4 @@
-FROM oven/bun:1.1.42 AS base
+FROM oven/bun:1.1.43 AS base
 
 WORKDIR /usr/src/app
 
@@ -7,6 +7,7 @@ FROM base AS build
 ENV NODE_ENV=production
 
 COPY . /usr/src/app
+#RUN rm -f bun.lock
 WORKDIR /usr/src/app
 RUN bun install
 RUN bun run build

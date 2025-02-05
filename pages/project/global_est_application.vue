@@ -69,12 +69,6 @@ useHead({
             <div data-aos="fade-down">
               Global EST Application
             </div>
-            <nuxt-link to="https://globalpdr.org/">
-              <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
-                <v-icon :icon="mdiWeb" size="large" class="mr-2" />
-                Visit webpage
-              </v-btn>
-            </nuxt-link>
           </div>
         </div>
       </v-col>
@@ -116,7 +110,7 @@ useHead({
           Overview
         </div>
         <div data-aos="fade-up" class="rounded overflow-hidden d-flex justify-center">
-          <script-you-tube-player video-id="fK418gdwDRk">
+          <script-you-tube-player video-id="fiTdl9njjoU">
             <template #awaitingLoad>
               <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">
                 <v-img src="/img/technologies/youtube.svg" />

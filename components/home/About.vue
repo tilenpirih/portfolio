@@ -6,8 +6,10 @@ import { mdiOpenInNew } from '@mdi/js'
   <div id="about" class="bg-surface">
     <v-container class="py-12 text-center d-flex justify-center">
       <div>
-        <div data-aos="fade-down" class="text-h3 text-primary pb-4">
-          About
+        <div data-aos="fade-down">
+          <div class="text-h3 text-primary pb-4">
+            About
+          </div>
         </div>
         <div style="max-width: 1200px;">
           <div data-aos="fade-down">
@@ -17,13 +19,15 @@ import { mdiOpenInNew } from '@mdi/js'
             I thrive on new challenges and am constantly seeking to expand my skillset by exploring and mastering new technologies.
             Whether it's crafting seamless user interfaces or optimizing backend processes, I'm always eager to contribute and grow as a developer.
           </div>
-          <div data-aos="fade-up" class="mt-3">
-            <nuxt-link to="/resume_Tilen_Pirih.pdf" target="_blank" external>
-              <v-btn variant="outlined" class="rounded-pill">
-                See my resume
-                <v-icon :icon="mdiOpenInNew" size="large" class="ml-2" />
-              </v-btn>
-            </nuxt-link>
+          <div data-aos="fade-up">
+            <div class="mt-3">
+              <nuxt-link to="/resume_Tilen_Pirih.pdf" target="_blank" external>
+                <v-btn variant="outlined" class="rounded-pill">
+                  See my resume
+                  <v-icon :icon="mdiOpenInNew" size="large" class="ml-2" />
+                </v-btn>
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </div>

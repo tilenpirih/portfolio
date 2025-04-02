@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { mdiWeb } from '@mdi/js'
 import { useDisplay } from 'vuetify'
 
 const display = useDisplay()

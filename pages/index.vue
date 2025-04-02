@@ -13,9 +13,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <home-top />
-  <home-about />
-  <home-skills />
-  <home-projects />
+  <lazy-home-top hydrate-on-visible />
+  <lazy-home-about hydrate-on-visible />
+  <lazy-home-skills hydrate-on-visible />
+  <lazy-home-projects hydrate-on-visible />
   <home-contact />
 </template>

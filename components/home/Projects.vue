@@ -70,21 +70,25 @@ const projects = [
 <template>
   <div id="projects" class="bg-surface">
     <v-container class="py-12">
-      <div data-aos="fade-down" class="text-h3 text-primary text-center pb-4">
-        Projects
+      <div data-aos="fade-down">
+        <div class="text-h3 text-primary text-center pb-4">
+          Projects
+        </div>
       </div>
       <v-row>
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
           <nuxt-link :to="project.link" class="text-decoration-none">
-            <v-card data-aos="flip-up" class="projectCard h-100 rounded-lg bg-background">
-              <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
-              <v-card-title class="text-h5 text-primary">
-                {{ project.title }}
-              </v-card-title>
-              <v-card-text>
-                {{ project.description }}
-              </v-card-text>
-            </v-card>
+            <div data-aos="flip-up" style="height: 100%;">
+              <v-card class="projectCard h-100 rounded-lg bg-background h-full">
+                <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
+                <v-card-title class="text-h5 text-primary">
+                  {{ project.title }}
+                </v-card-title>
+                <v-card-text>
+                  {{ project.description }}
+                </v-card-text>
+              </v-card>
+            </div>
           </nuxt-link>
         </v-col>
       </v-row>

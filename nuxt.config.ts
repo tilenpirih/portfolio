@@ -42,10 +42,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  aos:{
+  aos: {
     once: true,
   },
   nitro: {
-    preset: 'bun'
+    preset: 'bun',
   },
 })

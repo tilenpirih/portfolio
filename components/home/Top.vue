@@ -79,22 +79,30 @@ const defaultTheme = useTheme().themes.value.defaultTheme
       <v-row class="justify-center align-center">
         <v-col cols="12" md="6" lg="6" xl="4" class="d-flex align-center">
           <div class="w-100">
-            <div data-aos="fade-down" class="text-h2 text-lg-h1 text-primary text-center">
-              Tilen Pirih
+            <div data-aos="fade-down">
+              <div class="text-h2 text-lg-h1 text-primary text-center">
+                Tilen Pirih
+              </div>
             </div>
-            <div data-aos="fade-right" class="text-h4 text-lg-h3 text-center text-secondary">
-              Full-stack developer
+            <div data-aos="fade-right">
+              <div class="text-h4 text-lg-h3 text-center text-secondary">
+                Full-stack developer
+              </div>
             </div>
-            <div class="d-flex justify-center mt-3">
-              <v-btn data-aos="fade-up" variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
-                <div class="rounded bg-success mr-3 greenDot" />
-                Available for work
-              </v-btn>
+            <div data-aos="fade-up">
+              <div class="d-flex justify-center mt-3">
+                <v-btn variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
+                  <div class="rounded bg-success mr-3 greenDot" />
+                  Available for work
+                </v-btn>
+              </div>
             </div>
           </div>
         </v-col>
-        <v-col data-aos="flip-up" cols="12" md="6" lg="4" xl="3" class="d-flex justify-center">
-          <v-img max-width="400" aspect-ratio="1" class="border-lg border-primary profile" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
+        <v-col cols="12" md="6" lg="4" xl="3">
+          <div data-aos="flip-up">
+            <v-img max-width="400" aspect-ratio="1" alt="Profile image" class="border-lg border-primary profile ma-auto" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
+          </div>
         </v-col>
       </v-row>
     </v-container>

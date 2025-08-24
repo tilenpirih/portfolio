@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { useGoTo, useTheme } from 'vuetify'
 
 const goTo = useGoTo()
@@ -155,4 +155,4 @@ const defaultTheme = useTheme().themes.value.defaultTheme
 .profile {
   border-radius: 50%;
 }
-</style>
+</style> -->

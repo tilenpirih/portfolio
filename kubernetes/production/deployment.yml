@@ -17,12 +17,13 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: localhost:32000/personal/tilen/portfolio:1.0.0
+          image: registry.ventic.tv/personal/tilen/portfolio:1.0.0
           imagePullPolicy: Always
           resources:
+            requests:
+              cpu: '0.25'
             limits:
               memory: 512Mi
-              cpu: '0.25'
           env:
             - name: BASE_URL
               value: https://tilenpirih.com

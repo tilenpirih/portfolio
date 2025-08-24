@@ -19,8 +19,8 @@ useHead({
 
 <template>
   <v-app class="bg-background">
-    <navbar style="margin-bottom: 64px;" />
     <v-main>
+      <navbar style="margin-bottom: 64px;" />
       <slot />
     </v-main>
     <custom-footer />

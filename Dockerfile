@@ -1,16 +1,22 @@
-FROM oven/bun:1.2.9 AS base
+# Use Node.js base image
+FROM node:24.6.0-alpine AS base
 
 WORKDIR /usr/src/app
+
+# Install pnpm globally
+RUN npm install -g pnpm
 
 FROM base AS build
 
 ENV NODE_ENV=production
 
 COPY . /usr/src/app
-#RUN rm -f bun.lock
-WORKDIR /usr/src/app
-RUN bun install
-RUN bun run build
+
+# Install dependencies using pnpm
+RUN pnpm install --frozen-lockfile
+
+# Build the app
+RUN pnpm run build
 
 FROM base AS app
 
@@ -19,4 +25,4 @@ WORKDIR /prod/app
 
 EXPOSE 3000
 
-CMD [ "bun", "run", "server/index.mjs" ]
+CMD ["node", "server/index.mjs"]

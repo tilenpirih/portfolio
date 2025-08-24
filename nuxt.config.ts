@@ -18,9 +18,9 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.scss'],
 
   modules: [
-    'nuxt-aos',
+    // 'nuxt-aos',
     '@nuxt/scripts',
-    'nuxt-particles',
+    // 'nuxt-particles',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', config => {
         // @ts-expect-error
@@ -34,18 +34,18 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern',
-        },
-      },
-    },
+    // css: {
+    //   preprocessorOptions: {
+    //     scss: {
+    //       api: 'modern',
+    //     },
+    //   },
+    // },
   },
-  aos: {
-    once: true,
-  },
-  nitro: {
-    preset: 'bun',
-  },
+  // aos: {
+  //   once: true,
+  // },
+  // nitro: {
+  //   preset: 'bun',
+  // },
 })

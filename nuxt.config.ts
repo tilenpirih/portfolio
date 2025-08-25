@@ -19,6 +19,7 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-aos',
+    'nuxt-particles',
     '@nuxt/scripts',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', config => {

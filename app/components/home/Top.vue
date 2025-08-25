@@ -2,11 +2,79 @@
 import { useGoTo, useTheme } from 'vuetify'
 
 const goTo = useGoTo()
-// const defaultTheme = useTheme().themes.value.defaultTheme
+const defaultTheme = useTheme().themes.value.defaultTheme
 </script>
 
 <template>
   <div class="mainContainer mt-n16">
+        <nuxt-particles
+      id="tsparticles"
+      :key="defaultTheme?.dark.toString()"
+      class="particle-container"
+      :options="{
+        fullScreen: {
+          enable: false,
+          zIndex: -1,
+        },
+        fpsLimit: 60,
+        detectRetina: true,
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: 'repulse',
+            },
+          },
+          modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.8,
+              size: 40,
+            },
+            repulse: {
+              distance: 100,
+              duration: 0.4,
+            },
+          },
+        },
+        particles: {
+          color: {
+            value: defaultTheme?.colors.primary,
+          },
+          links: {
+            color: defaultTheme?.colors.primary,
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          move: {
+            direction: 'none',
+            enable: true,
+            outModes: 'bounce',
+            random: false,
+            speed: 1,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+            },
+            value: 150,
+          },
+          opacity: {
+            value: 0.5,
+          },
+          shape: {
+            type: 'circle',
+          },
+          size: {
+            value: { min: 1, max: 5 },
+          },
+        },
+      }"
+    />
     <v-container class="pt-16">
       <v-row class="justify-center align-center">
         <v-col cols="12" md="6" lg="6" xl="4" class="d-flex align-center">

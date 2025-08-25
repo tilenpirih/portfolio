@@ -1,0 +1,13 @@
+diff --git a/dist/module.mjs b/dist/module.mjs
+index 154607ee09e9f61989dcb8b773216ff3e7d86192..a376346667da18d7029b8046fb9e46e03f5d97e4 100644
+--- a/dist/module.mjs
++++ b/dist/module.mjs
+@@ -6,7 +6,7 @@ const module = defineNuxtModule({
+     name: "nuxt-particles",
+     configKey: "particles",
+     compatibility: {
+-      nuxt: "^3.7.0"
++      nuxt: ">3.7.0"
+     }
+   },
+   // Default configuration options of the Nuxt module

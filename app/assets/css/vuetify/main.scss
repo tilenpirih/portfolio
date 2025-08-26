@@ -1,6 +1,6 @@
 @use 'vuetify' with (
   $color-pack: false,
-  $utilities: (
+  // $utilities: (
     // 'align-content': false,
     // 'align-items': false,
     // 'align-self': false,
@@ -71,6 +71,6 @@
     // 'text-overflow': false,
     // 'text-transform': false,
     // 'typography': false,
-    'white-space': false,
-  )
+  //   'white-space': false,
+  // )
 );

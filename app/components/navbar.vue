@@ -26,7 +26,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
 })
-
 function clickButton(id: string) {
   if (route.path === '/') {
     goTo(id, { offset: -80 })
@@ -39,11 +38,15 @@ function clickButton(id: string) {
 
 <template>
   <div>
-    <div class="outerContainer px-4 pt-4">
-      <div class="innerContainer d-flex align-center justify-space-between px-3" :class="{ 'scrolled bg-blur': hasScrolled }">
+    <div class="w-100 position-fixed px-4 pt-4" style="z-index: 9999;">
+      <div
+        class="innerContainer d-flex align-center justify-space-between px-3 w-100 rounded-pill mb-0 border-md border-primary border-opacity-0"
+        :class="{ 'scrolled bg-blur border-opacity-50': hasScrolled }"
+      >
         <div style="width: 40px;">
           <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
         </div>
+
         <div v-if="smAndUp">
           <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="clickButton(tab.to)">
             {{ tab.title }}
@@ -54,9 +57,9 @@ function clickButton(id: string) {
         </div>
       </div>
     </div>
-    <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600">
-      <div class="d-flex justify-center h-100 flex-column">
-        <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="mx-1 w-100" @click="clickButton(tab.to); drawer = false">
+    <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600" style="padding: 0px !important;">
+      <div class="d-flex justify-center h-100 flex-column px-3" @click.stop="drawer = false">
+        <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="w-100" @click.stop="clickButton(tab.to); drawer = false">
           {{ tab.title }}
         </v-btn>
       </div>
@@ -65,21 +68,11 @@ function clickButton(id: string) {
 </template>
 
 <style scoped lang="scss">
-.outerContainer {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
 .innerContainer {
-  width: 100%;
-  margin-bottom: 0px;
-  border-radius: 100px;
   height: 48px;
-  border: solid 2px transparent;
   transition: 0.3s ease;
 }
 .scrolled {
-  border: solid 2px rgb(var(--v-theme-primary), 0.5);
   background-color: rgb(var(--v-theme-background), 0.5);
 }
 .v-navigation-drawer {

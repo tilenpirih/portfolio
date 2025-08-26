@@ -6,11 +6,11 @@ const defaultTheme = useTheme().themes.value.defaultTheme
 </script>
 
 <template>
-  <div class="mainContainer mt-n16">
-        <nuxt-particles
+  <div class="mt-n16 align-content-center position-relative" style="min-height: 100dvh">
+    <nuxt-particles
       id="tsparticles"
       :key="defaultTheme?.dark.toString()"
-      class="particle-container"
+      class="position-absolute top-0 left-0 w-100 h-100"
       :options="{
         fullScreen: {
           enable: false,
@@ -123,14 +123,6 @@ const defaultTheme = useTheme().themes.value.defaultTheme
     transform: scale(1);
     opacity: 1;
   }
-}
-
-.mainContainer {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
 }
 
 .particle-container {

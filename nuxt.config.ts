@@ -15,7 +15,10 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  css: ['@/assets/css/main.scss'],
+  css: [
+    '@/assets/css/main.scss',
+    '@/assets/css/vuetify/main.scss',
+  ],
 
   modules: [
     'nuxt-aos',
@@ -37,6 +40,13 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+    // css: {
+    //   preprocessorOptions: {
+    //     scss: {
+    //       additionalData: '@use "@/assets/css/vuetify/main.scss" as *;',
+    //     },
+    //   },
+    // },
     // css: {
     //   preprocessorOptions: {
     //     scss: {

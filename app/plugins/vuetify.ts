@@ -2,7 +2,7 @@ import type { ThemeDefinition } from 'vuetify'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import { sl } from 'vuetify/locale'
-import 'vuetify/styles'
+// import 'vuetify/styles'
 
 // #4290f5
 const defaultTheme: ThemeDefinition = {
@@ -40,11 +40,13 @@ if (import.meta.client) {
 export default defineNuxtPlugin(app => {
   const vuetify = createVuetify({
     ssr: true,
+    
     theme: {
       defaultTheme: 'defaultTheme',
       themes: {
         defaultTheme,
       },
+      variations: false,
     },
     icons: {
       defaultSet: 'mdi',

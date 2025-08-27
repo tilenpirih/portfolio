@@ -79,7 +79,7 @@ const projects = [
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
           <nuxt-link :to="project.link" class="text-decoration-none">
             <div data-aos="flip-up" style="height: 100%;">
-              <v-card class="projectCard h-100 rounded-lg bg-background h-full">
+              <v-card class="projectCard cursor-pointer h-100 rounded-lg bg-background h-full">
                 <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
                 <v-card-title class="text-h5 text-primary">
                   {{ project.title }}
@@ -99,7 +99,6 @@ const projects = [
 <style scoped lang="scss">
 .projectCard {
   transition: all 0.3s;
-  cursor: pointer;
 }
 .projectCard:hover {
   box-shadow: 0 0 4pt 2pt rgb(var(--v-theme-primary));

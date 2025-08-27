@@ -36,7 +36,7 @@ useHead({
   title: 'Project Background remover',
   meta: [
     { name: 'description', content: 'Remove image backgrounds instantly and for free. No limits, no hidden fees. Just fast and easy background remover.' },
-    { property: 'og:title', content: 'Project Global PDR Application' },
+    { property: 'og:title', content: 'Project Background remover' },
     { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/globalPDR.webp` },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}/project/global_pdr_application` },

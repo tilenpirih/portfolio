@@ -35,5 +35,6 @@ export default {
     ogImage: '/img/bg_eraser.webp',
     ogUrl: '/project/bg_eraser',
   },
+  videoId: 'lI33O427hX8',
 
 } satisfies ProjectData

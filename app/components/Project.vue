@@ -30,7 +30,7 @@ watch(() => display.mobile.value, value => {
         </div>
       </v-col>
       <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.7778" src="/img/bg_eraser.webp" class="rounded-lg border-lg border-primary" lazy-src="/img/lazy/bg_eraser.webp" />
+        <v-img max-width="600" aspect-ratio="1.7778" :src="project.image" class="rounded-lg border-lg border-primary" :lazy-src="project.lazyImage" />
       </v-col>
     </v-row>
   </v-container>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import projectData from '~/data/projects/bg-eraser'
+import projectData from '~/data/projects/bgEraser'
 
 const runtimeConfig = useRuntimeConfig()
 useHead({

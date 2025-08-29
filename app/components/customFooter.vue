@@ -16,14 +16,14 @@ const discordIcon = 'm22 24l-5.25-5l.63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0
         <v-btn class="mx-1" :icon="mdiFacebook" variant="outlined" href="https://www.facebook.com/tilen.pirih/" target="_blank" />
       </div>
       <div class="d-flex justify-center mt-3">
-        <v-icon class="mr-2" :icon="mdiPhone" />(+386) 51 731 371
+        <v-icon class="mr-2" color="primary" :icon="mdiPhone" />(+386) 51 731 371
       </div>
       <div class="d-flex justify-center">
-        <v-icon class="mr-2" :icon="mdiEmail" /> tilen.pirih@gmail.com
+        <v-icon class="mr-2" color="primary" :icon="mdiEmail" /> tilen.pirih@gmail.com
       </div>
       <div class="d-flex justify-center align-center mt-2">
         Tilen Pirih
-        <v-icon :icon="mdiCopyright" size="small" class="ml-2" />2024
+        <v-icon :icon="mdiCopyright" size="small" class="ml-1" />2024
       </div>
     </div>
   </v-footer>

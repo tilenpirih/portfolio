@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'Ventic',
   description: 'This project was originally designed to be an all-in-one tool for streaming various types of media. It was one of my first ventures into the Vue ecosystem and desktop application development. Unfortunately, due to time constraints and other commitments, I had to put it on hold. However, the experience was invaluable, and I gained a lot from it. <br> While several features are still missing, the tool is already great for discovering new movies, shows, actors, and watching trailers. I plan to revisit this project, rewriting it using Vue 3 and switching from Electron to Tauri, with the goal of delivering a fully polished product.',
+  shortText: 'Desktop app for discovering movies, shows, and trailers, built with Vue and Electron.',
   githubUrl: 'https://github.com/tilenpirih/ventic-clone',
   image: '/img/ventic.webp',
   lazyImage: '/img/lazy/ventic.webp',

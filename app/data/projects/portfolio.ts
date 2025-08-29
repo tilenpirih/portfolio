@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'Portfolio',
   description: 'You\'re welcome to use my portfolio as a template for your own presentation. It\'s fully open-source and available on GitHub.',
+  shortText: 'Open-source portfolio template you can use for your own projects.',
   githubUrl: 'https://github.com/tilenpirih/portfolio',
   image: '/img/portfolio.webp',
   lazyImage: '/img/lazy/portfolio.webp',

@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'Global EST Application',
   description: 'This project allows users to create a car damage report. Users can select car parts and for images it can automatically gather images from a tunnel cameras with RTSP protocol. After all the data is inserted it generates a PDF report and with one click of a button it sends the report to the insurance company.',
+  shortText: 'Create car damage reports with images and send them directly to insurance companies.',
   image: '/img/globalEST.webp',
   lazyImage: '/img/lazy/globalEST.webp',
   technologies: [

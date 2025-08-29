@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'KK Krka - Image generator',
   description: 'This project is designed for the Krka Basketball Club, making it easy to quickly generate images for social media. Users can create and save customizable templates that can be modified with ease. The platform allows for personalized image and text customization, enhancing flexibility. Additionally, it includes a built-in background removal tool, which is especially handy for removing backgrounds on mobile devices or when you\'re looking to save time.',
+  shortText: 'Quickly generate and customize social media images with built-in background removal.',
   websiteUrl: 'https://globalpdr.org',
   image: '/img/krka_social.webp',
   lazyImage: '/img/lazy/krka_social.webp',

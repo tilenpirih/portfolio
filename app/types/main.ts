@@ -7,6 +7,7 @@ export interface ProjectData {
   title: string
   websiteUrl?: string
   githubUrl?: string
+  shortText: string
   image: string
   lazyImage: string
   description: string

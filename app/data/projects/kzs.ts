@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'Košarkaška zveza Slovenije',
   description: 'I contributed to the development of the new website for the Slovenian Basketball Federation, working in collaboration with <a href="https://onixweb.net">Onixweb d.o.o.</a> I joined the project during its mid-development stage and actively participated in its progress for six months.<br/> Additionally, we adapted the design for the <a href="https://odbojka.si">Slovenian Volleyball Federation</a> and <a href="https://www.paravolley.eu">Paravolley Europe</a>.',
+  shortText: 'Contributed to the new website for the Slovenian Basketball Federation in collaboration with Onixweb.',
   websiteUrl: 'https://kzs.si',
   image: '/img/kzs.webp',
   lazyImage: '/img/lazy/kzs.webp',

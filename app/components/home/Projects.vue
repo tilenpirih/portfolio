@@ -1,69 +1,22 @@
 <script setup lang="ts">
+import bgEraser from '~/data/projects/bgEraser'
+import globalEstApplication from '~/data/projects/globalEstApplication'
+import globalPdrApplication from '~/data/projects/globalPdrApplication'
+import kkKrkaImageGeneratorCopy from '~/data/projects/kkKrkaImageGenerator'
+import kzs from '~/data/projects/kzs'
+import nktolmin from '~/data/projects/nktolmin'
+import portfolio from '~/data/projects/portfolio'
+import ventic from '~/data/projects/ventic'
+
 const projects = [
-  {
-    title: 'Free background remover',
-    description: 'Remove image backgrounds instantly and for free. No limits, no hidden fees. Just fast and easy background remover.',
-    image: '/img/bg_eraser.webp',
-    lazyImage: '/img/lazy/bg_eraser.webp',
-    link: '/project/bg_eraser',
-    chips: [],
-  },
-  {
-    title: 'Global EST Application',
-    description: 'App for creating car damage estimation reports.',
-    image: '/img/globalEST.webp',
-    lazyImage: '/img/lazy/globalEST.webp',
-    link: '/project/global_est_application',
-    chips: [],
-  },
-  {
-    title: 'Portfolio',
-    description: 'My personal portfolio website. Feel free to use it as a template for your own portfolio.',
-    image: '/img/portfolio.webp',
-    lazyImage: '/img/lazy/portfolio.webp',
-    link: '/project/portfolio',
-    chips: [],
-  },
-  {
-    title: 'KK Krka - Image generator',
-    description: 'Tool for generating images for social media.',
-    image: '/img/krka_social.webp',
-    lazyImage: '/img/lazy/krka_social.webp',
-    link: '/project/kk_krka_image_generator',
-    chips: [],
-  },
-  {
-    title: 'Global PDR Application',
-    description: 'PDR application for logging vehicles.',
-    image: '/img/globalPDR.webp',
-    lazyImage: '/img/lazy/globalPDR.webp',
-    link: '/project/global_pdr_application',
-    chips: [],
-  },
-  {
-    title: 'Košarkaška zveza Slovenije',
-    description: 'Slovenian basketball federation website.',
-    image: '/img/kzs.webp',
-    lazyImage: '/img/lazy/kzs.webp',
-    link: '/project/kzs',
-    chips: [],
-  },
-  {
-    title: 'Ventic',
-    description: 'Tracking and streaming desktop app.',
-    image: '/img/ventic.webp',
-    lazyImage: '/img/lazy/ventic.webp',
-    link: '/project/ventic',
-    chips: [],
-  },
-  {
-    title: 'NK Tolmin',
-    description: 'Football club website, where data were automatically gathered with web scraping.',
-    image: '/img/nktolmin.webp',
-    lazyImage: '/img/lazy/nktolmin.webp',
-    link: '/project/nktolmin',
-    chips: [],
-  },
+  bgEraser,
+  globalEstApplication,
+  portfolio,
+  kkKrkaImageGeneratorCopy,
+  globalPdrApplication,
+  kzs,
+  ventic,
+  nktolmin,
 ]
 </script>
 
@@ -77,7 +30,7 @@ const projects = [
       </div>
       <v-row>
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
-          <nuxt-link :to="project.link" class="text-decoration-none">
+          <nuxt-link :to="project.seo.ogUrl" class="text-decoration-none">
             <div data-aos="flip-up" style="height: 100%;">
               <v-card class="projectCard cursor-pointer h-100 rounded-lg h-full">
                 <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
@@ -85,7 +38,7 @@ const projects = [
                   {{ project.title }}
                 </v-card-title>
                 <v-card-text>
-                  {{ project.description }}
+                  {{ project.shortText }}
                 </v-card-text>
               </v-card>
             </div>

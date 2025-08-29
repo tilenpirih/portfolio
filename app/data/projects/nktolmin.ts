@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'NK Tolmin',
   description: 'This project was particularly meaningful to me because it involved revamping the website of my local football club, where I had played for 10 years. Additionally, I saw an opportunity to incorporate this work into my college <a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=145003&lang=slv" target="_blank">thesis</a>. My goal was to make it easier for the club to manage their online presence, so I developed a web scraper that automatically pulled relevant public data and displayed it seamlessly on the website.<br>Unfortunately, the project had to be abandoned. The club chose not to compensate me adequately, and without proper pay, I lacked the time and motivation to continue working and maintaining the project.',
+  shortText: 'Revamped the website of my local football club with automated data integration.',
   githubUrl: 'https://github.com/tilenpirih?tab=repositories&q=nk-tolmin&type=&language=&sort=',
   image: '/img/nktolmin.webp',
   lazyImage: '/img/lazy/nktolmin.webp',

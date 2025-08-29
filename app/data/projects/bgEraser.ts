@@ -2,8 +2,9 @@ import type { ProjectData } from '~/types/main'
 
 export default {
   title: 'Free background remover',
-  websiteUrl: 'https://bg-eraser.com/',
   description: 'This project allows you to instantly remove image backgrounds for free, with no limits or hidden fees. The process happens entirely on the client side, eliminating the need for server costs.',
+  shortText: 'Instantly remove image backgrounds for free, directly in your browser.',
+  websiteUrl: 'https://bg-eraser.com/',
   image: '/img/bg_eraser.webp',
   lazyImage: '/img/lazy/bg_eraser.webp',
   technologies: [

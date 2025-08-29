@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import projectData from '~/data/projects/kzs'
+import projectData from '~/data/projects/kkKrkaImageGenerator'
 
 const runtimeConfig = useRuntimeConfig()
 useHead({

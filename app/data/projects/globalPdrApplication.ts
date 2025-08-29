@@ -3,6 +3,7 @@ import type { ProjectData } from '~/types/main'
 export default {
   title: 'Global PDR Application',
   description: 'Global PDR Application is a web-based platform designed for logging and tracking vehicles, primarily used by car repair shops. Optimized for mobile devices, it also supports Progressive Web App (PWA) functionality, ensuring flexibility and easy customization for specific company needs. Technicians can add new vehicles along with detailed damage information, while administrators have full control over managing the data.',
+  shortText: 'Mobile-friendly app for logging, tracking, and managing vehicle repairs.',
   image: '/img/globalPDR.webp',
   websiteUrl: 'https://globalpdr.org',
   lazyImage: '/img/lazy/globalPDR.webp',

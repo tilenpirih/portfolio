@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ProjectData } from '~/types/main'
-import { mdiWeb } from '@mdi/js'
+import { mdiGithub, mdiWeb } from '@mdi/js'
 import { useDisplay } from 'vuetify'
 
 const { project } = defineProps<{ project: ProjectData }>()
@@ -20,12 +20,20 @@ watch(() => display.mobile.value, value => {
             <div data-aos="fade-down">
               {{ project.title }}
             </div>
-            <nuxt-link v-if="project.websiteUrl" :to="project.websiteUrl" target="_blank">
-              <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
-                <v-icon :icon="mdiWeb" size="large" class="mr-2" />
-                Visit webpage
-              </v-btn>
-            </nuxt-link>
+            <div class="d-flex ga-2 justify-center">
+              <nuxt-link v-if="project.websiteUrl" :to="project.websiteUrl" target="_blank">
+                <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
+                  <v-icon :icon="mdiWeb" size="large" class="mr-2" />
+                  Visit webpage
+                </v-btn>
+              </nuxt-link>
+              <nuxt-link v-if="project.githubUrl" :to="project.githubUrl" target="_blank">
+                <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
+                  <v-icon :icon="mdiGithub" size="large" class="mr-2" />
+                  Source code
+                </v-btn>
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </v-col>
@@ -55,7 +63,7 @@ watch(() => display.mobile.value, value => {
           <v-row class="justify-center">
             <v-col v-for="tech in project.technologies" :key="tech.link" cols="auto">
               <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">
-                <v-img :src="tech.icon" :width="buttonSize - 16" :height="buttonSize - 16" />
+                <v-img :src="tech.icon" aspect-ratio="1" :width="buttonSize - 16" :height="buttonSize - 16" />
               </v-btn>
             </v-col>
           </v-row>

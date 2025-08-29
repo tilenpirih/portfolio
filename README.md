@@ -10,7 +10,7 @@ Feel free to modify this template and use it for your own portfolio.
 2. Install the required dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 
 ## Development Server
@@ -18,7 +18,7 @@ bun install
 To start the development server, run the following command and open your browser at `http://localhost:3000`:
 
 ```bash
-bun run dev
+pnpm run dev
 ```
 
 ## Production
@@ -26,13 +26,13 @@ bun run dev
 To build the application for production, use:
 
 ```bash
-bun run build
+pnpm run build
 ```
 
 You can then preview the production build locally with:
 
 ```bash
-bun run preview
+pnpm run preview
 ```
 ## TODO
 Currently AOS have a bug that if the elements has a class I get a hydration mismatch error. [Issue](https://github.com/egidiusmengelberg/nuxt-aos/issues/19)

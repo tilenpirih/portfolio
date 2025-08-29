@@ -16,8 +16,8 @@ export default {
       link: 'https://vuetifyjs.com/',
     },
     {
-      icon: '/img/technologies/bun.svg',
-      link: 'https://bun.sh/',
+      icon: '/img/technologies/pnpm.svg',
+      link: 'https://pnpm.io/',
     },
     {
       icon: '/img/technologies/docker.svg',

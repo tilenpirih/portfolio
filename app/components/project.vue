@@ -42,7 +42,7 @@ watch(() => display.mobile.value, value => {
       </v-col>
     </v-row>
   </v-container>
-  <div class="bg-surface py-5">
+  <div class="py-5 bg-background">
     <v-container>
       <div data-aos="fade-down" class="text-h4 text-primary text-center mb-2">
         About
@@ -52,7 +52,6 @@ watch(() => display.mobile.value, value => {
       </div>
     </v-container>
   </div>
-
   <v-container class="py-9">
     <v-row :class="{ 'justify-space-between': project.videoId, 'justify-center': !project.videoId }">
       <v-col cols="12" md="6" lg="5" class="d-flex flex-column">

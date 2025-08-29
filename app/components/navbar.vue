@@ -73,9 +73,9 @@ function clickButton(id: string) {
   transition: 0.3s ease;
 }
 .scrolled {
-  background-color: rgb(var(--v-theme-background), 0.5);
+  background-color: rgb(var(--v-theme-surface), 0.5);
 }
 .v-navigation-drawer {
-  background-color: rgb(var(--v-theme-background), 0.7);
+  background-color: rgb(var(--v-theme-surface), 0.7);
 }
 </style>

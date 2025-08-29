@@ -18,7 +18,7 @@ useHead({
 </script>
 
 <template>
-  <v-app class="bg-background">
+  <v-app class="bg-surface">
     <v-main>
       <navbar style="margin-bottom: 64px;" />
       <slot />

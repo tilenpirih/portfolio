@@ -58,6 +58,7 @@ export default defineNuxtConfig({
   aos: {
     once: true,
   },
+
   // nitro: {
   //   preset: 'bun',
   // },

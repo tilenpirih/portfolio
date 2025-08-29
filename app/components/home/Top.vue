@@ -2,14 +2,14 @@
 import { useGoTo, useTheme } from 'vuetify'
 
 const goTo = useGoTo()
-const defaultTheme = useTheme().themes.value.defaultTheme
+const primaryColor = useTheme().current.value.colors.primary
 </script>
 
 <template>
-  <div class="mt-n16 align-content-center position-relative" style="min-height: 100dvh">
+  <div class="mt-n16 align-content-center position-relative bg-surface" style="min-height: 100dvh">
     <nuxt-particles
       id="tsparticles"
-      :key="defaultTheme?.dark.toString()"
+      :key="primaryColor"
       class="position-absolute top-0 left-0 w-100 h-100"
       :options="{
         fullScreen: {
@@ -40,10 +40,10 @@ const defaultTheme = useTheme().themes.value.defaultTheme
         },
         particles: {
           color: {
-            value: defaultTheme?.colors.primary,
+            value: primaryColor,
           },
           links: {
-            color: defaultTheme?.colors.primary,
+            color: primaryColor,
             distance: 150,
             enable: true,
             opacity: 0.5,

@@ -81,7 +81,7 @@ async function sendEmail() {
             <v-card v-if="sended && sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-success d-none d-sm-flex px-2 text-center">
               Message sent successfully!
             </v-card>
-            <v-card v-if="sended && !sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-error d-none d-sm-flex px-2 text-center">
+            <v-card v-if="sended && !sendSuccessfully" class="w-100 mr-6 justify-center align-center bg-error-container d-none d-sm-flex px-2 text-center text-on-error-container">
               {{ failMessage }}
             </v-card>
             <v-btn
@@ -98,7 +98,7 @@ async function sendEmail() {
             <v-card v-if="sended && sendSuccessfully" min-height="36" class="d-flex w-100 mr-6 justify-center align-center bg-success px-2 text-center">
               Message sent successfully!
             </v-card>
-            <v-card v-if="sended && !sendSuccessfully" min-height="36" class="d-flex w-100 mr-6 justify-center align-center bg-error px-2 text-center">
+            <v-card v-if="sended && !sendSuccessfully" min-height="36" class="d-flex w-100 mr-6 justify-center align-center bg-background  px-2 text-center text-on-error">
               {{ failMessage }}
             </v-card>
           </v-col>

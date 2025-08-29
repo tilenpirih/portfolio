@@ -7,7 +7,7 @@ const discordIcon = 'm22 24l-5.25-5l.63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0
 <template>
   <v-divider />
 
-  <v-footer class="d-flex justify-center py-6 bg-background">
+  <v-footer class="d-flex justify-center py-6">
     <div>
       <div class="d-flex justify-center">
         <v-btn class="mx-1" :icon="mdiGithub" variant="outlined" href="https://github.com/tilenpirih" target="_blank" />

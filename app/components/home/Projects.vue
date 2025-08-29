@@ -68,7 +68,7 @@ const projects = [
 </script>
 
 <template>
-  <div id="projects" class="bg-surface">
+  <div id="projects" class="bg-background">
     <v-container class="py-12">
       <div data-aos="fade-down">
         <div class="text-h3 text-primary text-center pb-4">
@@ -79,7 +79,7 @@ const projects = [
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
           <nuxt-link :to="project.link" class="text-decoration-none">
             <div data-aos="flip-up" style="height: 100%;">
-              <v-card class="projectCard cursor-pointer h-100 rounded-lg bg-background h-full">
+              <v-card class="projectCard cursor-pointer h-100 rounded-lg h-full">
                 <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
                 <v-card-title class="text-h5 text-primary">
                   {{ project.title }}

@@ -46,7 +46,7 @@ watch(() => display.mobile.value, value => {
   </div>
 
   <v-container class="py-9">
-    <v-row class="justify-space-between">
+    <v-row :class="{ 'justify-space-between': project.videoId, 'justify-center': !project.videoId }">
       <v-col cols="12" md="6" lg="5" class="d-flex flex-column">
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Technologies

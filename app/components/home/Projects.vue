@@ -21,7 +21,7 @@ const projects = [
 </script>
 
 <template>
-  <div id="projects" class="bg-background">
+  <div class="bg-background">
     <v-container class="py-12">
       <div data-aos="fade-down">
         <div class="text-h3 text-primary text-center pb-4">

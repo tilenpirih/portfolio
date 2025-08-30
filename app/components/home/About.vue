@@ -3,7 +3,7 @@ import { mdiOpenInNew } from '@mdi/js'
 </script>
 
 <template>
-  <div id="about" class="bg-background">
+  <div class="bg-background">
     <v-container class="py-12 text-center d-flex justify-center">
       <div>
         <div data-aos="fade-down">

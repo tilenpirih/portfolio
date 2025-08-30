@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-container id="skills" class="py-12">
+  <v-container class="py-12">
     <div data-aos="fade-down">
       <div class="text-h3 text-primary text-center pb-4">
         Skills

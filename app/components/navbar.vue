@@ -7,10 +7,11 @@ const goTo = useGoTo()
 const hasScrolled = ref(false)
 const drawer = ref(false)
 const tabs = ref([
-  { title: 'About', to: '#about' },
-  { title: 'Skills', to: '#skills' },
-  { title: 'Projects', to: '#projects' },
-  { title: 'Contact', to: '#contact' },
+  { title: 'About', path: '/#about' },
+  { title: 'Skills', path: '/#skills' },
+  { title: 'Projects', path: '/projects' },
+  { title: 'Blog', path: '/blog' },
+  { title: 'Contact', path: '/#contact' },
 ])
 const router = useRouter()
 const route = useRoute()
@@ -27,12 +28,13 @@ onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
 })
 function clickButton(id: string) {
-  if (route.path === '/') {
-    goTo(id, { offset: -80 })
-  }
-  else {
-    router.push({ path: '/', query: { section: id } })
-  }
+  // if (route.path === '/') {
+  //   goTo(id, { offset: -80 })
+  // }
+  // else {
+  //   router.push({ path: '/', query: { section: id } })
+  // }
+  router.push({ path: '/', hash: id })
 }
 </script>
 
@@ -48,9 +50,11 @@ function clickButton(id: string) {
         </div>
 
         <div v-if="smAndUp">
-          <v-btn v-for="tab in tabs" :key="tab.to" variant="text" rounded="xl" class="mx-1" @click="clickButton(tab.to)">
-            {{ tab.title }}
-          </v-btn>
+          <nuxt-link v-for="tab in tabs" :key="tab.path" :to="tab.path">
+            <v-btn variant="text" rounded="xl" class="mx-1">
+              {{ tab.title }}
+            </v-btn>
+          </nuxt-link>
         </div>
         <div>
           <change-theme />
@@ -59,7 +63,7 @@ function clickButton(id: string) {
     </div>
     <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600" style="padding: 0px !important;">
       <div class="d-flex justify-center h-100 flex-column px-3" @click.stop="drawer = false">
-        <v-btn v-for="tab in tabs" :key="tab.to" size="large" variant="text" rounded="xl" class="w-100" @click.stop="clickButton(tab.to); drawer = false">
+        <v-btn v-for="tab in tabs" :key="tab.path" size="large" variant="text" rounded="xl" class="w-100" @click.stop="clickButton(tab.path); drawer = false">
           {{ tab.title }}
         </v-btn>
       </div>

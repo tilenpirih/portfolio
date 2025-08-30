@@ -40,6 +40,4 @@ export default {
     ogImage: '/img/kzs.webp',
     ogUrl: '/project/kzs',
   },
-  // videoId: 'jbXCaaKe8t4',
-
 } satisfies ProjectData

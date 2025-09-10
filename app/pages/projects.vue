@@ -6,10 +6,12 @@ import globalPdrApplication from '~/data/projects/globalPdrApplication'
 import kkKrkaImageGenerator from '~/data/projects/kkKrkaImageGenerator'
 import kzs from '~/data/projects/kzs'
 import nktolmin from '~/data/projects/nktolmin'
+import oksVolunteer from '~/data/projects/oksVolunteer'
 import portfolio from '~/data/projects/portfolio'
 import ventic from '~/data/projects/ventic'
 
 const projects = [
+  oksVolunteer,
   dvs,
   bgEraser,
   globalEstApplication,

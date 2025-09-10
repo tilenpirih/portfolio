@@ -7,12 +7,13 @@ import globalEstApplication from '~/data/projects/globalEstApplication'
 import globalPdrApplication from '~/data/projects/globalPdrApplication'
 import kkKrkaImageGenerator from '~/data/projects/kkKrkaImageGenerator'
 import kzs from '~/data/projects/kzs'
+import oksVolunteer from '~/data/projects/oksVolunteer'
 import portfolio from '~/data/projects/portfolio'
-import ventic from '~/data/projects/ventic'
 
 const { mdAndDown, lgAndDown, xs } = useDisplay()
 
 const projects = [
+  oksVolunteer,
   dvs,
   bgEraser,
   globalEstApplication,
@@ -20,7 +21,6 @@ const projects = [
   portfolio,
   globalPdrApplication,
   kzs,
-  ventic,
 ]
 
 const listProjects = computed(() => {

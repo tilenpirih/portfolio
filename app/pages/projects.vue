@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import bgEraser from '~/data/projects/bgEraser'
+import dvs from '~/data/projects/dvs'
 import globalEstApplication from '~/data/projects/globalEstApplication'
 import globalPdrApplication from '~/data/projects/globalPdrApplication'
 import kkKrkaImageGenerator from '~/data/projects/kkKrkaImageGenerator'
@@ -9,6 +10,7 @@ import portfolio from '~/data/projects/portfolio'
 import ventic from '~/data/projects/ventic'
 
 const projects = [
+  dvs,
   bgEraser,
   globalEstApplication,
   kkKrkaImageGenerator,

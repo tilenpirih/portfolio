@@ -2,6 +2,7 @@
 import { mdiArrowRight } from '@mdi/js'
 import { useDisplay } from 'vuetify'
 import bgEraser from '~/data/projects/bgEraser'
+import chatbot from '~/data/projects/chatbot'
 import dvs from '~/data/projects/dvs'
 import globalEstApplication from '~/data/projects/globalEstApplication'
 import globalPdrApplication from '~/data/projects/globalPdrApplication'
@@ -13,6 +14,7 @@ import portfolio from '~/data/projects/portfolio'
 const { mdAndDown, lgAndDown, xs } = useDisplay()
 
 const projects = [
+  chatbot,
   oksVolunteer,
   dvs,
   bgEraser,
@@ -20,7 +22,6 @@ const projects = [
   kkKrkaImageGenerator,
   portfolio,
   globalPdrApplication,
-  kzs,
 ]
 
 const listProjects = computed(() => {

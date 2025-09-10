@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import bgEraser from '~/data/projects/bgEraser'
+import chatbot from '~/data/projects/chatbot'
 import dvs from '~/data/projects/dvs'
 import globalEstApplication from '~/data/projects/globalEstApplication'
 import globalPdrApplication from '~/data/projects/globalPdrApplication'
@@ -11,6 +12,7 @@ import portfolio from '~/data/projects/portfolio'
 import ventic from '~/data/projects/ventic'
 
 const projects = [
+  chatbot,
   oksVolunteer,
   dvs,
   bgEraser,
@@ -32,7 +34,7 @@ const projects = [
         Projects
       </div>
       <div class="text-center pb-6">
-        Throughout my career, I have worked on a variety of projects, ranging from small personal endeavors to large-scale applications for well-known companies. Here are some of the highlights:
+        Throughout my career, I have worked on a variety of projects, ranging from small personal endeavors to large-scale applications for well-known companies.
       </div>
     </div>
     <v-container class="py-8">

@@ -24,6 +24,10 @@ export default {
       link: 'https://bun.sh/',
     },
     {
+      icon: '/img/technologies/python.svg',
+      link: 'https://www.python.org/',
+    },
+    {
       icon: '/img/technologies/fastapi.svg',
       link: 'https://fastapi.tiangolo.com/',
     },

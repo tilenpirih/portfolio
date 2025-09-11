@@ -1,10 +1,6 @@
 import type { ThemeDefinition } from 'vuetify'
-import { createVuetify } from 'vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
-import { sl } from 'vuetify/locale'
-// import 'vuetify/styles'
+import type { ExternalVuetifyOptions } from 'vuetify-nuxt-module'
 
-// #4290f5
 const light: ThemeDefinition = {
   colors: {
     'background': '#eeedf2',
@@ -80,50 +76,31 @@ const dark: ThemeDefinition = {
     'overlay-background': '#181c23',
   },
 }
-export default defineNuxtPlugin(app => {
-  const themeCookie = useCookie('theme', { path: '/' })
-  const vuetify = createVuetify({
-    ssr: true,
-    theme: {
-      defaultTheme: themeCookie.value ? themeCookie.value : 'dark',
-      themes: {
-        dark,
-        light,
-      },
-      variations: false,
+export default {
+  theme: {
+    defaultTheme: 'dark',
+    themes: { light, dark },
+  },
+  icons: {
+    defaultSet: 'mdi-svg',
+  },
+  defaults: {
+    VBtn: {
+      color: 'primary',
+      class: 'text-none',
     },
-    icons: {
-      defaultSet: 'mdi',
-      aliases,
-      sets: {
-        mdi,
-      },
+    VProgressLinear: {
+      rounded: true,
+      height: '12',
+      color: 'primary',
     },
-    locale: {
-      locale: 'sl',
-      fallback: 'en',
-      messages: { sl },
+    VTextField: {
+      color: 'primary',
+      variant: 'outlined',
     },
-    defaults: {
-      VBtn: {
-        color: 'primary',
-        class: 'text-none',
-      },
-      VProgressLinear: {
-        rounded: true,
-        height: '12',
-        color: 'primary',
-      },
-      VTextField: {
-        color: 'primary',
-        variant: 'outlined',
-      },
-      VTextarea: {
-        color: 'primary',
-        variant: 'outlined',
-      },
+    VTextarea: {
+      color: 'primary',
+      variant: 'outlined',
     },
-  })
-
-  app.vueApp.use(vuetify)
-})
+  },
+} satisfies ExternalVuetifyOptions

@@ -1,4 +1,4 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import vuetifyConfig from './vuetify.config'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -21,24 +21,28 @@ export default defineNuxtConfig({
   ],
 
   modules: [
+    'vuetify-nuxt-module',
     'nuxt-aos',
     'nuxt-particles',
     '@nuxt/scripts',
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', config => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }))
-      })
-    },
   ],
+  vuetify: {
+    moduleOptions: {
+      ssrClientHints: {
+        reloadOnFirstRequest: false,
+        prefersColorScheme: true,
+        prefersColorSchemeOptions: {
+          useBrowserThemeOnly: false,
+        },
+        viewportSize: true,
+      },
+      disableVuetifyStyles: true,
+    },
+    vuetifyOptions: vuetifyConfig,
+  },
   vite: {
     optimizeDeps: {
       include: ['aos'],
-    },
-    vue: {
-      template: {
-        transformAssetUrls,
-      },
     },
     // css: {
     //   preprocessorOptions: {

@@ -29,7 +29,6 @@ onUnmounted(() => {
   window.removeEventListener('scroll', onScroll)
 })
 
-
 function onTabClick(to: string) {
   drawer.value = false
   const target = router.resolve(to)

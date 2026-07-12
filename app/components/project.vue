@@ -47,7 +47,15 @@ watch(() => display.mobile.value, value => {
         </v-col>
         <animate-in preset="flip-up" as-child>
           <v-col cols="12" md="6" class="flex justify-center">
-            <v-img max-width="600" aspect-ratio="1.7778" :src="project.image" class="rounded-lg border-4 border-solid border-primary" :lazy-src="project.lazyImage" />
+            <nuxt-img
+              :src="project.image"
+              :alt="project.title"
+              :width="600"
+              :height="338"
+              sizes="xs:100vw sm:600px"
+              fetchpriority="high"
+              class="w-full max-w-600px h-auto rounded-lg border-4 border-solid border-primary"
+            />
           </v-col>
         </animate-in>
       </v-row>

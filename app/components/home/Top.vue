@@ -96,7 +96,15 @@ const primaryColor = String(useTheme().current.value.colors.primary)
         </v-col>
         <v-col cols="12" md="6" lg="4" xl="3">
           <animate-in preset="flip-up" :delay="0.15">
-            <v-img max-width="400" aspect-ratio="1" alt="Profile image" class="border-4 border-solid border-primary border-opacity-30 profile m-auto" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
+            <nuxt-img
+              src="/img/profile.webp"
+              alt="Profile image"
+              :width="400"
+              :height="400"
+              sizes="xs:100vw sm:400px"
+              fetchpriority="high"
+              class="w-full max-w-400px h-auto border-4 border-solid border-primary border-opacity-30 profile m-auto block"
+            />
           </animate-in>
         </v-col>
       </v-row>

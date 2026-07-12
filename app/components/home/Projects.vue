@@ -43,7 +43,15 @@ const revealAt = [
           <nuxt-link :to="project.seo.ogUrl" class="no-underline">
             <animate-in preset="flip-up" :delay="index * 0.07" class="h-full">
               <v-card class="projectCard cursor-pointer rounded-lg h-full">
-                <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
+                <nuxt-img
+                  :src="project.image"
+                  :alt="project.title"
+                  :width="640"
+                  :height="360"
+                  sizes="xs:100vw sm:50vw lg:33vw xl:25vw"
+                  loading="lazy"
+                  class="w-full h-auto block"
+                />
                 <v-card-title class="text-h5 text-primary">
                   {{ project.title }}
                 </v-card-title>

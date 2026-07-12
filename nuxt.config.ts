@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     'nuxt-particles',
     '@nuxt/scripts',
     '@nuxt/image',
+    '@nuxt/fonts',
   ],
 
   // <nuxt-img sizes> resolves its `sm:`/`lg:` prefixes against these, so they

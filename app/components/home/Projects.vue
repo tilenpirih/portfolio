@@ -38,15 +38,13 @@ const listProjects = computed(() => {
 <template>
   <div class="bg-background">
     <v-container class="py-12">
-      <div data-aos="fade-down">
-        <div class="text-h3 text-primary text-center pb-6">
-          Projects
-        </div>
-      </div>
+      <animate-in preset="fade-down" class="text-h3 text-primary text-center pb-6">
+        Projects
+      </animate-in>
       <v-row>
         <v-col v-for="(project, index) in listProjects" :key="index" cols="12" sm="6" lg="4" xl="3">
           <nuxt-link :to="project.seo.ogUrl" class="no-underline">
-            <div data-aos="flip-up" style="height: 100%;">
+            <animate-in preset="flip-up" :delay="index * 0.07" class="h-full">
               <v-card class="projectCard cursor-pointer rounded-lg h-full">
                 <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
                 <v-card-title class="text-h5 text-primary">
@@ -56,18 +54,18 @@ const listProjects = computed(() => {
                   {{ project.shortText }}
                 </v-card-text>
               </v-card>
-            </div>
+            </animate-in>
           </nuxt-link>
         </v-col>
       </v-row>
       <div class="flex justify-center mt-8">
-        <div data-aos="fade-up">
+        <animate-in preset="fade-up">
           <nuxt-link to="/projects">
             <v-btn :append-icon="mdiArrowRight" variant="outlined" class="rounded-full">
               See all projects
             </v-btn>
           </nuxt-link>
-        </div>
+        </animate-in>
       </div>
     </v-container>
   </div>

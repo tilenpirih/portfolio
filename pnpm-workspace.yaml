@@ -1,6 +1,8 @@
 shellEmulator: true
 
-trustPolicy: no-downgrade
+# No `trustPolicy: no-downgrade` on purpose: it rejects chokidar@4.0.3 (pulled in
+# transitively via @netlify/blobs) for lacking provenance, which blocks install.
+# The pnpm/yaml-enforce-settings ESLint rule is off to match.
 
 packages:
   - .

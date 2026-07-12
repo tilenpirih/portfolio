@@ -8,7 +8,7 @@ const primaryColor = String(useTheme().current.value.colors.primary)
 </script>
 
 <template>
-  <div class="-mt-16 content-center relative bg-surface" style="min-height: 100dvh">
+  <div class="-mt-16 content-center relative bg-surface min-h-100dvh">
     <nuxt-particles
       id="tsparticles"
       :key="primaryColor"
@@ -81,30 +81,24 @@ const primaryColor = String(useTheme().current.value.colors.primary)
       <v-row class="justify-center items-center">
         <v-col cols="12" md="6" lg="6" xl="4" class="flex items-center">
           <div class="w-full">
-            <div data-aos="fade-down">
-              <div class="text-h2 lg:text-h1 text-primary text-center">
-                Tilen Pirih
-              </div>
-            </div>
-            <div data-aos="fade-right">
-              <div class="text-h4 lg:text-h3 text-center text-secondary">
-                Full-stack developer
-              </div>
-            </div>
-            <div data-aos="fade-up">
-              <div class="flex justify-center mt-3">
-                <v-btn variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
-                  <div class="rounded bg-success mr-3 greenDot" />
-                  Available for work
-                </v-btn>
-              </div>
-            </div>
+            <animate-in preset="fade-down" class="text-h2 lg:text-h1 text-primary text-center">
+              Tilen Pirih
+            </animate-in>
+            <animate-in preset="fade-right" :delay="0.1" class="text-h4 lg:text-h3 text-center text-secondary">
+              Full-stack developer
+            </animate-in>
+            <animate-in preset="fade-up" :delay="0.2" class="flex justify-center mt-3">
+              <v-btn variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
+                <div class="rounded bg-success mr-3 greenDot" />
+                Available for work
+              </v-btn>
+            </animate-in>
           </div>
         </v-col>
         <v-col cols="12" md="6" lg="4" xl="3">
-          <div data-aos="flip-up">
+          <animate-in preset="flip-up" :delay="0.15">
             <v-img max-width="400" aspect-ratio="1" alt="Profile image" class="border-4 border-solid border-primary profile m-auto" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
-          </div>
+          </animate-in>
         </v-col>
       </v-row>
     </v-container>

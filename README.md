@@ -35,7 +35,27 @@ You can then preview the production build locally with:
 pnpm run preview
 ```
 
-## TODO
+## Animation
 
-Currently AOS have a bug that if the elements has a class I get a hydration mismatch error. [Issue](https://github.com/egidiusmengelberg/nuxt-aos/issues/19)
-Currently I implemented a "hack" that I wrap every element in a div without any classes or use inline styles
+Scroll reveals go through `<animate-in>` ([app/components/AnimateIn.vue](app/components/AnimateIn.vue)), a thin
+wrapper over [motion-v](https://github.com/motiondivision/motion-vue). Pass a `preset`
+(`fade-up` / `fade-down` / `fade-left` / `fade-right` / `flip-up`) and an optional `delay` in
+seconds to stagger a list:
+
+```vue
+<animate-in preset="fade-up" :delay="index * 0.07">
+  <v-card>...</v-card>
+</animate-in>
+```
+
+It renders a `div` by default. Use `as-child` where a wrapper would break layout — for
+example a `v-col` that has to stay a direct child of its `v-row`:
+
+```vue
+<animate-in preset="fade-right" as-child>
+  <v-col cols="12" md="6">...</v-col>
+</animate-in>
+```
+
+`<motion-config reduced-motion="user">` in the default layout means all of it honours
+`prefers-reduced-motion`.

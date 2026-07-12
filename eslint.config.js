@@ -24,5 +24,8 @@ export default antfu({
     'unused-imports/no-unused-vars': 'warn',
     'node/prefer-global/process': 'off',
     'regexp/no-unused-capturing-group': ['error', { fixable: true }],
+    // Wants `trustPolicy: no-downgrade` in pnpm-workspace.yaml, which rejects
+    // chokidar@4.0.3 (transitive, via @netlify/blobs) and blocks pnpm install.
+    'pnpm/yaml-enforce-settings': 'off',
   },
 })

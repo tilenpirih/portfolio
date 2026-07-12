@@ -16,10 +16,14 @@ export default defineNuxtConfig({
     '@/assets/css/layers.css',
   ],
 
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
+
   modules: [
     '@unocss/nuxt',
     'vuetify-nuxt-module',
-    'nuxt-aos',
+    'motion-v/nuxt',
     'nuxt-particles',
     '@nuxt/scripts',
   ],
@@ -41,13 +45,5 @@ export default defineNuxtConfig({
   // they would trump both Vuetify's component CSS and the UnoCSS utilities.
   features: {
     inlineStyles: false,
-  },
-  vite: {
-    optimizeDeps: {
-      include: ['aos'],
-    },
-  },
-  aos: {
-    once: true,
   },
 })

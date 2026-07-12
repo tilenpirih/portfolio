@@ -21,20 +21,18 @@ const projects = [
 </script>
 
 <template>
-  <div class="pt-3" />
-  <div class="bg-background pt-8">
-    <div data-aos="fade-down">
-      <div class="text-h3 text-primary text-center pb-2">
-        Blog
-      </div>
-      <div class="text-center pb-6">
-        Here I will be posting some blog posts in the future. Still in development.
-      </div>
+  <div class="pt-3">
+    <!-- Keep this single root element: app.pageTransition wraps pages in
+         <Transition>, which cannot animate a fragment. -->
+    <div class="bg-background pt-8">
+      <animate-in preset="fade-down">
+        <div class="text-h3 text-primary text-center pb-2">
+          Blog
+        </div>
+        <div class="text-center pb-6">
+          Here I will be posting some blog posts in the future. Still in development.
+        </div>
+      </animate-in>
     </div>
-    <!-- <v-container class="py-8" /> -->
   </div>
 </template>
-
-<style scoped lang="scss">
-
-</style>

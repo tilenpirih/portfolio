@@ -18,11 +18,13 @@ useHead({
 </script>
 
 <template>
-  <v-app class="bg-surface">
-    <v-main>
-      <navbar style="margin-bottom: 64px;" />
-      <slot />
-    </v-main>
-    <custom-footer />
-  </v-app>
+  <motion-config reduced-motion="user">
+    <v-app class="bg-surface">
+      <v-main>
+        <navbar style="margin-bottom: 64px;" />
+        <slot />
+      </v-main>
+      <custom-footer />
+    </v-app>
+  </motion-config>
 </template>

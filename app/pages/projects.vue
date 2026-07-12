@@ -27,35 +27,38 @@ const projects = [
 </script>
 
 <template>
-  <div class="pt-3" />
-  <div class="bg-background pt-8">
-    <div data-aos="fade-down">
-      <div class="text-h3 text-primary text-center pb-2">
-        Projects
-      </div>
-      <div class="text-center pb-6">
-        Throughout my career, I have worked on a variety of projects, ranging from small personal endeavors to large-scale applications for well-known companies.
-      </div>
+  <div class="pt-3">
+    <!-- Keep this single root element: app.pageTransition wraps pages in
+         <Transition>, which cannot animate a fragment. -->
+    <div class="bg-background pt-8">
+      <animate-in preset="fade-down">
+        <div class="text-h3 text-primary text-center pb-2">
+          Projects
+        </div>
+        <div class="text-center pb-6">
+          Throughout my career, I have worked on a variety of projects, ranging from small personal endeavors to large-scale applications for well-known companies.
+        </div>
+      </animate-in>
+      <v-container class="py-8">
+        <v-row>
+          <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
+            <nuxt-link :to="project.seo.ogUrl" class="no-underline">
+              <animate-in preset="flip-up" :delay="(index % 4) * 0.07" class="h-full">
+                <v-card class="projectCard cursor-pointer rounded-lg h-full">
+                  <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
+                  <v-card-title class="text-h5 text-primary">
+                    {{ project.title }}
+                  </v-card-title>
+                  <v-card-text>
+                    {{ project.shortText }}
+                  </v-card-text>
+                </v-card>
+              </animate-in>
+            </nuxt-link>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
-    <v-container class="py-8">
-      <v-row>
-        <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
-          <nuxt-link :to="project.seo.ogUrl" class="no-underline">
-            <div data-aos="flip-up" style="height: 100%;">
-              <v-card class="projectCard cursor-pointer rounded-lg h-full">
-                <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
-                <v-card-title class="text-h5 text-primary">
-                  {{ project.title }}
-                </v-card-title>
-                <v-card-text>
-                  {{ project.shortText }}
-                </v-card-text>
-              </v-card>
-            </div>
-          </nuxt-link>
-        </v-col>
-      </v-row>
-    </v-container>
   </div>
 </template>
 

@@ -44,39 +44,45 @@ async function sendEmail() {
 
 <template>
   <v-container class="py-12">
-    <div data-aos="fade-down" class="text-h3 text-primary text-center pb-4">
+    <animate-in preset="fade-down" class="text-h3 text-primary text-center pb-4">
       Contact
-    </div>
-    <div data-aos="fade-down" class="text-center mb-5">
+    </animate-in>
+    <animate-in preset="fade-down" class="text-center mb-5">
       Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.
-    </div>
+    </animate-in>
     <div class="flex justify-center">
       <v-form ref="form" v-model="valid" style="max-width: 600px; width: 600px;">
         <v-row>
-          <v-col data-aos="fade-right" cols="12" md="6">
-            <v-text-field
-              v-model="fullName"
-              label="Your name"
-              :disabled="sended && sendSuccessfully"
-              :rules="[v => !!v || 'Name is required']"
-            />
-          </v-col>
-          <v-col data-aos="fade-left" cols="12" md="6">
-            <v-text-field
-              v-model="email"
-              label="Your email"
-              :disabled="sended && sendSuccessfully"
-              :rules="[v => !!v || 'E-mail is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid']"
-            />
-          </v-col>
-          <v-col data-aos="fade-up" cols="12" class="pt-0">
-            <v-textarea
-              v-model="message"
-              label="Message"
-              :disabled="sended && sendSuccessfully"
-              :rules="[v => !!v || 'Message is required']"
-            />
-          </v-col>
+          <animate-in preset="fade-right" as-child>
+            <v-col cols="12" md="6">
+              <v-text-field
+                v-model="fullName"
+                label="Your name"
+                :disabled="sended && sendSuccessfully"
+                :rules="[v => !!v || 'Name is required']"
+              />
+            </v-col>
+          </animate-in>
+          <animate-in preset="fade-left" as-child>
+            <v-col cols="12" md="6">
+              <v-text-field
+                v-model="email"
+                label="Your email"
+                :disabled="sended && sendSuccessfully"
+                :rules="[v => !!v || 'E-mail is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid']"
+              />
+            </v-col>
+          </animate-in>
+          <animate-in preset="fade-up" as-child>
+            <v-col cols="12" class="pt-0">
+              <v-textarea
+                v-model="message"
+                label="Message"
+                :disabled="sended && sendSuccessfully"
+                :rules="[v => !!v || 'Message is required']"
+              />
+            </v-col>
+          </animate-in>
           <v-col cols="12" class="flex justify-end pt-0">
             <v-card v-if="sended && sendSuccessfully" class="w-full mr-6 justify-center items-center bg-success text-on-success hidden sm:flex px-2 text-center">
               Message sent successfully!

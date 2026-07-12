@@ -12,14 +12,25 @@ import { defineNitroPlugin } from '#imports'
 const cssCache = new Map<string, string>()
 
 export default defineNitroPlugin(nitro => {
+  // Dev serves CSS as Vite virtual modules (`/_nuxt/virtual:nuxt:...css`) that
+  // only Vite's middleware can resolve — localFetch of one falls through to
+  // the SSR catch-all route, which renders a page, which fires this hook
+  // again: infinite recursion, and the dev server just spins. There's also no
+  // request waterfall to win locally, so do nothing at all in dev.
+  if (import.meta.dev)
+    return
+
   nitro.hooks.hook('render:html', async html => {
     for (let i = 0; i < html.head.length; i++) {
       for (const [tag, href] of html.head[i]!.matchAll(/<link rel="stylesheet" href="(\/_nuxt\/[^"]+\.css)"[^>]*>/g)) {
         let css = cssCache.get(href!)
         if (css === undefined) {
           const res = await nitro.localFetch(href!, {})
-          if (!res.ok)
-            continue // keep the <link>; slower but correct
+          // The content-type check is what keeps a fallthrough response (a
+          // rendered HTML page for a URL that isn't a real asset) from being
+          // inlined as "CSS". Keep the <link> instead; slower but correct.
+          if (!res.ok || !String(res.headers.get('content-type')).includes('text/css'))
+            continue
           css = await res.text()
           // A `content: "</style>"` in the CSS would end our tag early and buy
           // an injection. Nothing in the build produces one, but if it ever

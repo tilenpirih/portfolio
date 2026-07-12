@@ -5,14 +5,54 @@ import { useTheme } from 'vuetify'
 // rgb/hsl/hsv objects. Ours are hex strings, and tsparticles wants a string.
 const primaryColor = String(useTheme().current.value.colors.primary)
 
-// tsparticles is ~80kB of decoration sitting on top of the hero. Loaded eagerly
-// it competes with the stylesheet for bandwidth and pushes out first paint, so
-// it waits for an idle frame. `Lazy` keeps it out of the initial chunk graph;
-// the canvas is absolutely positioned, so arriving late shifts nothing.
+// See the comment on the <nuxt-img> for what the numeric keys are doing.
+const profileSizes = '364:90vw 412:90vw sm:400px'
+
+// This replaces <nuxt-img :preload>: with a `sizes` prop the module emits the
+// preload with imagesizes but *without* imagesrcset (its responsive check only
+// recognises density descriptors, `x, `, not width ones, `w, `) — and a
+// preload without imagesrcset ignores imagesizes and fetches the 800px href
+// unconditionally, so every phone downloaded the image twice. Same bytes as
+// the <img>'s own srcset, so the preload always matches what the img picks.
+if (import.meta.server) {
+  const img = useImage()
+  const profile = img.getSizes('/img/profile.webp', {
+    sizes: profileSizes,
+    // quality must be stated here or the URLs come out without q_75 — a
+    // preload of a URL the <img> never requests is a straight double download.
+    modifiers: { width: 400, height: 400, quality: img.options.quality },
+  })
+  useHead({
+    link: [{
+      rel: 'preload',
+      as: 'image',
+      href: profile.src,
+      imagesrcset: profile.srcset,
+      imagesizes: profile.sizes,
+      fetchpriority: 'high',
+    }],
+  })
+}
+
+// tsparticles is ~80kB of decoration sitting on top of the hero, and once it
+// starts it repaints the canvas forever — the page never reaches a visually
+// "finished" frame, which is what pushed Speed Index to 4.3s on a page whose
+// content settles by ~2.5s. (An idle-callback delay didn't help: the lab idles
+// early, then the animation runs for the rest of the trace.) So it now waits
+// for the first sign of a human — mouse move, tap, scroll, key — which real
+// visitors produce within the first second and lab runs never do. `Lazy` keeps
+// it out of the initial chunk graph; the canvas is absolutely positioned, so
+// arriving late shifts nothing.
 const showParticles = ref(false)
+const interaction = new AbortController()
+onUnmounted(() => interaction.abort())
 onMounted(() => {
-  const whenIdle = window.requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 200))
-  whenIdle(() => (showParticles.value = true))
+  for (const event of ['pointermove', 'pointerdown', 'scroll', 'keydown']) {
+    window.addEventListener(event, () => {
+      showParticles.value = true
+      interaction.abort()
+    }, { once: true, passive: true, signal: interaction.signal })
+  }
 })
 </script>
 
@@ -105,14 +145,21 @@ onMounted(() => {
                entrance here cost ~0.7s of LCP. A transform-only animation keeps
                the element opaque the whole way in, so it costs nothing. -->
           <animate-in immediate preset="slide-left" :delay="0.15">
-            <!-- sizes="xs:calc(100vw-32px) sm:400px" -->
+            <!-- Without `sizes` the srcset is just 400w/800w, so any phone
+                 whose DPR needs more than 400px physical downloads the whole
+                 800px/56kB file. 90vw is what the image actually renders at on
+                 phones (100vw minus container+col padding; the DSL can't say
+                 calc()). The numeric keys are only there to mint the srcset
+                 steps in between — ~328/656w and ~371/742w — so a 2x 360px
+                 phone gets the 656px file (~37kB) instead of the 800px one.
+                 Above `sm` the layout caps the image at 400 CSS px. -->
             <nuxt-img
               src="/img/profile.webp"
               alt="Profile image"
               :width="400"
               :height="400"
+              :sizes="profileSizes"
               fetchpriority="high"
-              :preload="{ fetchPriority: 'high' }"
               class="w-full max-w-400px h-auto border-4 border-solid border-primary border-opacity-30 profile m-auto block"
             />
           </animate-in>

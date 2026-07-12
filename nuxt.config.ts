@@ -31,7 +31,6 @@ export default defineNuxtConfig({
     'vuetify-nuxt-module',
     'motion-v/nuxt',
     'nuxt-particles',
-    '@nuxt/scripts',
     '@nuxt/image',
     '@nuxt/fonts',
   ],
@@ -94,6 +93,9 @@ export default defineNuxtConfig({
   // they would trump both Vuetify's component CSS and the UnoCSS utilities.
   // (It also doesn't work here: Nuxt only inlines component-attributed CSS, and
   // Vuetify's and UnoCSS's arrive as global stylesheets.)
+  // The stylesheet still gets inlined — whole, order intact — by
+  // server/plugins/inline-css.ts, which is what keeps first paint from waiting
+  // a full round trip on a render-blocking <link>.
   features: {
     inlineStyles: false,
   },

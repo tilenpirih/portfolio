@@ -7,6 +7,6 @@
     <lazy-home-about id="about" hydrate-on-visible />
     <lazy-home-skills id="skills" hydrate-on-visible />
     <lazy-home-projects id="projects" hydrate-on-visible />
-    <home-contact id="contact" />
+    <lazy-home-contact id="contact" hydrate-on-visible />
   </div>
 </template>

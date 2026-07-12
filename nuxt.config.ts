@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     'nuxt-particles',
     '@nuxt/image',
     '@nuxt/fonts',
+    '@nuxt/scripts',
   ],
 
   // Deployment is a bare `node server/index.mjs` behind an nginx ingress, and

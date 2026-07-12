@@ -44,7 +44,7 @@ async function sendEmail() {
 
 <template>
   <v-container class="py-12">
-    <animate-in preset="fade-down" class="text-h3 text-primary text-center pb-4">
+    <animate-in as="h2" preset="fade-down" class="text-h3 text-primary text-center pb-4">
       Contact
     </animate-in>
     <animate-in preset="fade-down" class="text-center mb-5">

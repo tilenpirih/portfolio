@@ -48,6 +48,19 @@
     color: rgb(var(--v-theme-primary));
   }
 
+  /* Headings are here for semantics/screen readers; the look still comes from
+     the .text-h* class on them, which sits in a later layer and so wins. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
   /* Route change, driven by app.pageTransition in nuxt.config. */
   .page-enter-active,
   .page-leave-active {

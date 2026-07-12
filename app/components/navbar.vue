@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { mdiMenu } from '@mdi/js'
-import { useDisplay } from 'vuetify'
 
-const { smAndUp, xs } = useDisplay()
 const route = useRoute()
 const router = useRouter()
 const hasScrolled = ref(false)
@@ -49,11 +47,13 @@ function isActive(to: string) {
         class="innerContainer flex items-center justify-between px-3 w-full rounded-full mb-0 border-2 border-solid"
         :class="hasScrolled ? 'scrolled bg-blur border-primary/50' : 'border-primary/0'"
       >
+        <!-- CSS breakpoints, not useDisplay(): a JS breakpoint isn't known during
+             SSR without Vuetify's client hints, and those cost a request restart. -->
         <div style="width: 40px;">
           <v-btn
-            v-if="xs"
             variant="text"
             size="small"
+            class="sm:hidden"
             :icon="mdiMenu"
             aria-label="Open navigation menu"
             :aria-expanded="drawer"
@@ -61,7 +61,7 @@ function isActive(to: string) {
           />
         </div>
 
-        <div v-if="smAndUp">
+        <div class="hidden sm:block">
           <v-btn
             v-for="tab in tabs"
             :key="tab.to"

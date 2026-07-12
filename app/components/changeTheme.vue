@@ -3,16 +3,22 @@ import { mdiThemeLightDark } from '@mdi/js'
 import { useTheme } from 'vuetify'
 
 const theme = useTheme()
-function switchTheme() {
-  if (theme.name.value === 'light')
-    theme.change('dark')
-  else
-    theme.change('light')
+const cookie = useThemeCookie()
 
-  document.cookie = `theme=${theme.name.value}; path=/`
+function switchTheme() {
+  const next = theme.name.value === 'light' ? 'dark' : 'light'
+  theme.change(next)
+  // plugins/theme.ts reads this back during SSR on the next visit.
+  cookie.value = next
 }
 </script>
 
 <template>
-  <v-btn variant="text" size="small" :icon="mdiThemeLightDark" @click="switchTheme()" />
+  <v-btn
+    variant="text"
+    size="small"
+    :icon="mdiThemeLightDark"
+    :aria-label="`Switch to ${theme.name.value === 'dark' ? 'light' : 'dark'} theme`"
+    @click="switchTheme()"
+  />
 </template>

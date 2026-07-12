@@ -32,9 +32,9 @@ const projects = [
          <Transition>, which cannot animate a fragment. -->
     <div class="bg-background pt-8">
       <animate-in preset="fade-down">
-        <div class="text-h3 text-primary text-center pb-2">
+        <h1 class="text-h3 text-primary text-center pb-2">
           Projects
-        </div>
+        </h1>
         <div class="text-center pb-6">
           Throughout my career, I have worked on a variety of projects, ranging from small personal endeavors to large-scale applications for well-known companies.
         </div>
@@ -54,7 +54,7 @@ const projects = [
                     loading="lazy"
                     class="w-full h-auto block"
                   />
-                  <v-card-title class="text-h5 text-primary">
+                  <v-card-title tag="h2" class="text-h5 text-primary">
                     {{ project.title }}
                   </v-card-title>
                   <v-card-text>

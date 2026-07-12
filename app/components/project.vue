@@ -1,14 +1,8 @@
 <script setup lang="ts">
 import type { ProjectData } from '~/types/main'
 import { mdiGithub, mdiWeb } from '@mdi/js'
-import { useDisplay } from 'vuetify'
 
 const { project } = defineProps<{ project: ProjectData }>()
-const display = useDisplay()
-const buttonSize = ref(100)
-watch(() => display.mobile.value, value => {
-  buttonSize.value = value ? 80 : 100
-})
 </script>
 
 <template>
@@ -21,26 +15,38 @@ watch(() => display.mobile.value, value => {
         <v-col cols="12" md="6" lg="6" class="flex items-center">
           <div style="width: 100%;">
             <div class="text-h3 lg:text-h2 text-primary text-center">
-              <animate-in preset="fade-down">
+              <animate-in as="h1" preset="fade-down">
                 {{ project.title }}
               </animate-in>
+              <!-- The href goes on the v-btn, not on a <nuxt-link> wrapped around
+                   it. A link wrapping a button is two nested interactive elements
+                   ("link, button, Visit webpage" to a screen reader), and the outer
+                   <a> collapses to a zero-size touch target. -->
               <div class="flex gap-2 justify-center">
-                <nuxt-link v-if="project.websiteUrl" :to="project.websiteUrl" target="_blank">
-                  <animate-in preset="fade-up" :delay="0.1" as-child>
-                    <v-btn variant="outlined" class="rounded-full m-auto">
-                      <v-icon :icon="mdiWeb" size="large" class="mr-2" />
-                      Visit webpage
-                    </v-btn>
-                  </animate-in>
-                </nuxt-link>
-                <nuxt-link v-if="project.githubUrl" :to="project.githubUrl" target="_blank">
-                  <animate-in preset="fade-up" :delay="0.15" as-child>
-                    <v-btn variant="outlined" class="rounded-full m-auto">
-                      <v-icon :icon="mdiGithub" size="large" class="mr-2" />
-                      Source code
-                    </v-btn>
-                  </animate-in>
-                </nuxt-link>
+                <animate-in v-if="project.websiteUrl" preset="fade-up" :delay="0.1" as-child>
+                  <v-btn
+                    variant="outlined"
+                    class="rounded-full m-auto"
+                    :href="project.websiteUrl"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <v-icon :icon="mdiWeb" size="large" class="mr-2" aria-hidden="true" />
+                    Visit webpage
+                  </v-btn>
+                </animate-in>
+                <animate-in v-if="project.githubUrl" preset="fade-up" :delay="0.15" as-child>
+                  <v-btn
+                    variant="outlined"
+                    class="rounded-full m-auto"
+                    :href="project.githubUrl"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <v-icon :icon="mdiGithub" size="large" class="mr-2" aria-hidden="true" />
+                    Source code
+                  </v-btn>
+                </animate-in>
               </div>
             </div>
           </div>
@@ -62,7 +68,7 @@ watch(() => display.mobile.value, value => {
     </v-container>
     <div class="py-5 bg-background">
       <v-container>
-        <animate-in preset="fade-down" class="text-h4 text-primary text-center mb-2">
+        <animate-in as="h2" preset="fade-down" class="text-h4 text-primary text-center mb-2">
           About
         </animate-in>
         <animate-in preset="fade-up" class="text-center">
@@ -73,7 +79,7 @@ watch(() => display.mobile.value, value => {
     <v-container class="py-9">
       <v-row :class="project.videoId ? 'justify-between' : 'justify-center'">
         <v-col cols="12" md="6" lg="5" class="flex flex-col">
-          <animate-in preset="fade-down" class="text-h4 text-primary text-center mb-4">
+          <animate-in as="h2" preset="fade-down" class="text-h4 text-primary text-center mb-4">
             Technologies
           </animate-in>
           <animate-in preset="fade-up" class="h-full flex items-center">
@@ -86,8 +92,16 @@ watch(() => display.mobile.value, value => {
                 as-child
               >
                 <v-col cols="auto">
-                  <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">
-                    <v-img :src="tech.icon" aspect-ratio="1" :width="buttonSize - 16" :height="buttonSize - 16" />
+                  <v-btn
+                    variant="outlined"
+                    class="rounded-lg techButton"
+                    color="primary"
+                    :href="tech.link"
+                    target="_blank"
+                    rel="noopener"
+                    :aria-label="`${techName(tech.icon)} (opens in a new tab)`"
+                  >
+                    <v-img :src="tech.icon" :alt="techName(tech.icon)" aspect-ratio="1" class="techIcon" />
                   </v-btn>
                 </v-col>
               </animate-in>
@@ -95,14 +109,14 @@ watch(() => display.mobile.value, value => {
           </animate-in>
         </v-col>
         <v-col v-if="project.videoId" cols="12" md="6" lg="5">
-          <animate-in preset="fade-down" class="text-h4 text-primary text-center mb-4">
+          <animate-in as="h2" preset="fade-down" class="text-h4 text-primary text-center mb-4">
             Overview
           </animate-in>
           <animate-in preset="fade-up" class="rounded overflow-hidden flex justify-center">
             <script-you-tube-player :video-id="project.videoId">
               <template #awaitingLoad>
                 <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">
-                  <v-img src="/img/technologies/youtube.svg" />
+                  <v-img src="/img/technologies/youtube.svg" alt="" />
                 </div>
               </template>
             </script-you-tube-player>
@@ -112,3 +126,28 @@ watch(() => display.mobile.value, value => {
     </v-container>
   </div>
 </template>
+
+<style scoped lang="scss">
+/* Was useDisplay().mobile driving :width/:height props. Vuetify's `mobile`
+   breakpoint is `lg`, so this reproduces it — without needing the viewport to
+   be known during SSR. Scoped styles are unlayered, so they beat Vuetify's. */
+.techButton {
+  width: 80px;
+  height: 80px;
+}
+.techIcon {
+  width: 64px;
+  height: 64px;
+}
+
+@media (min-width: 1280px) {
+  .techButton {
+    width: 100px;
+    height: 100px;
+  }
+  .techIcon {
+    width: 84px;
+    height: 84px;
+  }
+}
+</style>

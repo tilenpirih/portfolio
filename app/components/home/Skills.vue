@@ -20,7 +20,7 @@ const listInView = useInView(list, { once: true, amount: 0.2 })
 
 <template>
   <v-container class="py-12">
-    <animate-in preset="fade-down" class="text-h3 text-primary text-center pb-4">
+    <animate-in as="h2" preset="fade-down" class="text-h3 text-primary text-center pb-4">
       Skills
     </animate-in>
     <v-row ref="list">
@@ -32,10 +32,16 @@ const listInView = useInView(list, { once: true, amount: 0.2 })
         class="px-6"
       >
         <animate-in :preset="index % 2 === 0 ? 'fade-right' : 'fade-left'" :delay="index * 0.06">
-          <div class="text-center text-h5">
+          <h3 class="text-center text-h5">
             {{ skill.name }}
-          </div>
-          <v-progress-linear class="mt-1" :model-value="listInView ? skill.level : 0" max="10" />
+          </h3>
+          <v-progress-linear
+            class="mt-1"
+            :model-value="listInView ? skill.level : 0"
+            max="10"
+            :aria-label="skill.name"
+            :aria-valuetext="`${skill.level} out of 10`"
+          />
         </animate-in>
       </v-col>
     </v-row>

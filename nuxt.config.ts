@@ -19,6 +19,11 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      // Without this a screen reader reads the page in whatever language the
+      // user configured it for, mispronouncing everything.
+      htmlAttrs: { lang: 'en' },
+    },
   },
 
   modules: [
@@ -30,6 +35,30 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
   ],
+
+  // Deployment is a bare `node server/index.mjs` behind an nginx ingress, and
+  // ingress-nginx has gzip off by default — so nothing compressed the 1MB of
+  // JS/CSS we were shipping. This precompresses it at build time (no request-
+  // time CPU cost); server/plugins/compression.ts covers the SSR HTML, which
+  // isn't a static asset and so can't be precompressed.
+  nitro: {
+    compressPublicAssets: { gzip: true, brotli: true },
+  },
+
+  routeRules: {
+    // IPX serves these with a 60s TTL by default, so every repeat visitor
+    // re-downloaded every image. The transform params are in the URL, but the
+    // *source* filename is not — replacing public/img/x.webp in place while
+    // keeping the name will serve stale images for a year. Rename on change.
+    '/_ipx/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+  },
+
+  // Defaults to 'full', which pulls in every tsparticles shape, plugin and
+  // interaction (~140kB). Top.vue only uses circle/move/links/repulse — all in
+  // slim. Bump this back to 'full' if a particle option stops taking effect.
+  particles: {
+    mode: 'slim',
+  },
 
   // <nuxt-img sizes> resolves its `sm:`/`lg:` prefixes against these, so they
   // have to be Vuetify's thresholds — otherwise a size hint would switch at a
@@ -46,17 +75,18 @@ export default defineNuxtConfig({
     quality: 75,
   },
 
+  // No ssrClientHints. It sends a Critical-CH header, which makes the browser
+  // discard and re-issue the very first request to resupply the hints — ~600ms
+  // on every first visit, and Lighthouse fails `redirects` because of it.
+  // What it did for us instead:
+  //   - prefersColorScheme -> plugins/theme.ts restores the theme from a cookie.
+  //     We lose OS colour-scheme detection for a first-time visitor, who now
+  //     gets vuetifyOptions.defaultTheme until they use the toggle.
+  //   - viewportSize -> navbar.vue and project.vue use CSS breakpoints now, so
+  //     nothing needs the viewport width to be known during SSR.
   vuetify: {
     moduleOptions: {
       styles: { configFile: 'app/assets/css/settings.scss' },
-      ssrClientHints: {
-        reloadOnFirstRequest: false,
-        prefersColorScheme: true,
-        prefersColorSchemeOptions: {
-          useBrowserThemeOnly: false,
-        },
-        viewportSize: true,
-      },
     },
     vuetifyOptions: vuetifyConfig,
   },
@@ -64,5 +94,22 @@ export default defineNuxtConfig({
   // they would trump both Vuetify's component CSS and the UnoCSS utilities.
   features: {
     inlineStyles: false,
+  },
+
+  vite: {
+    build: {
+      // With inlineStyles off, every chunk's CSS is its own render-blocking
+      // <link>: 8 of them on the homepage, and the browser can't paint until the
+      // last one lands. One file costs a little more CSS up front (~18kB brotli
+      // for the whole site) and saves the round trips, which is the thing that
+      // actually hurts on a slow connection. Concatenation order still follows
+      // the import graph, so layers.css lands first and the @layer order holds.
+      cssCodeSplit: false,
+    },
+    optimizeDeps: {
+      include: [
+        '@mdi/js',
+      ]
+    }
   },
 })

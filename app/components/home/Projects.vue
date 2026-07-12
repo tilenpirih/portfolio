@@ -35,7 +35,7 @@ const revealAt = [
 <template>
   <div class="bg-background">
     <v-container class="py-12">
-      <animate-in preset="fade-down" class="text-h3 text-primary text-center pb-6">
+      <animate-in as="h2" preset="fade-down" class="text-h3 text-primary text-center pb-6">
         Projects
       </animate-in>
       <v-row>
@@ -52,7 +52,7 @@ const revealAt = [
                   loading="lazy"
                   class="w-full h-auto block"
                 />
-                <v-card-title class="text-h5 text-primary">
+                <v-card-title tag="h3" class="text-h5 text-primary">
                   {{ project.title }}
                 </v-card-title>
                 <v-card-text>
@@ -65,11 +65,9 @@ const revealAt = [
       </v-row>
       <div class="flex justify-center mt-8">
         <animate-in preset="fade-up">
-          <nuxt-link to="/projects">
-            <v-btn :append-icon="mdiArrowRight" variant="outlined" class="rounded-full">
-              See all projects
-            </v-btn>
-          </nuxt-link>
+          <v-btn to="/projects" :append-icon="mdiArrowRight" variant="outlined" class="rounded-full">
+            See all projects
+          </v-btn>
         </animate-in>
       </div>
     </v-container>

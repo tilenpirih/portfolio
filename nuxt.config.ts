@@ -92,24 +92,26 @@ export default defineNuxtConfig({
   },
   // Inlined <style> blocks land outside the @layer order set in layers.css, so
   // they would trump both Vuetify's component CSS and the UnoCSS utilities.
+  // (It also doesn't work here: Nuxt only inlines component-attributed CSS, and
+  // Vuetify's and UnoCSS's arrive as global stylesheets.)
   features: {
     inlineStyles: false,
   },
 
   vite: {
     build: {
-      // With inlineStyles off, every chunk's CSS is its own render-blocking
-      // <link>: 8 of them on the homepage, and the browser can't paint until the
-      // last one lands. One file costs a little more CSS up front (~18kB brotli
-      // for the whole site) and saves the round trips, which is the thing that
-      // actually hurts on a slow connection. Concatenation order still follows
-      // the import graph, so layers.css lands first and the @layer order holds.
+      // Every chunk's CSS is otherwise its own render-blocking <link> — 8 of them
+      // on the homepage, and nothing paints until the last one lands. One file
+      // costs slightly more CSS up front (~14kB brotli for the whole site) and
+      // saves the round trips, which is what actually hurts on a slow connection.
+      // Concatenation follows the import graph, so layers.css lands first and the
+      // @layer order holds.
       cssCodeSplit: false,
     },
     optimizeDeps: {
       include: [
         '@mdi/js',
-      ]
-    }
+      ],
+    },
   },
 })

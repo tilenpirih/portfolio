@@ -25,7 +25,11 @@ spec:
             limits:
               memory: 512Mi
           env:
-            - name: BASE_URL
+            # NUXT_PUBLIC_ prefix, not a bare BASE_URL: that is the only name Nuxt
+            # reads at runtime to override runtimeConfig.public.BASE_URL. As a plain
+            # BASE_URL it was silently ignored, leaving the value empty — which is
+            # why canonical came out as "/" and og:image as a relative path.
+            - name: NUXT_PUBLIC_BASE_URL
               value: https://tilenpirih.com
             - name: EMAILJS_PUBLIC_KEY
               valueFrom:

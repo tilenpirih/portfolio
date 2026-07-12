@@ -1,23 +1,23 @@
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig()
+const siteUrl = useSiteUrl()
 const route = useRoute()
 
 useHead({
   title: 'Tilen Pirih - Fullstack developer',
   link: [
-    { rel: 'canonical', href: computed(() => `${runtimeConfig.public.BASE_URL}${route.path}`) },
+    { rel: 'canonical', href: computed(() => `${siteUrl}${route.path}`) },
   ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'description', content: 'Portfolio of Tilen Pirih, a self-employed fullstack developer from Slovenia building web apps with Vue, Nuxt, Python and Postgres.' },
     { name: 'author', content: 'Tilen Pirih' },
     { property: 'og:title', content: 'Tilen Pirih - Fullstack developer' },
-    { property: 'og:image', content: `${runtimeConfig.public.BASE_URL}/img/OGImage.webp` },
+    { property: 'og:image', content: `${siteUrl}/img/OGImage.webp` },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
     { property: 'og:image:alt', content: 'Tilen Pirih - Fullstack developer' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: `${runtimeConfig.public.BASE_URL}` },
+    { property: 'og:url', content: computed(() => `${siteUrl}${route.path}`) },
     { name: 'twitter:card', content: 'summary_large_image' },
   ],
 })

@@ -105,12 +105,12 @@ onMounted(() => {
                entrance here cost ~0.7s of LCP. A transform-only animation keeps
                the element opaque the whole way in, so it costs nothing. -->
           <animate-in immediate preset="slide-left" :delay="0.15">
+            <!-- sizes="xs:calc(100vw-32px) sm:400px" -->
             <nuxt-img
               src="/img/profile.webp"
               alt="Profile image"
               :width="400"
               :height="400"
-              sizes="xs:100vw sm:400px"
               fetchpriority="high"
               :preload="{ fetchPriority: 'high' }"
               class="w-full max-w-400px h-auto border-4 border-solid border-primary border-opacity-30 profile m-auto block"

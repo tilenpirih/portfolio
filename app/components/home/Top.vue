@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useGoTo, useTheme } from 'vuetify'
+import { useTheme } from 'vuetify'
 
-const goTo = useGoTo()
 // Vuetify 4 widened theme colours from `string` to a union that also covers
 // rgb/hsl/hsv objects. Ours are hex strings, and tsparticles wants a string.
 const primaryColor = String(useTheme().current.value.colors.primary)
@@ -88,7 +87,7 @@ const primaryColor = String(useTheme().current.value.colors.primary)
               Full-stack developer
             </animate-in>
             <animate-in preset="fade-up" :delay="0.2" class="flex justify-center mt-3">
-              <v-btn variant="outlined" rounded="xl" class="text-primary bg-blur" @click="goTo(`#contact`, { offset: -80 })">
+              <v-btn to="#contact" variant="outlined" rounded="xl" class="text-primary bg-blur">
                 <div class="rounded bg-success mr-3 greenDot" />
                 Available for work
               </v-btn>

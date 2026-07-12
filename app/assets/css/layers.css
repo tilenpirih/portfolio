@@ -25,6 +25,18 @@
 
   html {
     overflow: auto !important;
+    scroll-behavior: smooth;
+  }
+
+  /* Nuxt's default scrollBehavior reads scroll-margin-top off the hash target,
+     so this is what keeps a section clear of the fixed navbar (48px + 16px of
+     top padding, plus breathing room). */
+  #top,
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    scroll-margin-top: 80px;
   }
 
   .bg-blur {
@@ -51,6 +63,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
     .page-enter-active,
     .page-leave-active {
       transition: none;

@@ -1,17 +1,13 @@
 <script setup lang="ts">
 import { mdiArrowRight } from '@mdi/js'
-import { useDisplay } from 'vuetify'
 import bgEraser from '~/data/projects/bgEraser'
 import chatbot from '~/data/projects/chatbot'
 import dvs from '~/data/projects/dvs'
 import globalEstApplication from '~/data/projects/globalEstApplication'
 import globalPdrApplication from '~/data/projects/globalPdrApplication'
 import kkKrkaImageGenerator from '~/data/projects/kkKrkaImageGenerator'
-import kzs from '~/data/projects/kzs'
 import oksVolunteer from '~/data/projects/oksVolunteer'
 import portfolio from '~/data/projects/portfolio'
-
-const { mdAndDown, lgAndDown, xs } = useDisplay()
 
 const projects = [
   chatbot,
@@ -24,15 +20,21 @@ const projects = [
   globalPdrApplication,
 ]
 
-const listProjects = computed(() => {
-  if (xs.value)
-    return projects.slice(0, 3)
-  if (mdAndDown.value)
-    return projects.slice(0, 4)
-  if (lgAndDown.value)
-    return projects.slice(0, 6)
-  return projects
-})
+// How many of these to show is a breakpoint decision, but it has to be made in
+// CSS, not JS: the server has no viewport, so slicing the list with useDisplay()
+// rendered 3 cards on the server and 6-8 on the client - a hydration mismatch.
+// Every card is rendered on both sides; the extras are hidden per breakpoint.
+// Visible count: xs 3, sm/md 4, lg 6, xl+ 8.
+const revealAt = [
+  '', // 0-2: always
+  '',
+  '',
+  'hidden sm:block', // 4th from sm up
+  'hidden lg:block', // 5th-6th from lg up
+  'hidden lg:block',
+  'hidden xl:block', // 7th-8th from xl up
+  'hidden xl:block',
+]
 </script>
 
 <template>
@@ -42,7 +44,7 @@ const listProjects = computed(() => {
         Projects
       </animate-in>
       <v-row>
-        <v-col v-for="(project, index) in listProjects" :key="index" cols="12" sm="6" lg="4" xl="3">
+        <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3" :class="revealAt[index]">
           <nuxt-link :to="project.seo.ogUrl" class="no-underline">
             <animate-in preset="flip-up" :delay="index * 0.07" class="h-full">
               <v-card class="projectCard cursor-pointer rounded-lg h-full">

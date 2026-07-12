@@ -20,11 +20,6 @@ const projects = [
   globalPdrApplication,
 ]
 
-// How many of these to show is a breakpoint decision, but it has to be made in
-// CSS, not JS: the server has no viewport, so slicing the list with useDisplay()
-// rendered 3 cards on the server and 6-8 on the client - a hydration mismatch.
-// Every card is rendered on both sides; the extras are hidden per breakpoint.
-// Visible count: xs 3, sm/md 4, lg 6, xl+ 8.
 const revealAt = [
   '', // 0-2: always
   '',

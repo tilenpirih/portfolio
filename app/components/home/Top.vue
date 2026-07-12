@@ -97,7 +97,7 @@ const primaryColor = String(useTheme().current.value.colors.primary)
         </v-col>
         <v-col cols="12" md="6" lg="4" xl="3">
           <animate-in preset="flip-up" :delay="0.15">
-            <v-img max-width="400" aspect-ratio="1" alt="Profile image" class="border-4 border-solid border-primary profile m-auto" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
+            <v-img max-width="400" aspect-ratio="1" alt="Profile image" class="border-4 border-solid border-primary border-opacity-30 profile m-auto" src="/img/profile.webp" lazy-src="/img/lazy/profile.webp" />
           </animate-in>
         </v-col>
       </v-row>

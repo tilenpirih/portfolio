@@ -12,15 +12,12 @@ export default defineNuxtConfig({
       BASE_URL: process.env.BASE_URL,
     },
   },
-  build: {
-    transpile: ['vuetify'],
-  },
   css: [
-    '@/assets/css/main.scss',
-    '@/assets/css/vuetify/main.scss',
+    '@/assets/css/layers.css',
   ],
 
   modules: [
+    '@unocss/nuxt',
     'vuetify-nuxt-module',
     'nuxt-aos',
     'nuxt-particles',
@@ -28,6 +25,7 @@ export default defineNuxtConfig({
   ],
   vuetify: {
     moduleOptions: {
+      styles: { configFile: 'app/assets/css/settings.scss' },
       ssrClientHints: {
         reloadOnFirstRequest: false,
         prefersColorScheme: true,
@@ -36,34 +34,20 @@ export default defineNuxtConfig({
         },
         viewportSize: true,
       },
-      disableVuetifyStyles: true,
     },
     vuetifyOptions: vuetifyConfig,
+  },
+  // Inlined <style> blocks land outside the @layer order set in layers.css, so
+  // they would trump both Vuetify's component CSS and the UnoCSS utilities.
+  features: {
+    inlineStyles: false,
   },
   vite: {
     optimizeDeps: {
       include: ['aos'],
     },
-    // css: {
-    //   preprocessorOptions: {
-    //     scss: {
-    //       additionalData: '@use "@/assets/css/vuetify/main.scss" as *;',
-    //     },
-    //   },
-    // },
-    // css: {
-    //   preprocessorOptions: {
-    //     scss: {
-    //       api: 'modern',
-    //     },
-    //   },
-    // },
   },
   aos: {
     once: true,
   },
-
-  // nitro: {
-  //   preset: 'bun',
-  // },
 })

@@ -13,22 +13,22 @@ watch(() => display.mobile.value, value => {
 
 <template>
   <v-container class="py-16">
-    <v-row class="justify-center align-center">
-      <v-col cols="12" md="6" lg="6" class="d-flex align-center">
+    <v-row class="justify-center items-center">
+      <v-col cols="12" md="6" lg="6" class="flex items-center">
         <div style="width: 100%;">
-          <div class="text-h3 text-lg-h2 text-primary text-center">
+          <div class="text-h3 lg:text-h2 text-primary text-center">
             <div data-aos="fade-down">
               {{ project.title }}
             </div>
-            <div class="d-flex ga-2 justify-center">
+            <div class="flex gap-2 justify-center">
               <nuxt-link v-if="project.websiteUrl" :to="project.websiteUrl" target="_blank">
-                <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
+                <v-btn data-aos="fade-up" variant="outlined" class="rounded-full m-auto">
                   <v-icon :icon="mdiWeb" size="large" class="mr-2" />
                   Visit webpage
                 </v-btn>
               </nuxt-link>
               <nuxt-link v-if="project.githubUrl" :to="project.githubUrl" target="_blank">
-                <v-btn data-aos="fade-up" variant="outlined" class="rounded-pill m-auto">
+                <v-btn data-aos="fade-up" variant="outlined" class="rounded-full m-auto">
                   <v-icon :icon="mdiGithub" size="large" class="mr-2" />
                   Source code
                 </v-btn>
@@ -37,8 +37,8 @@ watch(() => display.mobile.value, value => {
           </div>
         </div>
       </v-col>
-      <v-col data-aos="flip-up" cols="12" md="6" class="d-flex justify-center">
-        <v-img max-width="600" aspect-ratio="1.7778" :src="project.image" class="rounded-lg border-lg border-primary" :lazy-src="project.lazyImage" />
+      <v-col data-aos="flip-up" cols="12" md="6" class="flex justify-center">
+        <v-img max-width="600" aspect-ratio="1.7778" :src="project.image" class="rounded-lg border-4 border-solid border-primary" :lazy-src="project.lazyImage" />
       </v-col>
     </v-row>
   </v-container>
@@ -53,12 +53,12 @@ watch(() => display.mobile.value, value => {
     </v-container>
   </div>
   <v-container class="py-9">
-    <v-row :class="{ 'justify-space-between': project.videoId, 'justify-center': !project.videoId }">
-      <v-col cols="12" md="6" lg="5" class="d-flex flex-column">
+    <v-row :class="project.videoId ? 'justify-between' : 'justify-center'">
+      <v-col cols="12" md="6" lg="5" class="flex flex-col">
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Technologies
         </div>
-        <div data-aos="fade-up" class="h-100 d-flex align-center">
+        <div data-aos="fade-up" class="h-full flex items-center">
           <v-row class="justify-center">
             <v-col v-for="tech in project.technologies" :key="tech.link" cols="auto">
               <v-btn variant="outlined" class="rounded-lg" color="primary" :width="buttonSize" :height="buttonSize" :href="tech.link" target="_blank">
@@ -72,7 +72,7 @@ watch(() => display.mobile.value, value => {
         <div data-aos="fade-down" class="text-h4 text-primary text-center mb-4">
           Overview
         </div>
-        <div data-aos="fade-up" class="rounded overflow-hidden d-flex justify-center">
+        <div data-aos="fade-up" class="rounded overflow-hidden flex justify-center">
           <script-you-tube-player :video-id="project.videoId">
             <template #awaitingLoad>
               <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">

@@ -45,9 +45,9 @@ const listProjects = computed(() => {
       </div>
       <v-row>
         <v-col v-for="(project, index) in listProjects" :key="index" cols="12" sm="6" lg="4" xl="3">
-          <nuxt-link :to="project.seo.ogUrl" class="text-decoration-none">
+          <nuxt-link :to="project.seo.ogUrl" class="no-underline">
             <div data-aos="flip-up" style="height: 100%;">
-              <v-card class="projectCard cursor-pointer h-100 rounded-lg h-full">
+              <v-card class="projectCard cursor-pointer rounded-lg h-full">
                 <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
                 <v-card-title class="text-h5 text-primary">
                   {{ project.title }}
@@ -60,10 +60,10 @@ const listProjects = computed(() => {
           </nuxt-link>
         </v-col>
       </v-row>
-      <div class="d-flex justify-center mt-8">
+      <div class="flex justify-center mt-8">
         <div data-aos="fade-up">
           <nuxt-link to="/projects">
-            <v-btn :append-icon="mdiArrowRight" variant="outlined" class="rounded-pill">
+            <v-btn :append-icon="mdiArrowRight" variant="outlined" class="rounded-full">
               See all projects
             </v-btn>
           </nuxt-link>

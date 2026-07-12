@@ -1,2 +1,9 @@
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
+packages:
+  - .
+
 patchedDependencies:
   nuxt-particles@0.3.0: patches/nuxt-particles@0.3.0.patch

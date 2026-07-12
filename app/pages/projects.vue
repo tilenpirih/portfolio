@@ -40,9 +40,9 @@ const projects = [
     <v-container class="py-8">
       <v-row>
         <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" lg="4" xl="3">
-          <nuxt-link :to="project.seo.ogUrl" class="text-decoration-none">
+          <nuxt-link :to="project.seo.ogUrl" class="no-underline">
             <div data-aos="flip-up" style="height: 100%;">
-              <v-card class="projectCard cursor-pointer h-100 rounded-lg h-full">
+              <v-card class="projectCard cursor-pointer rounded-lg h-full">
                 <v-img :src="project.image" :lazy-src="project.lazyImage" aspect-ratio="1.777" />
                 <v-card-title class="text-h5 text-primary">
                   {{ project.title }}

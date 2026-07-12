@@ -1,5 +1,6 @@
 import type { ThemeDefinition } from 'vuetify'
 import type { ExternalVuetifyOptions } from 'vuetify-nuxt-module'
+import { forVuetify as breakpoints } from './app/theme/breakpoints'
 
 const light: ThemeDefinition = {
   colors: {
@@ -81,13 +82,16 @@ export default {
     defaultTheme: 'dark',
     themes: { light, dark },
   },
+  display: {
+    thresholds: breakpoints,
+  },
   icons: {
     defaultSet: 'mdi-svg',
   },
   defaults: {
     VBtn: {
       color: 'primary',
-      class: 'text-none',
+      class: 'normal-case',
     },
     VProgressLinear: {
       rounded: true,

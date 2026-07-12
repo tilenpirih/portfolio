@@ -34,6 +34,8 @@ You can then preview the production build locally with:
 ```bash
 pnpm run preview
 ```
+
 ## TODO
+
 Currently AOS have a bug that if the elements has a class I get a hydration mismatch error. [Issue](https://github.com/egidiusmengelberg/nuxt-aos/issues/19)
 Currently I implemented a "hack" that I wrap every element in a div without any classes or use inline styles

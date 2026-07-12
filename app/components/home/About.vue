@@ -4,7 +4,7 @@ import { mdiOpenInNew } from '@mdi/js'
 
 <template>
   <div class="bg-background">
-    <v-container class="py-12 text-center d-flex justify-center">
+    <v-container class="py-12 text-center flex justify-center">
       <div>
         <div data-aos="fade-down">
           <div class="text-h3 text-primary pb-4">
@@ -22,7 +22,7 @@ import { mdiOpenInNew } from '@mdi/js'
           <div data-aos="fade-up">
             <div class="mt-3">
               <nuxt-link to="/resume_Tilen_Pirih.pdf" target="_blank" external>
-                <v-btn variant="outlined" class="rounded-pill">
+                <v-btn variant="outlined" class="rounded-full">
                   See my resume
                   <v-icon :icon="mdiOpenInNew" size="large" class="ml-2" />
                 </v-btn>
@@ -34,7 +34,3 @@ import { mdiOpenInNew } from '@mdi/js'
     </v-container>
   </div>
 </template>
-
-<style scoped>
-
-</style>

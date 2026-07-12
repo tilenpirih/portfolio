@@ -40,10 +40,10 @@ function clickButton(id: string) {
 
 <template>
   <div>
-    <div class="w-100 position-fixed px-4 pt-4" style="z-index: 9999;">
+    <div class="w-full fixed px-4 pt-4" style="z-index: 9999;">
       <div
-        class="innerContainer d-flex align-center justify-space-between px-3 w-100 rounded-pill mb-0 border-md border-primary border-opacity-0"
-        :class="{ 'scrolled bg-blur border-opacity-50': hasScrolled }"
+        class="innerContainer flex items-center justify-between px-3 w-full rounded-full mb-0 border-2 border-solid"
+        :class="hasScrolled ? 'scrolled bg-blur border-primary/50' : 'border-primary/0'"
       >
         <div style="width: 40px;">
           <v-btn v-if="xs" variant="text" size="small" :icon="mdiMenu" @click="drawer = !drawer" />
@@ -62,8 +62,8 @@ function clickButton(id: string) {
       </div>
     </div>
     <v-navigation-drawer v-model="drawer" temporary app class="px-3 bg-blur" width="600" style="padding: 0px !important;">
-      <div class="d-flex justify-center h-100 flex-column px-3" @click.stop="drawer = false">
-        <v-btn v-for="tab in tabs" :key="tab.path" size="large" variant="text" rounded="xl" class="w-100" @click.stop="clickButton(tab.path); drawer = false">
+      <div class="flex justify-center h-full flex-col px-3" @click.stop="drawer = false">
+        <v-btn v-for="tab in tabs" :key="tab.path" size="large" variant="text" rounded="xl" class="w-full" @click.stop="clickButton(tab.path); drawer = false">
           {{ tab.title }}
         </v-btn>
       </div>

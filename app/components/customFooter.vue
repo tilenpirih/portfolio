@@ -7,28 +7,24 @@ const discordIcon = 'm22 24l-5.25-5l.63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0
 <template>
   <v-divider />
 
-  <v-footer class="d-flex justify-center py-6">
+  <v-footer class="flex justify-center py-6">
     <div>
-      <div class="d-flex justify-center">
+      <div class="flex justify-center">
         <v-btn class="mx-1" :icon="mdiGithub" variant="outlined" href="https://github.com/tilenpirih" target="_blank" />
         <v-btn class="mx-1" :icon="mdiLinkedin" variant="outlined" href="https://www.linkedin.com/in/tilen-pirih-292797320/" target="_blank" />
         <v-btn class="mx-1" :icon="discordIcon" variant="outlined" href="https://discordapp.com/users/254138818351988737" target="_blank" />
         <v-btn class="mx-1" :icon="mdiFacebook" variant="outlined" href="https://www.facebook.com/tilen.pirih/" target="_blank" />
       </div>
-      <div class="d-flex justify-center mt-3">
+      <div class="flex justify-center mt-3">
         <v-icon class="mr-2" color="primary" :icon="mdiPhone" />(+386) 51 731 371
       </div>
-      <div class="d-flex justify-center">
+      <div class="flex justify-center">
         <v-icon class="mr-2" color="primary" :icon="mdiEmail" /> tilen.pirih@gmail.com
       </div>
-      <div class="d-flex justify-center align-center mt-2">
+      <div class="flex justify-center items-center mt-2">
         Tilen Pirih
         <v-icon :icon="mdiCopyright" size="small" class="ml-1" />2024
       </div>
     </div>
   </v-footer>
 </template>
-
-<style scoped>
-
-</style>

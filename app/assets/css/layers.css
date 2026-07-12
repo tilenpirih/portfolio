@@ -1,0 +1,38 @@
+/* Cascade order. Later layers win, regardless of specificity.
+   `app` sits first on purpose: it holds bare element defaults, and `a { color }`
+   must lose to `.v-btn` for buttons wrapped in a <nuxt-link>. UnoCSS utilities
+   sit after Vuetify's component styles so a utility class can override them. */
+@layer app;
+
+@layer uno-base, uno-theme;
+
+@layer vuetify-core, vuetify-components, vuetify-overrides, vuetify-utilities;
+
+@layer uno-shortcuts, uno-default;
+
+@layer vuetify-final;
+
+@layer app {
+  :root {
+    --v-font-heading: 'Roboto', sans-serif;
+    --v-font-body: 'Roboto', sans-serif;
+  }
+
+  body {
+    margin: 0px;
+    overflow: hidden;
+  }
+
+  html {
+    overflow: auto !important;
+  }
+
+  .bg-blur {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  a {
+    color: rgb(var(--v-theme-primary));
+  }
+}

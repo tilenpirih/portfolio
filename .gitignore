@@ -18,6 +18,9 @@ logs
 .fleet
 .idea
 
+# Local reference checkout, not part of this project
+DAS-PDR
+
 # Local env files
 .env
 .env.*

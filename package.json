@@ -9,25 +9,28 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "build:preview": "nuxt build && nuxt preview",
+    "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@mdi/font": "^7.4.47",
     "@mdi/js": "^7.4.47",
-    "@nuxt/scripts": "^0.11.13",
+    "@nuxt/scripts": "^1.3.0",
     "aos": "^2.3.4",
-    "nuxt": "^4.0.3",
-    "nuxt-aos": "^1.2.5",
+    "nuxt": "^4.4.8",
+    "nuxt-aos": "^1.2.6",
     "nuxt-particles": "^0.3.0",
-    "vue": "^3.5.13",
-    "vuetify": "^3.10.0",
-    "vuetify-nuxt-module": "0.18.7"
+    "vue": "^3.5.39",
+    "vuetify-nuxt-module": "1.0.0-rc.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.2.1",
-    "eslint": "9.34.0",
-    "eslint-plugin-format": "^1.0.1",
-    "sass": "^1.90.0",
-    "vite-plugin-vuetify": "^2.1.2"
+    "@antfu/eslint-config": "^9.1.0",
+    "@unocss/nuxt": "^66.7.5",
+    "@unocss/preset-wind4": "^66.7.5",
+    "eslint": "^10.7.0",
+    "eslint-plugin-format": "^2.0.1",
+    "sass": "^1.101.0",
+    "unocss": "^66.7.5",
+    "unocss-preset-vuetify": "^0.3.0",
+    "vuetify": "^4.1.4"
   }
 }

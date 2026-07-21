@@ -131,12 +131,12 @@ onMounted(() => {
             <animate-in as="p" immediate preset="fade-right" :delay="0.1" class="text-h4 lg:text-h3 text-center text-secondary">
               Full-stack developer
             </animate-in>
-            <animate-in immediate preset="fade-up" :delay="0.2" class="flex justify-center mt-3">
-              <v-btn to="#contact" variant="outlined" rounded="xl" class="text-primary bg-blur">
-                <div class="rounded bg-success mr-3 greenDot" />
+            <div class="flex justify-center mt-3">
+              <v-btn to="#contact" variant="outlined" rounded="xl" class="text-primary backdrop-blur-md">
+                <div class="rounded bg-success mr-3 greenDot " />
                 Available for work
               </v-btn>
-            </animate-in>
+            </div>
           </div>
         </v-col>
         <v-col cols="12" md="6" lg="4" xl="3">

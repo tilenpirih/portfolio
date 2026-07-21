@@ -39,11 +39,6 @@
     scroll-margin-top: 80px;
   }
 
-  .bg-blur {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-
   a {
     color: rgb(var(--v-theme-primary));
   }

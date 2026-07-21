@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import astral8 from '~/data/projects/astral8'
 import bgEraser from '~/data/projects/bgEraser'
 import chatbot from '~/data/projects/chatbot'
 import dvs from '~/data/projects/dvs'
@@ -12,6 +13,7 @@ import portfolio from '~/data/projects/portfolio'
 import ventic from '~/data/projects/ventic'
 
 const projects = [
+  astral8,
   chatbot,
   oksVolunteer,
   dvs,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { mdiArrowRight } from '@mdi/js'
+import astral8 from '~/data/projects/astral8'
 import bgEraser from '~/data/projects/bgEraser'
 import chatbot from '~/data/projects/chatbot'
 import dvs from '~/data/projects/dvs'
@@ -7,16 +8,15 @@ import globalEstApplication from '~/data/projects/globalEstApplication'
 import globalPdrApplication from '~/data/projects/globalPdrApplication'
 import kkKrkaImageGenerator from '~/data/projects/kkKrkaImageGenerator'
 import oksVolunteer from '~/data/projects/oksVolunteer'
-import portfolio from '~/data/projects/portfolio'
 
 const projects = [
+  astral8,
   chatbot,
   oksVolunteer,
   dvs,
   bgEraser,
   globalEstApplication,
   kkKrkaImageGenerator,
-  portfolio,
   globalPdrApplication,
 ]
 

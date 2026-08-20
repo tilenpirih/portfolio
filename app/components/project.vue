@@ -26,7 +26,7 @@ const { project } = defineProps<{ project: ProjectData }>()
                 <animate-in v-if="project.websiteUrl" preset="fade-up" :delay="0.1" as-child>
                   <v-btn
                     variant="outlined"
-                    class="rounded-full m-auto"
+                    class="rounded-full"
                     :href="project.websiteUrl"
                     target="_blank"
                     rel="noopener"
@@ -38,7 +38,7 @@ const { project } = defineProps<{ project: ProjectData }>()
                 <animate-in v-if="project.githubUrl" preset="fade-up" :delay="0.15" as-child>
                   <v-btn
                     variant="outlined"
-                    class="rounded-full m-auto"
+                    class="rounded-full"
                     :href="project.githubUrl"
                     target="_blank"
                     rel="noopener"

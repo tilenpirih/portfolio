@@ -11,7 +11,7 @@ onMounted(() => {
     .map(id => document.getElementById(id))
     .filter((el): el is HTMLElement => el !== null)
 
-  observer = new IntersectionObserver((entries) => {
+  observer = new IntersectionObserver(entries => {
     for (const e of entries) {
       if (!e.isIntersecting)
         continue

@@ -132,7 +132,7 @@ onMounted(() => {
               Full-stack developer
             </animate-in>
             <div class="flex justify-center mt-3">
-              <v-btn to="#contact" variant="outlined" rounded="xl" class="text-primary backdrop-blur-md">
+              <v-btn to="#contact" variant="outlined" class="rounded-full text-primary backdrop-blur-md">
                 <div class="rounded bg-success mr-3 greenDot " />
                 Available for work
               </v-btn>

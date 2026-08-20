@@ -68,8 +68,7 @@ function isActive(to: string) {
             :to="tab.to"
             :active="isActive(tab.to)"
             variant="text"
-            rounded="xl"
-            class="mx-1"
+            class="mx-1 rounded-full"
             @click="onTabClick(tab.to)"
           >
             {{ tab.title }}

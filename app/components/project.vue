@@ -22,7 +22,7 @@ const { project } = defineProps<{ project: ProjectData }>()
                    it. A link wrapping a button is two nested interactive elements
                    ("link, button, Visit webpage" to a screen reader), and the outer
                    <a> collapses to a zero-size touch target. -->
-              <div class="flex gap-2 justify-center">
+              <div class="flex flex-wrap gap-3 justify-center mt-3">
                 <animate-in v-if="project.websiteUrl" preset="fade-up" :delay="0.1" as-child>
                   <v-btn
                     variant="outlined"

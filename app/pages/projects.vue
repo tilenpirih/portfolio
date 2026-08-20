@@ -13,6 +13,7 @@ import portfolio from '~/data/projects/portfolio'
 import ventic from '~/data/projects/ventic'
 
 const projects = [
+  ventic,
   astral8,
   chatbot,
   oksVolunteer,
@@ -23,7 +24,6 @@ const projects = [
   portfolio,
   globalPdrApplication,
   kzs,
-  ventic,
   nktolmin,
 ]
 </script>

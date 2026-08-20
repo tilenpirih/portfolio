@@ -2,9 +2,13 @@ import type { ProjectData } from '~/types/main'
 
 export default {
   title: 'Ventic',
-  description: 'This project was originally designed to be an all-in-one tool for streaming various types of media. It was one of my first ventures into the Vue ecosystem and desktop application development. Unfortunately, due to time constraints and other commitments, I had to put it on hold. However, the experience was invaluable, and I gained a lot from it. <br> While several features are still missing, the tool is already great for discovering new movies, shows, actors, and watching trailers. I plan to revisit this project, rewriting it using Vue 3 and switching from Electron to Tauri, with the goal of delivering a fully polished product.',
-  shortText: 'Desktop app for discovering movies, shows, and trailers, built with Vue and Electron.',
-  githubUrl: 'https://github.com/tilenpirih/ventic-clone',
+  description: `Ventic is a media library and BitTorrent player for the desktop and Android TV. It keeps track of what you are watching and plays torrents in a real mpv window rather than a browser video tag, so half-downloaded MKVs, HEVC, AV1 and DTS all simply play. The torrent engine runs inside the app, playback starts on the first bytes rather than after the download, and the whole library — history, progress, favourites, watchlist — lives on the device with no account and no server behind it. Every screen is reachable with a d-pad, so it is as comfortable driven by a TV remote as by a mouse.<br>
+    It ships with no sources and searches nothing on its own: a source is a Stremio-protocol URL you add yourself. With none configured, Ventic is a general-purpose torrent client with a very good player attached.<br>
+    The project began years ago as one of my first ventures into Vue and desktop development — an Electron app on Vue 2 and Vuetify that I shelved unfinished when time ran out. You can still see <a href="https://www.youtube.com/watch?v=8BgjFmTXyM0" target="_blank" rel="noopener">that first iteration here</a>. In August 2026 I rebuilt it from nothing: Nuxt 4 and Vuetify 4 in front, a Tauri 2 Rust shell that parents an actual mpv window into the page, libmpv linked and drawn directly on macOS where no other process's window can be embedded, and an ExoPlayer backend on Android answering the same command protocol — one player component, three backends underneath.<br>
+    What made that speed possible was an AI-assisted workflow. I stayed the architect and the reviewer: I decided what the app should be, where the boundaries sat, and what was not going in it, then used AI to cover ground I would otherwise have spent months on — Rust for the window embedding and the in-process engine, Kotlin for the Android service, ffmpeg for seek previews and subtitle auto-sync. Every non-obvious piece of logic got a runnable self-check next to it instead of a test framework, so ranking, the disk budget, the backup round trip, the d-pad geometry and the contrast of all 26 themes are all asserted rather than assumed. A project that had sat abandoned for years went from an empty repository to a released, cross-platform, self-updating app in under three weeks — and it is genuinely finished this time.`,
+  shortText: 'Media library and BitTorrent player for desktop and Android TV, built with Nuxt and Tauri.',
+  websiteUrl: 'https://ventic.tv/',
+  githubUrl: 'https://github.com/ventic/ventic',
   image: '/img/ventic.webp',
   lazyImage: '/img/lazy/ventic.webp',
   technologies: [
@@ -43,10 +47,9 @@ export default {
   ],
   seo: {
     title: 'Project Ventic',
-    description: 'This project was originally designed to be an all-in-one tool for streaming various types of media. It was one of my first ventures into the Vue ecosystem and desktop application development. Unfortunately, due to time constraints and other commitments, I had to put it on hold. However, the experience was invaluable, and I gained a lot from it.',
+    description: 'Ventic is a media library and BitTorrent player for desktop and Android TV, built with Nuxt 4 and Tauri 2. It plays torrents in a real embedded mpv window, runs its torrent engine in-process, keeps your library on the device, and is fully usable from a TV remote. A project I shelved years ago as an Electron app and rebuilt from scratch in under three weeks with an AI-assisted workflow.',
     ogTitle: 'Project Ventic',
     ogImage: '/img/ventic.webp',
     ogUrl: '/project/ventic',
   },
-  videoId: '8BgjFmTXyM0',
 } satisfies ProjectData

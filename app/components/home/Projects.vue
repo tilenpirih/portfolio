@@ -5,11 +5,12 @@ import bgEraser from '~/data/projects/bgEraser'
 import chatbot from '~/data/projects/chatbot'
 import dvs from '~/data/projects/dvs'
 import globalEstApplication from '~/data/projects/globalEstApplication'
-import globalPdrApplication from '~/data/projects/globalPdrApplication'
 import kkKrkaImageGenerator from '~/data/projects/kkKrkaImageGenerator'
 import oksVolunteer from '~/data/projects/oksVolunteer'
+import ventic from '~/data/projects/ventic'
 
 const projects = [
+  ventic,
   astral8,
   chatbot,
   oksVolunteer,
@@ -17,7 +18,6 @@ const projects = [
   bgEraser,
   globalEstApplication,
   kkKrkaImageGenerator,
-  globalPdrApplication,
 ]
 
 const revealAt = [

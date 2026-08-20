@@ -23,7 +23,7 @@ const { project } = defineProps<{ project: ProjectData }>()
                    ("link, button, Visit webpage" to a screen reader), and the outer
                    <a> collapses to a zero-size touch target. -->
               <div class="flex flex-wrap gap-3 justify-center mt-3">
-                <animate-in v-if="project.websiteUrl" preset="fade-up" :delay="0.1" as-child>
+                <animate-in v-if="project.websiteUrl" preset="fade-right" :delay="0.1" as-child>
                   <v-btn
                     variant="outlined"
                     class="rounded-full"
@@ -35,7 +35,7 @@ const { project } = defineProps<{ project: ProjectData }>()
                     Visit webpage
                   </v-btn>
                 </animate-in>
-                <animate-in v-if="project.githubUrl" preset="fade-up" :delay="0.15" as-child>
+                <animate-in v-if="project.githubUrl" preset="fade-left" :delay="0.1" as-child>
                   <v-btn
                     variant="outlined"
                     class="rounded-full"

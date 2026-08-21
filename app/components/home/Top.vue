@@ -128,7 +128,7 @@ onMounted(() => {
             <animate-in as="h1" immediate preset="fade-down" class="text-h2 lg:text-h1 text-primary text-center">
               Tilen Pirih
             </animate-in>
-            <animate-in as="p" immediate preset="fade-right" :delay="0.1" class="text-h4 lg:text-h3 text-center text-secondary">
+            <animate-in as="p" immediate preset="fade-right" :delay="0.1" class="text-h4 mt-4 mb-8 lg:text-h3 text-center text-secondary">
               Full-stack developer
             </animate-in>
             <div class="flex justify-center mt-3">

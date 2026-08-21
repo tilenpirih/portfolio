@@ -4,6 +4,10 @@ export default antfu({
   formatters: true,
   vue: true,
   typescript: true,
+  // Blog posts are prose, and the code blocks inside them are verbatim quotes
+  // from other repositories. The markdown formatter would re-indent and
+  // re-punctuate both, so treat them as content rather than source.
+  ignores: ['server/assets/blog/**'],
 }, {
   files: ['**/*.vue'],
   rules: {

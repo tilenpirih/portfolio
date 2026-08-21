@@ -39,14 +39,14 @@ const publishedOn = new Date(post.date).toLocaleDateString('en-GB', { day: 'nume
     <!-- Keep this single root element: app.pageTransition wraps pages in
          <Transition>, which cannot animate a fragment. -->
     <div class="bg-background pt-8">
-      <v-container class="py-8" style="max-width: 800px;">
+      <v-container class="py-8 max-w-[1200px]">
         <animate-in preset="fade-down" immediate>
-          <nuxt-link to="/blog" class="text-caption d-inline-flex align-center mb-4">
+          <nuxt-link to="/blog" class="text-caption inline-flex items-center mb-4">
             <v-icon :icon="mdiArrowLeft" size="small" class="mr-1" />
             All posts
           </nuxt-link>
 
-          <h1 class="text-h4 text-sm-h3 text-primary pb-3">
+          <h1 class="text-h4 sm:text-h3 text-primary pb-3">
             {{ post.title }}
           </h1>
 
@@ -76,7 +76,7 @@ const publishedOn = new Date(post.date).toLocaleDateString('en-GB', { day: 'nume
 
         <v-divider class="my-10" />
 
-        <v-btn to="/blog" variant="tonal" class="text-none" size="large">
+        <v-btn to="/blog" variant="tonal" size="large">
           <v-icon :icon="mdiArrowLeft" class="mr-2" />
           All posts
         </v-btn>

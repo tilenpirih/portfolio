@@ -91,7 +91,6 @@ export default {
   defaults: {
     VBtn: {
       color: 'primary',
-      class: 'normal-case',
     },
     VProgressLinear: {
       rounded: true,

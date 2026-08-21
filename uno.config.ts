@@ -60,8 +60,15 @@ export default defineConfig({
   // built against. `subtitle1` -> `text-subtitle-1`, `h1` -> `text-h1`.
   // Unlike Vuetify's bg-*, wind4's sets only the background and not the paired
   // on-* foreground, so anything on a coloured surface states its text-on-* class.
-  rules: Object.entries(typographyPresets.md2).map(([key, css]) => [
-    `text-${key.replace(/^(subtitle|body)(\d)$/, '$1-$2')}`,
-    toKebab(css),
-  ] as [string, Record<string, string>]),
+  rules: [
+    ...Object.entries(typographyPresets.md2).map(([key, css]) => [
+      `text-${key.replace(/^(subtitle|body)(\d)$/, '$1-$2')}`,
+      toKebab(css),
+    ] as [string, Record<string, string>]),
+    // Vuetify's text-opacity utilities. The --v-*-opacity vars come from the
+    // theme composable at runtime, so these still follow light/dark.
+    [/^text-(high-emphasis|medium-emphasis|disabled)$/, ([, name]) => ({
+      color: `rgba(var(--v-theme-on-background), var(--v-${name}-opacity))`,
+    })],
+  ],
 })

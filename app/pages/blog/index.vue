@@ -41,7 +41,7 @@ function formatDate(date: string) {
           :delay="index * 0.07"
           :immediate="index === 0"
         >
-          <v-card class="rounded-lg pa-2 pa-sm-4 mb-6">
+          <v-card class="rounded-lg pa-2 sm:pa-4 mb-6">
             <v-card-text class="pb-0">
               <div class="text-caption text-medium-emphasis">
                 {{ formatDate(entry.date) }}

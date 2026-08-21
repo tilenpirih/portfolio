@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { series } from '~/data/blog'
+import { posts } from '~/data/blog'
 
 const siteUrl = useSiteUrl()
 useHead({
@@ -35,7 +35,7 @@ function formatDate(date: string) {
              one ships as opacity:0 and waits for hydration, which pins LCP to the
              bundle. See the `immediate` prop in AnimateIn.vue. -->
         <animate-in
-          v-for="(entry, index) in series"
+          v-for="(entry, index) in posts"
           :key="entry.slug"
           preset="fade-up"
           :delay="index * 0.07"
@@ -44,7 +44,7 @@ function formatDate(date: string) {
           <v-card class="rounded-lg pa-2 pa-sm-4 mb-6">
             <v-card-text class="pb-0">
               <div class="text-caption text-medium-emphasis">
-                {{ formatDate(entry.date) }} &middot; {{ entry.parts.length }} parts
+                {{ formatDate(entry.date) }}
               </div>
             </v-card-text>
 
@@ -63,38 +63,9 @@ function formatDate(date: string) {
                 {{ tag }}
               </v-chip>
             </v-card-text>
-
-            <v-divider class="mx-4" />
-
-            <v-list bg-color="transparent" density="comfortable">
-              <v-list-item
-                v-for="(part, partIndex) in entry.parts"
-                :key="part.slug"
-                :to="`/blog/${part.slug}`"
-                class="rounded-lg"
-              >
-                <template #prepend>
-                  <span class="text-caption text-medium-emphasis mr-4">{{ partIndex + 1 }}</span>
-                </template>
-                <v-list-item-title class="text-primary">
-                  {{ part.title }}
-                </v-list-item-title>
-                <v-list-item-subtitle class="text-wrap">
-                  {{ part.description }}
-                </v-list-item-subtitle>
-              </v-list-item>
-            </v-list>
           </v-card>
         </animate-in>
       </v-container>
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-/* Vuetify clamps a list subtitle to a single line, which cuts these mid-sentence
-   on a phone. Two lines is enough for every description we have. */
-:deep(.v-list-item-subtitle) {
-  -webkit-line-clamp: 2;
-}
-</style>

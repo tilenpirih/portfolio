@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { mdiArrowLeft, mdiArrowRight } from '@mdi/js'
-import { findPost, seriesOf } from '~/data/blog'
+import { mdiArrowLeft } from '@mdi/js'
+import { findPost } from '~/data/blog'
 
 // Without this, Vue reuses one component instance across every /blog/** path —
-// same route record — so setup never re-runs and part 2 would render part 1.
+// same route record — so setup never re-runs and the next post would render
+// the previous one's content.
 definePageMeta({ key: route => route.fullPath })
 
 const route = useRoute()
@@ -12,14 +13,8 @@ const slug = (Array.isArray(route.params.slug) ? route.params.slug : [route.para
   .join('/')
 
 const post = findPost(slug)
-const parent = seriesOf(slug)
-if (!post || !parent)
+if (!post)
   throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
-
-const chapters = parent.parts
-const partIndex = chapters.findIndex(chapter => chapter.slug === slug)
-const previous = chapters[partIndex - 1]
-const next = chapters[partIndex + 1]
 
 const { data } = await useFetch(`/api/blog/${slug}`)
 
@@ -32,11 +27,11 @@ useHead({
     { property: 'og:description', content: post.description },
     { property: 'og:type', content: 'article' },
     { property: 'og:url', content: `${siteUrl}/blog/${slug}` },
-    { property: 'article:published_time', content: parent.date },
+    { property: 'article:published_time', content: post.date },
   ],
 })
 
-const publishedOn = new Date(parent.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+const publishedOn = new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
 </script>
 
 <template>
@@ -50,10 +45,6 @@ const publishedOn = new Date(parent.date).toLocaleDateString('en-GB', { day: 'nu
             <v-icon :icon="mdiArrowLeft" size="small" class="mr-1" />
             All posts
           </nuxt-link>
-
-          <div class="text-caption text-medium-emphasis mb-2">
-            {{ parent.title }} &middot; part {{ partIndex + 1 }} of {{ chapters.length }}
-          </div>
 
           <h1 class="text-h4 text-sm-h3 text-primary pb-3">
             {{ post.title }}
@@ -85,16 +76,10 @@ const publishedOn = new Date(parent.date).toLocaleDateString('en-GB', { day: 'nu
 
         <v-divider class="my-10" />
 
-        <div class="d-flex flex-column flex-sm-row ga-4 justify-space-between">
-          <v-btn v-if="previous" :to="`/blog/${previous.slug}`" variant="tonal" class="text-none flex-grow-1 justify-start" size="large">
-            <v-icon :icon="mdiArrowLeft" class="mr-2" />
-            <span class="text-truncate">{{ previous.title }}</span>
-          </v-btn>
-          <v-btn v-if="next" :to="`/blog/${next.slug}`" variant="tonal" class="text-none flex-grow-1 justify-end" size="large">
-            <span class="text-truncate">{{ next.title }}</span>
-            <v-icon :icon="mdiArrowRight" class="ml-2" />
-          </v-btn>
-        </div>
+        <v-btn to="/blog" variant="tonal" class="text-none" size="large">
+          <v-icon :icon="mdiArrowLeft" class="mr-2" />
+          All posts
+        </v-btn>
       </v-container>
     </div>
   </div>
@@ -189,7 +174,7 @@ const publishedOn = new Date(parent.date).toLocaleDateString('en-GB', { day: 'nu
     font-size: 0.875em;
     word-break: break-word;
     /* Quoted code should read exactly as it was written — with ligatures on,
-       a PHP `=>` renders as a ⇒ that is nowhere in the source. */
+       a `=>` renders as a ⇒ that is nowhere in the source. */
     font-variant-ligatures: none;
   }
 

@@ -37,6 +37,12 @@ export default {
       icon: '/img/technologies/ts.svg',
       link: 'https://www.typescriptlang.org/',
     },
+    { icon: '/img/technologies/rust.png', link: 'https://www.rust-lang.org/' },
+    { icon: '/img/technologies/mpv.svg', link: 'https://mpv.io/' },
+    { icon: '/img/technologies/kotlin.svg', link: 'https://kotlinlang.org/' },
+    { icon: '/img/technologies/android.svg', link: 'https://developer.android.com/media/media3/exoplayer' },
+    { icon: '/img/technologies/unocss.svg', link: 'https://unocss.dev/' },
+    { icon: '/img/technologies/android.svg', link: 'https://www.android.com/tv/' },
     {
       icon: '/img/technologies/bun.svg',
       link: 'https://bun.com/',

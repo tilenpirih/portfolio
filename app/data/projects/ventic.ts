@@ -8,41 +8,38 @@ export default {
     What made that speed possible was the order I worked in. I set the foundation up by hand: picking the stack and wiring it together - Nuxt 4 on a Tauri 2 shell, Vuetify and UnoCSS for the UI layer, Pinia for state, the torrent engine, the theming system, the linting and the build scripts - plus the project structure and the conventions everything after it would follow. That part is quick to do and expensive to get wrong, so it was worth doing myself rather than prompting for. With a solid base and the patterns already set, AI could set the pieces on top of it - screens, rooms, settings tabs, the Kotlin service, the ffmpeg work - quickly and consistently, with me reviewing every change against the foundation it was built on. Every non-obvious piece of logic got a runnable self-check beside it instead of a test framework, so release ranking, the disk budget, the backup round trip, the d-pad focus geometry and the contrast of all 26 themes are asserted rather than assumed. A project that had sat abandoned for years went from an empty repository to a released, cross-platform, self-updating app in under three weeks - and this time it is genuinely finished.`,
   shortText: 'Media library and BitTorrent player for desktop and Android TV, built with Nuxt and Tauri.',
   websiteUrl: 'https://ventic.tv/',
+  videoId: 'ypqtd02nWQY',
   githubUrl: 'https://github.com/ventic/ventic',
   image: '/img/ventic.webp',
   lazyImage: '/img/lazy/ventic.webp',
   technologies: [
     {
-      icon: '/img/technologies/vue.svg',
-      link: 'https://vuejs.org/',
+      icon: '/img/technologies/nuxt.svg',
+      link: 'https://nuxt.com/',
     },
     {
-      icon: '/img/technologies/electron.svg',
-      link: 'https://www.electronjs.org/',
+      icon: '/img/technologies/tauri.svg',
+      link: 'https://v2.tauri.app/',
     },
     {
       icon: '/img/technologies/vuetify.svg',
       link: 'https://vuetifyjs.com/',
     },
     {
-      icon: '/img/technologies/vuex.svg',
-      link: 'https://vuex.vuejs.org/',
+      icon: '/img/technologies/pinia.svg',
+      link: 'https://pinia.vuejs.org/',
     },
     {
       icon: '/img/technologies/tmdb.svg',
       link: 'https://www.themoviedb.org/',
     },
     {
-      icon: '/img/technologies/js.svg',
-      link: 'https://www.w3schools.com/js/',
+      icon: '/img/technologies/ts.svg',
+      link: 'https://www.typescriptlang.org/',
     },
     {
-      icon: '/img/technologies/videojs.svg',
-      link: 'https://videojs.com/',
-    },
-    {
-      icon: '/img/technologies/nodejs.svg',
-      link: 'https://nodejs.org/en',
+      icon: '/img/technologies/bun.svg',
+      link: 'https://bun.com/',
     },
   ],
   seo: {

@@ -101,7 +101,7 @@ const { project } = defineProps<{ project: ProjectData }>()
                     rel="noopener"
                     :aria-label="`${techName(tech.icon)} (opens in a new tab)`"
                   >
-                    <v-img :src="tech.icon" :alt="techName(tech.icon)" aspect-ratio="1" class="techIcon" />
+                    <img :src="tech.icon" :alt="techName(tech.icon)" class="techIcon" loading="lazy" decoding="async">
                   </v-btn>
                 </v-col>
               </animate-in>
@@ -115,9 +115,13 @@ const { project } = defineProps<{ project: ProjectData }>()
           <animate-in preset="fade-up" class="rounded overflow-hidden flex justify-center">
             <script-you-tube-player :video-id="project.videoId">
               <template #awaitingLoad>
-                <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); height: 48px; width: 68px;">
-                  <v-img src="/img/technologies/youtube.svg" alt="" />
-                </div>
+                <img
+                  src="/img/technologies/youtube.svg"
+                  alt=""
+                  width="68"
+                  height="48"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"
+                >
               </template>
             </script-you-tube-player>
           </animate-in>
@@ -138,6 +142,8 @@ const { project } = defineProps<{ project: ProjectData }>()
 .techIcon {
   width: 64px;
   height: 64px;
+  /* What v-img did by default; the icons are not all square. */
+  object-fit: contain;
 }
 
 @media (min-width: 1280px) {

@@ -11,11 +11,13 @@ import { mdiOpenInNew } from '@mdi/js'
         </animate-in>
         <div style="max-width: 1200px;">
           <animate-in preset="fade-down">
-            My name is Tilen Pirih, and I'm a passionate Fullstack Developer from Slovenia. As a self-employed developer,
-            I have the freedom to take on diverse projects and tailor my work to the specific needs of my clients.
-            With a strong focus on frontend development, I specialize in building dynamic and responsive applications using Vue.js and Nuxt.js.
-            I thrive on new challenges and am constantly seeking to expand my skillset by exploring and mastering new technologies.
-            Whether it's crafting seamless user interfaces or optimizing backend processes, I'm always eager to contribute and grow as a developer.
+            My name is Tilen Pirih, and I'm a full-stack developer from Slovenia. Over the years, I've had the opportunity to work on a wide variety of projects for different clients, from smaller applications to larger and more complex systems.
+            <br>
+            Working across such diverse projects has given me experience adapting to different requirements, codebases, teams, and ways of working. It has also allowed me to grow beyond simply implementing features, taking on responsibilities such as technical decision-making, architecture, problem solving, and improving existing systems.
+            <br>
+            As a self-employed developer, I've worked with both local and international clients and have often been involved throughout the development process, from understanding requirements and planning solutions to implementation and delivery.
+            <br>
+            I enjoy challenging projects, learning new things along the way, and finding practical solutions to complex problems. I'm always interested in opportunities where I can contribute my experience while continuing to grow as a developer.
           </animate-in>
           <animate-in preset="fade-up" class="mt-3">
             <v-btn
